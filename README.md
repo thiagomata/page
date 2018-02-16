@@ -4,6 +4,10 @@ I decided to created it, because the current resume tools are to restricted abou
 
 To do so, it is using glue and some building blocks as:
 
+* jquery
+* chart.js - http://chartjs.org/
+* pallete.js
+* handlebars-v4
 * timeline.js - https://timeline.knightlab.com/
 * a facebook template - http://usebootstrap.com/preview/facebook/#
 * free images from:
@@ -15,7 +19,7 @@ To do so, it is using glue and some building blocks as:
   - https://thenounproject.com
   - https://www.iconfinder.com
 
-All the resume / cv information it is into the file timeline.json, so fell free to fork and create your own version of that. Merge request are welcome.
+All the resume / cv information it is into the file resume.json, based on the json model of https://jsonresume.org/, so fell free to fork and create your own version of that. Merge request are welcome.
 
 Best Regards,
 Thiago Mata
