@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Resume</title>
+  <script id="template-page-title" type="text/x-handlebars-template">
+    {{name}} - {{label}}
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/icons.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="assets/css/facebook.css" rel="stylesheet">
+  <script type="text/javascript" src="assets/js/mapreduce.js"></script>
+  <script type="text/javascript" src="assets/js/kv.js"></script>
+  <script type="text/javascript" src="assets/js/handlebars-v4.0.11.js"></script>
+  <script type="text/javascript" src="assets/js/cssx.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.js"></script>
+  <script type="text/javascript" src="assets/js/chart.min.js"></script>
+  <script type="text/javascript" src="assets/js/chart.bundle.min.js"></script>
+  <script type="text/javascript" src="assets/js/chart.utils.js"></script>
+  <script type="text/javascript" src="assets/js/pallete.js"></script>
+  <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/js/d3.legend.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/js/line-chart.js"></script> -->
+  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="assets/js/resume.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box">
+      <div class="row row-offcanvas row-offcanvas-left">
+
+        <!-- sidebar -->
+        <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+
+          <!--
+            Mobile icon to show / hide the text of the side bar menu
+          -->
+          <ul class="nav">
+            <li>
+              <a href="#" data-toggle="offcanvas" class="visible-xs text-center">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!--
+          Left Side Menu
+          -->
+          <ul
+          data-template-source="#template-social-networks-details"
+          data-template-context="getSocialNetworks"
+          class="nav hidden-xs" id="lg-menu"
+          >
+          </ul>
+          <script type="text/x-handlebars-template" id="template-social-networks-details">
+            <li class="active">
+              <a href="index.php?page=document">
+                <i class="glyphicon glyphicon-list-alt"></i>
+                Document
+              </a>
+            </li>
+            <li>
+              <a href="index.php?page=stories">
+                <i class="glyphicon glyphicon-list"></i>
+                Stories
+              </a>
+            </li>
+            <li>
+              <a href="index.php?page=timeline">
+                <div class="icons icons-timeline">
+                </div> Timeline
+              </a>
+            </li>
+            <!-- list of social networks links -->
+            {{#each socialNetworks }}
+              <li>
+                <a href="{{link}}">
+                  <div class="icons icons-social-{{icon}}">
+                  </div>
+                  {{name}}
+                </a>
+              </li>
+            {{/each}}
+          </script>
+          <!--
+          Menu footer
+          -->
+          <ul class="list-unstyled hidden-xs"
+            id="sidebar-footer"
+            data-template-source="#template-menu-footer"
+            data-template-context="getBasicData">
+          </ul>
+          <script id="template-menu-footer" type="text/x-handlebars-template">
+            <li>
+              <a href="{{link}}">
+                <h3>{{name}}</h3>
+                {{label}}
+                </a>
+            </li>
+          </script>
+
+          <!--
+          Mobile version of the side bar menu
+          -->
+          <!-- tiny only nav-->
+          <ul class="nav visible-xs" id="xs-menu"
+          data-template-source="#template-social-networks-short"
+          data-template-context="getSocialNetworks"
+          >
+          </ul>
+          <script id="template-social-networks-short" type="text/x-handlebars-template">
+            <li class="active">
+              <a href="index.php?page=document">
+                <i class="glyphicon glyphicon-list-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a href="index.php?page=stories">
+                <i class="glyphicon glyphicon-list"></i>
+              </a>
+            </li>
+            <li>
+              <a href="index.php?page=timeline">
+                <div class="icons icons-timeline"></div>
+              </a>
+            </li>
+            <li class="list-unstyled hidden-xs">
+            </li>
+            {{#each socialNetworks }}
+              <li>
+                  <a href="{{link}}">
+                    <div class="icons icons-social-{{icon}}">
+                    </div>
+                  </a>
+                </li>
+            {{/each}}
+          </script>
+        </div>
+        <!-- /sidebar -->
+
+        <!-- all the information that is not on the left side menu -->
+        <!-- main right col -->
+        <div class="column col-sm-10 col-xs-11" id="main">
+
+          <!-- top nav -->
+          <div class="navbar navbar-blue navbar-static-top">
+
+            <form class="navbar-form navbar-left"
+            data-template-source="#template-search-filter"
+            >
+            </form>
+            <script id="template-search-filter" type="text/x-handlebars-template">
+              <div class="input-group input-group-sm" style="max-width:360px;">
+                <input
+                  class="form-control"
+                  placeholder="Search"
+                  id="search-term"
+                  name="q"
+                  onchange="window.resume.updateSearchTerm(this)"
+                  value="{{ searchTerm }}"
+                  type="text"
+                />
+                <div class="input-group-btn">
+                <button class="btn btn-default" type="updateSearchTerm(this)"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+            </script>
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#professional">
+                  <div class="icons icons-work-tie">
+                    &nbsp;
+                  </div>
+                  Professional
+                </a>
+              <li>
+                <li>
+                  <a href="#academic">
+                    <div class="icons icons-academic">
+                      &nbsp;
+                    </div>
+                    Academic
+                  </a>
+                <li>
+              </li>
+              <li>
+                <a href="#courses">
+                  <div class="icons icons-course">
+                    &nbsp;
+                  </div>
+                  Courses
+                </a>
+              <li>
+                <li>
+                  <a href="#trending">
+                    <div class="icons icons-chart">
+                      &nbsp;
+                    </div>
+                    Trending
+                  </a>
+                <li>
+            </ul>
+          </div>
+          <!-- /top nav -->
+          <div class="padding">
+            <div class="full col-sm-12" >
+              <div class="row me"
+                data-template-source="#template-row-me"
+                data-template-context="getBasicData"
+                data-template-render-on-update="false"
+              ><!-- begin me-row-->
+              </div><!-- end me-row -->
+              <script id="template-row-me" type="text/x-handlebars-template">
+                {{#if picture}}
+                  <div class="col-sm-2">
+                    <div class="face-circle">
+                      <img src="{{picture}}"/>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 me-description">
+                    <h4>{{name}}</h4>
+                    <p> {{summary}}
+                    </p>
+                    <p>
+                      <a href="mailto:">
+                        {{email}}
+                      </a>
+                      <a href="mailto:">
+                        {{phone}}
+                      </a>
+                    </p>
+                  </div><!-- end me-description -->
+                {{else}}
+                  <div class="col-sm-12 me-description">
+                    <h4>{{name}}</h4>
+                    <p>
+                      {{summary}}
+                    </p>
+                    <p>
+                      <a href="mailto:">
+                        {{email}}
+                      </a>
+                      <a href="mailto:">
+                        {{phone}}
+                      </a>
+                    </p>
+                  </div><!-- end me-description -->
+                {{/if}}
+              </script>
+              <div
+                data-template-source="#template-category"
+                data-template-context="getWorkExperiences"
+              >
+              </div>
+              <div
+                data-template-source="#template-category"
+                data-template-context="getAcademicHistory"
+              >
+              </div>
+              <div
+                data-template-source="#template-category"
+                data-template-context="getCoursesHistory"
+              >
+              </div>
+              <script id="template-category" type="text/x-handlebars-template">
+                <div
+                  class="panel panel-default parent-panel"
+                  id="{{categoryId}}">
+                  <div class="panel-heading">
+                    <div class="row"> <!-- element experience header -->
+                      <div class="col-sm-8">
+                        <a name="{{categoryAnchor}}">
+                          <h4>{{categoryTitle}}</h4>
+                        </a>
+                      </div>
+
+                      <div class="col-sm-4"> <!-- select filter -->
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <select class="form-control"
+                            onclick="window.resume.onSelectFilterChange( this )">
+                              <option
+                                {{#ifCond searchFilter 'relevants' }}
+                                  selected
+                                {{/ifCond}}
+                                value="relevants"
+                              >Only the most relevants</option>
+                              <option value="relevants last">Most relevants and last</option>
+                              <option value="last"
+                                {{#ifCond searchFilter 'last' }}
+                                  selected
+                                {{/ifCond}}
+                              >All from the last years</option>
+                              <option value="all"
+                                {{#ifCond searchFilter 'all' }}
+                                  selected
+                                {{/ifCond}}
+                              >All experiences</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div> <!-- end select filter -->
+                    </div>
+                    <div id="element-experience-list" class="row experience-list"> <!-- element experience list -->
+                      {{#each elements }}
+                        <div class="
+                          experience
+                          element-experience
+                          experience-{{date-order-position}}
+                          relevance-{{relevance}}
+                          {{#each tags}}
+                            {{id}}
+                          {{/each}}"
+                        >
+                          <div class="panel-body"> <!-- element experience panel body -->
+                            <h3> {{ title }} </h3>
+                            <div class="subheading col-sm-9">
+                              <div class="company-icon-box">
+                                {{#if icon }}
+                                  <img class="company-icon"
+                                    src="assets/images/{{{ icon }}}"
+                                  />
+                                {{/if}}
+                                &nbsp;
+                                <h4 class="company-name">
+                                  {{#if website }}
+                                    <a href="{{ website }}">
+                                      {{company}}
+                                    </a>
+                                  {{else}}
+                                    {{company}}
+                                  {{/if}}
+                                </h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-3"> <!-- element experience duration -->
+                              <h4 class="date-range">
+                                  {{startDate}}
+                                  {{#if endDate }}
+                                    to
+                                    {{endDate}}
+                                  {{/if}}
+                                  {{#if present }}
+                                    to
+                                    Present
+                                  {{/if}}
+                              </h4>
+                              <br/>
+                              {{#if duration}}
+                                <div class="duration">
+                                  {{#if duration.years }}
+                                    {{ duration.years }} years
+                                  {{/if}}
+                                  {{#if duration.months }}
+                                    {{#if duration.years }}
+                                      and
+                                    {{/if}}
+                                    {{ duration.months }} months
+                                  {{/if}}
+                                </div>
+                              {{/if}}
+                          </div> <!-- end element experience duration -->
+                          </div> <!-- end element experience panel body -->
+                          <div class="col-sm-12 element-text-description">
+                            {{description}}
+                            {{#if certificate }}
+                              <a href="{{certificate}}">See Certificate</a>.
+                            {{/if}}
+                          </div><!-- end element-text-description -->
+                          <div class="col-sm-12 tags"> <!-- element tags -->
+                            {{#each tags }}
+                              <div
+                                class="tag tag-{{id}}
+                                {{#if active}}
+                                  tag-active
+                                {{/if}}
+                                "
+                                onclick="window.resume.clickTag('{{id}}', 'element-panel')">
+                                  {{label}}
+                              </div>
+                            {{/each}}
+                          </div> <!-- end tags -->
+                        </div><!-- end element experience -->
+                      {{/each}}
+                    </div> <!-- end element experience list-->
+                  </div><!-- end element panel heading -->
+                  {{#if hasHiddenElements }}
+                    {{#if hasVisibileElements }}
+                      <div class="panel-body there-are-hidden-elements">
+                        <p class="lead">Missing Something?</p>
+                        <p>
+                          There are <span class="count-hidden-elements">{{countHidden}}</span> {{elementsTitle}} hidden by the filters.
+                          You can <a href="#" onclick="window.resume.clearFilter()">clean the filter and show them all</a>.
+                        </p>
+                      </div>
+                    {{else}}
+                      <div class="panel-body all-hidden-elements">
+                        <p class="lead">
+                          Nothing Here :(
+                        </p>
+                        <p>
+                          There are no {{elementsTitle}} that fits into the current filter.
+                          But, there are <span class="count-hidden-elements">{{countHidden}}</span> {{elementsTitle}} hidden.
+                          You can <a href="#" onclick="window.resume.clearFilter()">clean the filter and show them all</a>.
+                        </p>
+                      </div>
+                    {{/if}}
+                  {{/if}}
+                </div>
+              </script>
+              <div class="panel panel-default parent-panel" >
+                <div class="panel-heading">
+                  <div class="row">
+                    <a name="trending">
+                      <h4>Trending</h4>
+                    </a>
+                  </div> <!-- end row -->
+                  <div class="row">
+                    <p>
+                      These trends are calculated from the proportion
+                      that each tag appears in the experiences
+                      over the years.
+                    </p>
+                    <div id="canvas-box">
+                    </div>
+                  </div>
+                </div> <!-- end panel-heading -->
+              </div> <!-- end panel -->
+            </div>
+          </div><!-- end padding -->
+        </div> <!-- end #main -->
+      </div><!-- end row-offcanvas -->
+    </div><!-- end wrapper -->
+  </div><!-- end box -->
+</body>
+</html>
