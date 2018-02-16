@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- 1 -->
+  <link title="timeline-styles" rel="stylesheet" href="../css/timeline.css">
+  <!-- 2 -->
+  <script src="../js/timeline.js"></script>
+</head>
+<body>
+  <center>
+    <h1> THIS PAGE IS A DRAFT </h1>
+  </center>
+  <p>
+    I am testing different ways to show the curriculum data.
+    This page will be soon replaced by the final project that should have a similar component.
+    You can see more about it in this <a href="https://github.com/thiagomata/resume.js"> resume.js project </a>.
+  </p>
+  <p>
+    While doing this change, links can break and code methods can stop working.
+  </p>
+  <div id='timeline-embed' style="width: 100%; height: 600px"></div>
+
+  <script>
+  function readTextFile(file, callback) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.overrideMimeType("application/json");
+      rawFile.open("GET", file, true);
+      rawFile.onreadystatechange = function() {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+              callback(rawFile.responseText);
+          }
+      }
+      rawFile.send(null);
+  }
+
+  //usage:
+  readTextFile("../json/timeline.json", function(text){
+      window.dataTimeline = JSON.parse(text);
+      updateTimeline();
+  })
+
+  function updateTimeline() {
+    var onlyImportants = false // document.getElementById("check-importants").checked;
+    var onlyWork       = false // document.getElementById("check-work").checked;
+    var onlyAcademic   = false // document.getElementById("check-academic").checked;
+    var resultTimeline = [];
+    resultTimeline.title = window.dataTimeline.title;
+    var events = window.dataTimeline.events;
+    if( onlyImportants ) {
+      var events = events.filter( e => e.important );
+    }
+    if( onlyWork ) {
+      var events = events.filter( e => e.group == "work" );
+    }
+    if( onlyAcademic ) {
+      var events = events.filter( e => e.group == "scholar" );
+    }
+    resultTimeline.events = events;
+    window.timeline = new TL.Timeline('timeline-embed', resultTimeline, {
+      hash_bookmark: true
+    } );
+  }
+  </script>
+</body>
+</html>

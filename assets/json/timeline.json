@@ -1,7 +1,7 @@
 {
 	"about": {
 		"name": "Thiago Henrique Ramos da Mata",
-		"label": "Software Engineer,"
+		"label": "Software Engineer",
 		"social-networks": {
 			"twitter": "https://twitter.com/thiagomata",
 			"linkedin": "https://www.linkedin.com/in/thiagomata/"
@@ -12,7 +12,7 @@
 			"headline": "Thiago Mata Resume",
 			"text": "My history so far"
 		},
-		"media":{
+		"media": {
 			"url": "thiago_face.jpg"
 		}
 	},
@@ -596,7 +596,7 @@
 			"group": "course",
 			"tags": ["google cloud platform", "hadoop", "pig", "spark", "google cloud datastore", "machine learning", "google cloud dataproc", "python", "google bigquery"],
 			"text": {
-				"organization":"Google Cloud",
+				"organization": "Google Cloud",
 				"headline": "Leveraging Unstructured Data with Cloud Dataproc on Google Cloud Platform",
 				"text": "This <a href='https://www.coursera.org/learn/leveraging-unstructured-data-dataproc-gcp'>course</a> shows how to create and manage computing clusters to run Hadoop, Spark, Pig and/or Hive jobs on Google Cloud Platform.  Also shows how to access various cloud storage options from their compute clusters and integrate Google’s machine learning capabilities into their analytics programs, how to manage Dataproc Clusters using the Web Console and the CLI, and use cluster to run Spark and Pig jobs. It shows how to create iPython notebooks that integrate with BigQuery and storage and utilize Spark. Finally, it shows houw to integrate the machine learning APIs into data analysis. <a href='https://www.coursera.org/account/accomplishments/verify/EZABLESW7TNH'> See certificate </a>."
 			},
@@ -674,7 +674,9 @@
 				"headline": "Reproducible Research",
 				"text": "This <a href='https://www.coursera.org/learn/reproducible-research'>course</a> from the Johns Hopkins University focuses on the concepts and tools behind reporting modern data analyses in a reproducible manner. Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. <a href='https://www.coursera.org/account/accomplishments/verify/4HGZWSPKS4SQ'> See certificate </a>."
 			},
-			"background": { "url": "johns-hopkins.jpg" },
+			"background": {
+				"url": "johns-hopkins.jpg"
+			},
 			"media": {
 				"icon": "johns-hopkins-icon.png",
 				"thumbnail": "course.png",
@@ -716,7 +718,9 @@
 				"headline": "Exploratory Data Analysis",
 				"text": "This <a href='https://www.coursera.org/learn/exploratory-data-analysis'>course</a> covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modeling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data. <a href='https://www.coursera.org/account/accomplishments/verify/MSM9U9CDWYCU'> See certificate </a>."
 			},
-			"background": { "url": "johns-hopkins.jpg" },
+			"background": {
+				"url": "johns-hopkins.jpg"
+			},
 			"media": {
 				"icon": "johns-hopkins-icon.png",
 				"thumbnail": "course.png",
@@ -736,7 +740,9 @@
 				"headline": "Getting and Cleaning Data",
 				"text": "This <a href='https://www.coursera.org/learn/data-cleaning'>course</a> covers obtaining data from the web, from APIs, from databases and from colleagues in various formats. It will also cover the basics of data cleaning and how to make data “tidy”. Tidy data dramatically speed downstream data analysis tasks. The course will also cover the components of a complete data set including raw data, processing instructions, codebooks, and processed data. Finally, it covers the basics needed for collecting, cleaning, and sharing data. <a href='https://www.coursera.org/account/accomplishments/verify/9ZUMB8XUB458'> See certificate </a>."
 			},
-			"background": { "url": "johns-hopkins.jpg" },
+			"background": {
+				"url": "johns-hopkins.jpg"
+			},
 			"media": {
 				"icon": "johns-hopkins-icon.png",
 				"thumbnail": "course.png",
@@ -778,7 +784,9 @@
 				"headline": "The Data Scientist’s Toolbox",
 				"text": "This <a href='https://www.coursera.org/learn/data-scientists-tools'>course</a> gives an overview of the data, questions, and tools that data analysts and data scientists work with. <a href='https://www.coursera.org/account/accomplishments/verify/2WWGW253DNH3'> See certificate </a>."
 			},
-			"background": { "url": "johns-hopkins.jpg" },
+			"background": {
+				"url": "johns-hopkins.jpg"
+			},
 			"media": {
 				"icon": "johns-hopkins-icon.png",
 				"thumbnail": "course.png",
