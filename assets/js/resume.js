@@ -347,7 +347,8 @@ function ResumeTemplate( resume ) {
       label:   resumeTemplate.getPath( this.resume.jsonData, "basics.label", null ),
       summary: resumeTemplate.getPath( this.resume.jsonData, "basics.summary" ),
       email:   resumeTemplate.getPath( this.resume.jsonData, "basics.email" ),
-      phone:   resumeTemplate.getPath( this.resume.jsonData, "basics.phone" )
+      phone:   resumeTemplate.getPath( this.resume.jsonData, "basics.phone" ),
+      jsonresume: this.resume.getDatabase()
     }
   }
 
@@ -804,6 +805,9 @@ function ResumeTemplate( resume ) {
 function Resume() {
 
   const database = "./assets/json/resume.json";
+  this.getDatabase = function(){
+    return database;
+  }
 
   const graphElement = $("#canvas-box");
 

@@ -71,12 +71,14 @@
                 Stories
               </a>
             </li> -->
+            <!--
             <li>
               <a href="assets/images/timeline.html">
                 <div class="icons icons-timeline">
                 </div> Timeline
               </a>
             </li>
+            -->
             <!-- list of social networks links -->
             {{#each socialNetworks }}
               <li>
@@ -228,12 +230,21 @@
                     <p> {{summary}}
                     </p>
                     <p>
-                      <a href="mailto:">
-                        {{email}}
-                      </a>
-                      <a href="mailto:">
-                        {{phone}}
-                      </a>
+                      {{#if email}}
+                        <a href="mailto:{{email}}">
+                          {{email}}
+                        </a>
+                      {{/if}}
+                      {{#if phone}}
+                        <a href="tel:{{phone}}">
+                          {{phone}}
+                        </a>
+                      {{/if}}
+                      {{#if jsonresume}}
+                        <a href="{{jsonresume}}">
+                          resume.json
+                        </a>
+                      {{/if}}
                     </p>
                   </div><!-- end me-description -->
                 {{else}}
@@ -243,12 +254,21 @@
                       {{summary}}
                     </p>
                     <p>
-                      <a href="mailto:">
-                        {{email}}
-                      </a>
-                      <a href="mailto:">
-                        {{phone}}
-                      </a>
+                      {{#if email}}
+                        <a href="mailto:{{email}}">
+                          {{email}}
+                        </a>
+                      {{/if}}
+                      {{#if phone}}
+                        <a href="tel:{{phone}}">
+                          {{phone}}
+                        </a>
+                      {{/if}}
+                      {{#if jsonresume}}
+                        <a href="{{jsonresume}}">
+                          resume.json
+                        </a>
+                      {{/if}}
                     </p>
                   </div><!-- end me-description -->
                 {{/if}}
@@ -431,7 +451,7 @@
                     </div>
                   </div>
                 </div> --><!-- end panel-heading -->
-          <!--</div> --><!-- end panel --> -->
+            <!--</div> --><!-- end panel -->
             </div>
           </div><!-- end padding -->
         </div> <!-- end #main -->
