@@ -199,6 +199,14 @@
                   Courses
                 </a>
               <li>
+                <li>
+                  <a href="#scientific-papers">
+                    <div class="icons icons-paper">
+                      &nbsp;
+                    </div>
+                    Papers
+                  </a>
+                <li>
               <!-- <li>
                 <a href="#trending">
                   <div class="icons icons-chart">
@@ -222,7 +230,7 @@
                 {{#if picture}}
                   <div class="col-sm-2">
                     <div class="face-circle">
-                      <img src="{{picture}}"/>
+                      <img src="{{picture}}" alt="one picture of {{name}}"/>
                     </div>
                   </div>
                   <div class="col-sm-8 me-description">
@@ -288,6 +296,11 @@
                 data-template-context="getCoursesHistory"
               >
               </div>
+              <div
+                data-template-source="#template-category"
+                data-template-context="getPapersHistory"
+              >
+              </div>
               <script id="template-category" type="text/x-handlebars-template">
                 <div
                   class="panel panel-default parent-panel"
@@ -340,40 +353,66 @@
                         >
                           <div class="panel-body"> <!-- element experience panel body -->
                             <h3> {{ title }} </h3>
+
+                            {{#if icon }}
+                              <div class="subheading col-sm-1">
+                                <div class="company-icon-box">
+                                    <img class="company-icon"
+                                      src="assets/images/{{{ icon }}}"
+                                      alt="{{company }} icon"
+                                    />
+                                </div>
+                              </div>
+                              <div class="subheading col-sm-8">
+                                  <h4 class="company-name">
+                                    {{#if website }}
+                                      <a href="{{ website }}">
+                                        {{company}}
+                                      </a>
+                                    {{else}}
+                                      {{company}}
+                                    {{/if}}
+                                  </h4>
+                              </div>
+                          {{else}}
                             <div class="subheading col-sm-9">
-                              <div class="company-icon-box">
-                                {{#if icon }}
-                                  <img class="company-icon"
-                                    src="assets/images/{{{ icon }}}"
-                                  />
-                                {{/if}}
-                                &nbsp;
                                 <h4 class="company-name">
                                   {{#if website }}
                                     <a href="{{ website }}">
-                                      {{company}}
+                                      {{#if abbreviation }}
+                                        {{abbreviation}} -
+                                        {{company}}
+                                      {{else}}
+                                        {{company}}
+                                      {{/if}}
                                     </a>
                                   {{else}}
                                     {{company}}
                                   {{/if}}
                                 </h4>
-                              </div>
                             </div>
+                          {{/if}}
+
                             <div class="col-sm-3"> <!-- element experience duration -->
                               <h4 class="date-range">
-                                  {{startDate}}
-                                  {{#if endDate }}
+                                  <div style="float:left">
+                                    {{startDate}}
+                                  </div>
+                                {{#if endDate }}
+                                  <div style="float:left">
+                                    &nbsp;
                                     to
                                     {{endDate}}
+                                  </div>
                                   {{/if}}
                                   {{#if present }}
+                                    &nbsp;
                                     to
                                     Present
                                   {{/if}}
                               </h4>
-                              <br/>
                               {{#if duration}}
-                                <div class="duration">
+                                <div class="duration" style="float:left">
                                   {{#if duration.years }}
                                     {{ duration.years }} years
                                   {{/if}}
@@ -389,8 +428,28 @@
                           </div> <!-- end element experience panel body -->
                           <div class="col-sm-12 element-text-description">
                             {{description}}
+                            {{#if authors}}
+                              {{#ifArraySize authors 1 }}
+                                Author is
+                                {{#each authors }}
+                                    <a href="mailto:{{email}}">
+                                      {{name}}.
+                                    </a>
+                                {{/each}}
+                              {{else}}
+                                Authors are
+                                {{#each authors }}
+                                    <a href="mailto:{{email}}">
+                                      {{name}}{{#unless @last}},{{else}}.{{/unless}}
+                                    </a>
+                                {{/each}}
+                              {{/ifArraySize}}
+                            {{/if}}
                             {{#if certificate }}
                               <a href="{{certificate}}">See Certificate</a>.
+                            {{/if}}
+                            {{#if see-more }}
+                              <a href="{{see-more}}">See more</a>.
                             {{/if}}
                           </div><!-- end element-text-description -->
                           <div class="col-sm-12 tags"> <!-- element tags -->

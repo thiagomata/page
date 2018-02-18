@@ -655,6 +655,70 @@ function ResumeTemplate( resume ) {
     }
   }
 
+  this.loadPapersHistory = function() {
+    if( this.jsonPaperHistory !== undefined ) {
+      return this.jsonPaperHistory;
+    }
+    return this.jsonPaperHistory = {
+      categoryAnchor:            "scientific-papers",
+      categoryTitle:             "Scientific Papers",
+      elementsTitle:             "papers",
+      elements: resumeTemplate.getPath( this.resume.jsonData, "papers", [] ).map(
+        function( jsonPaper ) {
+          return {
+            relevance:      resumeTemplate.getPath( jsonPaper, "relevance", 1 ),
+            title:          resumeTemplate.getPath( jsonPaper, "title"),
+            icon:           resumeTemplate.getPath( jsonPaper, "media.icon", null ),
+            abbreviation:   resumeTemplate.getPath( jsonPaper, "event.abbreviation",
+                              resumeTemplate.getPath( jsonPaper, "repository.name")
+                            ),
+            company:        resumeTemplate.getPath( jsonPaper, "event.name",
+                              resumeTemplate.getPath( jsonPaper, "repository.institution")
+                            ),
+            website:        resumeTemplate.getPath( jsonPaper, "event.website", null),
+            "see-more":     resumeTemplate.getPath( jsonPaper, "website", null),
+            startDate:      resumeTemplate.getPath( jsonPaper, "releaseDate"),
+            endDate:        null,
+            present:        false,
+            description:    resumeTemplate.getPath( jsonPaper, "summary", null ),
+            authors:        resumeTemplate.getPath( jsonPaper, "authors", null ),
+            tags:           resumeTemplate.getPath( jsonPaper, "keywords", [] ).map(
+              function (tag) {
+                return {
+                  id: "tag-" + tag,
+                  label: tag.
+                    split("-").
+                    map(
+                      function( word ) {
+                        return word[0].toUpperCase() + word.substring(1);
+                      }
+                    ).join(" ")
+                }
+              }
+            )
+          }
+        }
+      ).sort(
+        function ( elementA, elementB ) {
+          return new Date( elementB.startDate ) - new Date( elementA.startDate );
+        }
+      ).map(
+        function (element,key) {
+          element["date-order-position"] = key + 1;
+          if( element.endDate != null ) {
+            element.duration = resumeTemplate.datesDiff(
+              new Date( element.startDate ),
+              element.endDate
+            );
+          } else {
+            element.duration = null;
+          }
+          return element;
+        }
+      )
+    }
+  }
+
   this.filterExperienceNode = function( fullNode ) {
     var filteredNode = JSON.parse( JSON.stringify( fullNode ) );
     filteredNode.isActiveFilterByDate = this.resume.isActiveFilterByDate;
@@ -689,17 +753,22 @@ function ResumeTemplate( resume ) {
 
   this.getWorkExperiences = function() {
     var fullNode     = resumeTemplate.loadWorkExperiences();
-    return this.filterExperienceNode( fullNode );
+    return resumeTemplate.filterExperienceNode( fullNode );
   }
 
   this.getAcademicHistory = function() {
     var fullNode     = resumeTemplate.loadAcademicHistory();
-    return this.filterExperienceNode( fullNode );
+    return resumeTemplate.filterExperienceNode( fullNode );
   }
 
   this.getCoursesHistory = function() {
     var fullNode     = resumeTemplate.loadCoursesHistory();
-    return this.filterExperienceNode( fullNode );
+    return resumeTemplate.filterExperienceNode( fullNode );
+  }
+
+  this.getPapersHistory = function() {
+    var fullNode     = resumeTemplate.loadPapersHistory();
+    return resumeTemplate.filterExperienceNode( fullNode );
   }
 
   this.getSocialNetworks = function() {
@@ -768,7 +837,15 @@ function ResumeTemplate( resume ) {
         if( contextFunction === undefined ) {
           contextData = resumeTemplate.resume;
         } else {
-          contextData = resumeTemplate[ contextFunction ]();
+          var contextVar = ( resumeTemplate[ contextFunction] );
+          if( contextVar === undefined ) {
+            throw new Error("invalid context ", contextFunction );
+          }
+          if( contextVar instanceof Function ) {
+            contextData = contextVar();
+          } else {
+            contextData = contextVar;
+          }
         }
 
         var templateId = $element.data("template-source");
@@ -791,6 +868,13 @@ function ResumeTemplate( resume ) {
   this.construct = function () {
     Handlebars.registerHelper('ifCond', function(v1, v2, options) {
       if(v1 === v2) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    });
+
+    Handlebars.registerHelper('ifArraySize', function(v1, v2, options) {
+      if(v1.length === v2) {
         return options.fn(this);
       }
       return options.inverse(this);

@@ -44,6 +44,12 @@
   top: 0px;
 }
 
+.icons-paper {
+  mask-image: url("../img/icon-paper.png");
+  -webkit-mask-image: url("../img/icon-paper.png");
+  top: 0px;
+}
+
 .icons-chart {
   mask-image: url("../img/icon-chart.svg");
   -webkit-mask-image: url("../img/icon-chart.svg");
@@ -84,8 +90,8 @@ a:hover .icons {
 
 .company-icon-box {
     float: left;
-    height: 60px;
-    width: 90%;
+    height: 40px;
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;

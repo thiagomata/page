@@ -558,7 +558,7 @@
       "area": "Data Science",
       "studyType": "course",
       "startDate": "2016-06-02",
-      "relevance": 4,
+      "relevance": 5,
       "title": "Introduction to Probability and Data",
       "summary": "This course introduces the sampling and exploring data, as well as basic probability theory and Bayes' rule. It presents various types of sampling methods, and discuss how such methods can impact the scope of inference. A variety of exploratory data analysis techniques will be covered, including numeric summary statistics and basic data visualization using R and RStudio for lab exercises and a final project.",
       "keywords": [
@@ -606,7 +606,7 @@
       "area": "Managment",
       "studyType": "course",
       "startDate": "2010-06-10",
-      "relevance": 4,
+      "relevance": 6,
       "title": "Scrum Master",
       "summary": "This course teachs how a Scrum Master can helps project teams properly use Scrum, increasing the likelihood of the project 's overall success. It presents the Scrum values, practices, and applications. The Scrum master must act as \"servant leaders,\" helping the rest of the Scrum team work together and learn the Scrum framework also protect them from both internal and external distractions.",
       "keywords": [
@@ -777,7 +777,7 @@
         "matlab", "latex", "usability", "accessibility", "evaluation", "web-3d", "medical-applications"
       ]
     },{
-      "title": "Access to content of digital biomedical repositories through a web interface with 3d anatomical manikin",
+      "title": "Access to Content of Digital Biomedical Repositories through a Web Interface with 3D Anatomical Manikin",
       "releaseDate": "2014-01-28",
       "repository": {
         "name": "Repositório institucional",
@@ -804,7 +804,7 @@
         "thumbnail": "logo_unb.png"
       }
     },{
-      "title": "Interactive hypertext for visually impaired users",
+      "title": "Interactive Hypertext for Visually Impaired Users",
       "releaseDate": "2007-12-10",
       "repository": {
         "name": "Repositório institucional",
