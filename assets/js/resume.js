@@ -719,6 +719,70 @@ function ResumeTemplate( resume ) {
     }
   }
 
+  this.loadAwardsHistory = function() {
+    if( this.jsonAwardsHistory !== undefined ) {
+      return this.jsonAwardsHistory;
+    }
+    return this.jsonAwardsHistory = {
+      categoryAnchor:            "awards",
+      categoryTitle:             "Awards",
+      elementsTitle:             "awards",
+      elements: resumeTemplate.getPath( this.resume.jsonData, "awards", [] ).map(
+        function( jsonAwards ) {
+          return {
+            relevance:      resumeTemplate.getPath( jsonAwards, "relevance", 1 ),
+            title:          resumeTemplate.getPath( jsonAwards, "title"),
+            icon:           resumeTemplate.getPath( jsonAwards, "media.icon", null ),
+            // abbreviation:   resumeTemplate.getPath( jsonAwards, "event.abbreviation",
+            //                   resumeTemplate.getPath( jsonAwards, "repository.name")
+            //                 ),
+            company:        resumeTemplate.getPath( jsonAwards, "awarder"),
+            //                   resumeTemplate.getPath( jsonAwards, "repository.institution")
+            //                 ),
+            // website:        resumeTemplate.getPath( jsonAwards, "event.website", null),
+            // "see-more":     resumeTemplate.getPath( jsonAwards, "website", null),
+            // startDate:      resumeTemplate.getPath( jsonAwards, "releaseDate"),
+            // endDate:        null,
+            // present:        false,
+            description:    resumeTemplate.getPath( jsonAwards, "summary", null ),
+            // authors:        resumeTemplate.getPath( jsonAwards, "authors", null ),
+            tags:           resumeTemplate.getPath( jsonAwards, "keywords", [] ).map(
+              function (tag) {
+                return {
+                  id: "tag-" + tag,
+                  label: tag.
+                    split("-").
+                    map(
+                      function( word ) {
+                        return word[0].toUpperCase() + word.substring(1);
+                      }
+                    ).join(" ")
+                }
+              }
+            )
+          }
+        }
+      ).sort(
+        function ( elementA, elementB ) {
+          return new Date( elementB.startDate ) - new Date( elementA.startDate );
+        }
+      ).map(
+        function (element,key) {
+          element["date-order-position"] = key + 1;
+          if( element.endDate != null ) {
+            element.duration = resumeTemplate.datesDiff(
+              new Date( element.startDate ),
+              element.endDate
+            );
+          } else {
+            element.duration = null;
+          }
+          return element;
+        }
+      )
+    }
+  }
+
   this.filterExperienceNode = function( fullNode ) {
     var filteredNode = JSON.parse( JSON.stringify( fullNode ) );
     filteredNode.isActiveFilterByDate = this.resume.isActiveFilterByDate;
@@ -768,6 +832,11 @@ function ResumeTemplate( resume ) {
 
   this.getPapersHistory = function() {
     var fullNode     = resumeTemplate.loadPapersHistory();
+    return resumeTemplate.filterExperienceNode( fullNode );
+  }
+
+  this.getAwardsHistory = function() {
+    var fullNode     = resumeTemplate.loadAwardsHistory();
     return resumeTemplate.filterExperienceNode( fullNode );
   }
 

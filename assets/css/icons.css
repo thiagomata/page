@@ -50,6 +50,12 @@
   top: 0px;
 }
 
+.icons-award {
+  mask-image: url("../img/icon-award.png");
+  -webkit-mask-image: url("../img/icon-award.png");
+  top: 0px;
+}
+
 .icons-chart {
   mask-image: url("../img/icon-chart.svg");
   -webkit-mask-image: url("../img/icon-chart.svg");
