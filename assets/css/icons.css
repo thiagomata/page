@@ -48,8 +48,6 @@
 }
 
 .category-professional-icon {
-  /* mask-image: url("../img/icon-tie.svg");
-  -webkit-mask-image: url("../img/icon-tie.svg"); */
   background-image: url("../img/icon-tie.svg");
 }
 
@@ -92,6 +90,11 @@
 .category-awards-icon {
   background-image: url("../img/icon-award.png");
 }
+
+.category-trending-icon {
+  background-image: url("../img/icon-chart.svg");
+}
+
 
 .icons-chart {
   mask-image: url("../img/icon-chart.svg");
