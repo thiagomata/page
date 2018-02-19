@@ -12,108 +12,118 @@
 /**
  * Create the Trending Tags Graphs based on the experiences tag data
  */
-function TrendingTagsGraph( resume ) {
+function TrendingTagsGraph( resume, tagElementInput ) {
 
-  this.resume = resume;
+  var self = this;
+
+  self.resume = resume;
+
+  self.tagElement = tagElementInput;
+
+  self.chartData = null;
 
   /**
    * Define the max of different colors to use in the chart
    */
-  const maxColors = 10;
+  self.maxColors = 10;
+
+  /**
+   * Defines the color pallete
+   */
+  self.colorsPalette = 'mpn65';
 
   /**
    * Define the max of tags to use into the graph
    */
-  const maxTags   = 30;
-  const palette   = 'mpn65';
+  self.maxTags   = 30;
 
-  /**
-   * Search filter. Default is null
-   */
-  search: null;
 
-  /**
-   * Color sequence function
-   */
-  var colorSeq;
+  construct = function() {
+    self.definePallete();
+    self.loadChartData();
+  }
 
-  /**
-   * Data grouped by tag
-   */
-  var tagTree         = null;
+  self.colorSeq = null;
 
-  /**
-   * Data grouped by year
-   */
-  var yearTree        = null;
-
-  /**
-   * Data with all the extra
-   * necessary information
-   */
-  var flatData        = null;
-
-  /**
-   * Fake Constructor. load Data
-   */
-  this.construct = function () {
-    this.colorSeq = palette(
-      this.palette,
-      Math.min( this.maxTags, this.maxColors  )
+  self.definePallete = function() {
+    self.colorSeq = palette(
+      self.colorsPalette,
+      self.maxColors
     );
   }
 
-  this.getColor = function( value ) {
-      return this.colorSeq[ value % this.maxColors ];
+  self.getColor = function( value ) {
+      return "#" + self.colorSeq[ value % self.maxColors ];
   }
 
-  this.setSearch = function( value ) {
-    this.search = value;
-  }
+  self.loadNodesTagAndYear = function() {
 
-  this.renderGraph = function( tagPlace ) {
-    // loadTagTree();
-    // loadYearTree();
-    // loadYears();
-    // loadDataToChart();
-    // loadFlatData();
-    // loadTagTreeScore();
-    this.loadFilteredDataToChart().forEach(
-      (d) => renderLineChart( [d], 'Trending use of ' + d.label, tagPlace )
-    )
-  }
 
-  this.loadTagTree = function () {
-    if( this.tagTree != null ) {
-      return this.tagTree;
-    }
+    var allEvents = Resume.getPath( this.resume.jsonData, "work", []
+    ).concat(
+      Resume.getPath( this.resume.jsonData, "education", [] )
+    ).concat(
+      Resume.getPath( this.resume.jsonData, "papers", [] )
+    ).concat(
+      Resume.getPath( this.resume.jsonData, "awards", [] )
+    ).concat(
+      Resume.getPath( this.resume.jsonData, "publications", [] )
+    ).concat(
+      Resume.getPath( this.resume.jsonData, "volunteer", [] )
+    ).reduce(
+      function( accumulator, node ) {
+        if( node.startDate !== undefined ) {
+          accumulator.push( node );
+          return accumulator;
+        }
+        if( node.releaseDate !== undefined ) {
+          node.startDate = node.releaseDate;
+          accumulator.push( node );
+          return accumulator;
+        }
+        if( node.date !== undefined ) {
+          node.startDate = node.date;
+          accumulator.push( node );
+          return accumulator;
+        }
+        /* Elements with no date will not
+         * be usefully and can be removed in
+         * the first step
+         */
+        return accumulator;
+      }, []
+    );
 
-    this.tagTree = this.resume.jsonData.events.map(
+
+    return allEvents.map(
       function(n) {
         return Array.
-        asArray( n.tags ).
+        asArray( n.keywords ).
         map(
           function( t ) {
             var endDate = null;
 
             if (
-              n.end_date !== undefined && n.end_date.year !== undefined
+              n.endDate !== undefined && n.endDate.year !== undefined
             ) {
-              endDate = n.end_date.year;
+              endDate = new Date( n.endDate ).getFullYear();
             }
 
             if( n.present === true ) {
               endDate = new Date().getFullYear();
             }
 
+            var startDate = new Date( n.startDate );
+            var startDateYear = startDate.getFullYear();
+
             if( endDate === null ) {
               return {
                 tag: t,
-                year: n.start_date.year
+                year: startDateYear
               };
             }
 
-            return Array.range( n.start_date.year, endDate + 1 ).map(
+            return Array.range( startDateYear, endDate + 1 ).map(
               function( year ) {
                 return {
                   tag: t,
@@ -126,129 +136,118 @@ function TrendingTagsGraph( resume ) {
       }
     ).
     flatRecursive();
-
-    return tagTree;
   }
 
-  this.loadYearTree = function () {
-    if( yearTree != null ) {
-      return yearTree;
-    }
-
-    yearTree = this.loadTagTree().filter(
-      function(x) {
-        if (  searchTerm == "" ||
-              searchTerm === undefined ||
-              searchTerm === null
-        ) {
-          return true;
+  self.loadChartData = function() {
+    var nodeYearWithTags = this.loadNodesTagAndYear().reduce(
+      function( accYearWithTags, element ) {
+        var year = element.year;
+        var tag  = element.tag;
+        if( accYearWithTags[ year ] === undefined ) {
+          accYearWithTags.years.push( year );
+          accYearWithTags[ year ] = {
+            total: 0,
+            tags: []
+          };
         }
+        if( accYearWithTags[ year][ tag ] === undefined ) {
+          accYearWithTags[ year ][ tag ] = 1;
+          accYearWithTags[ year ].tags.push( tag );
+        } else {
+          accYearWithTags[ year ][ tag ]++;
+        }
+        accYearWithTags[ year ].total++;
+        return accYearWithTags;
+      },
+      {
+        years: []
       }
-    ).
-    groupByFunction( (x) => x.year ).
-    sort( (a,b) => a.key - b.key );
+    );
 
-    return yearTree;
-  }
-
-  this.loadYears = function () {
-    return {
-      dataYears:      this.loadYearTree().map( y => y.key ),
-      dataYearsCount: this.loadYearTree().map( y => y.value.length )
-    }
-  }
-
-  this.loadFlatData = function () {
-    if( flatData != null ) {
-      return flatData;
-    }
-    flatData = this.loadYears().map(
-      function( nodeYear ) {
-        return nodeYear.value.
-        map( t => t.tag ).
-        countByValues().
-        map(
-          function ( nodeTag ) {
-            return {
-              year: nodeYear.key,
-              tag: nodeTag.key,
-              value: Math.round( 100 * nodeTag.value / nodeYear.value.length )
-            }
+    var normalizedYearTag = [];
+    nodeYearWithTags.years.forEach(
+      function (year) {
+        var nodeYearTag = nodeYearWithTags[ year ];
+        var tags = nodeYearTag.tags;
+        tags.forEach(
+          function (tag) {
+            var countTagOnYear = nodeYearTag[ tag ];
+            normalizedYearTag.push({
+              year: year,
+              tag: tag,
+              score: Math.round( 100 * countTagOnYear / nodeYearTag.total )
+            })
           }
         )
       }
+    );
+
+    self.yearsRange = Array.range(
+      nodeYearWithTags.years.min(),
+      nodeYearWithTags.years.max() + 1
+    );
+
+    self.chartData  = normalizedYearTag.groupByFunction(
+      (node) => node.tag
     ).
-    flatRecursive();
-
-    return flatData;
-  }
-
-  this.loadTagTreeScore = function () {
-    if( tagTreeScore != null ) {
-      return tagTreeScore;
-    }
-
-    tagTreeScore = this.loadFlatData().groupByFunction(
-      (x) => x.tag
-    ).map(
-      function (nodeTag) {
-        return {
-          tag: nodeTag.key,
-          value: nodeTag.value.map(
-            function (nodeValue) {
-              return {
-                year: nodeValue.year,
-                value: nodeValue.value
-              }
-            }
-          ).sort(
-            (a,b) => a.year - b.year
-          )
-        }
+    map(
+      function( node ) {
+        node.totalScore = node.value.map(
+           node => node.score
+        ).sum();
+        return node;
       }
-    ).sort(
-      (a,b) => b.value.length - a.value.length
-    ).head(maxChartTags);
-
-    return tagTreeScore;
-  }
-
-  this.loadDataToChart = function () {
-    if( dataToChart != null ) {
-      return dataToChart;
-    }
-    var dataToChart = this.loadTagTreeScore().map(
-      function( nodeTag, index ) {
+    ).
+    sort(
+      (a, b) => b.totalScore - a.totalScore
+    ).
+    head(10).
+    map(
+      function(node) {
+        var scores = self.yearsRange.overlaps(
+          node.value,
+          function searchNode( year, node ) {
+            return node.year == year;
+          },
+          function getNode( node ) {
+            return node.score;
+          },
+          null
+        );
         return {
-          label: nodeTag.tag,
-          backgroundColor: '#' + seq[index % colors],
-          borderColor:'#' + seq[index % colors],
-          data: this.loadYears().dataYears.overlaps(
-            nodeTag.value,
-            (year,node) => node.year == year,
-            (node) => node.value
-          ),
-          fill: false
+          tag: node.key,
+          years: self.yearsRange,
+          scores: scores,
+          totalScore: node.totalScore
         }
       }
     );
   }
 
-  this.loadFilteredDataToChart = function () {
-    return this.loadDataToChart().
-    filter(
-      function( d ) {
-        if( tags.length == 0 ) {
-          return true;
-        }
-        return ( tags.indexOf( d.label) > -1 );
+  self.renderGraph = function() {
+    self.chartData.forEach(
+      function( dataChartElement, key ) {
+        console.log(dataChartElement);
+        self.renderLineChart(
+          [
+            {
+              "label": dataChartElement.tag,
+              backgroundColor: self.getColor(key),
+              borderColor: self.getColor(key),
+              data: dataChartElement.scores,
+              fill: false
+            }
+          ],
+          dataChartElement.tag + " trend"
+        );
       }
     )
   }
 
-  this.renderLineChart = function ( dataToChart, title, tagPlace ) {
 
-    var years = Array.range(loadYears().min(),loadYears().max() + 1);
+  this.renderLineChart = function ( dataToChart, title ) {
+
+    var years = Array.range(self.yearsRange.min(),self.yearsRange.max() + 1);
 
     var config = {
       type: 'line',
@@ -291,12 +290,12 @@ function TrendingTagsGraph( resume ) {
     };
 
     var tagCanvas = document.createElement("canvas");
-    tagPlace.appendChild(tagCanvas);
-    var ctx = canvas.getContext("2d");
+    self.tagElement.append(tagCanvas);
+    var ctx = tagCanvas.getContext("2d");
     new Chart(ctx, config);
   }
 
-  this.construct();
+  construct();
 }
 
 function ResumeTemplate( resume ) {
@@ -325,29 +324,14 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.getPath = function( objElement, strPath, notFoundValue ) {
-    var arrPath = strPath.split(".").reverse();
-    var strStep;
-    if( notFoundValue === undefined ) {
-      notFoundValue = strPath;
-    }
-    while( strStep = arrPath.pop() ) {
-      objElement = objElement[ strStep ];
-      if( objElement === undefined ) {
-        return notFoundValue;
-      }
-    }
-    return objElement;
-  }
-
   this.getBasicData = function() {
     return {
-      name:    resumeTemplate.getPath( this.resume.jsonData, "basics.name" ),
-      picture: resumeTemplate.getPath( this.resume.jsonData, "basics.picture", null ),
-      label:   resumeTemplate.getPath( this.resume.jsonData, "basics.label", null ),
-      summary: resumeTemplate.getPath( this.resume.jsonData, "basics.summary" ),
-      email:   resumeTemplate.getPath( this.resume.jsonData, "basics.email" ),
-      phone:   resumeTemplate.getPath( this.resume.jsonData, "basics.phone" ),
+      name:    Resume.getPath( this.resume.jsonData, "basics.name" ),
+      picture: Resume.getPath( this.resume.jsonData, "basics.picture", null ),
+      label:   Resume.getPath( this.resume.jsonData, "basics.label", null ),
+      summary: Resume.getPath( this.resume.jsonData, "basics.summary" ),
+      email:   Resume.getPath( this.resume.jsonData, "basics.email" ),
+      phone:   Resume.getPath( this.resume.jsonData, "basics.phone" ),
       jsonresume: this.resume.getDatabase()
     }
   }
@@ -440,7 +424,6 @@ function ResumeTemplate( resume ) {
 
   this.datesDiff = function ( dateA, dateB ) {
 
-    console.log( dateA , dateB );
     if( dateA === null || dateA === undefined || dateB === null || dateB === undefined ) {
       return null;
     }
@@ -485,19 +468,19 @@ function ResumeTemplate( resume ) {
       categoryAnchor:            "professional",
       categoryTitle:             "Professional Experiences",
       elementsTitle:             "professional experiences",
-      elements: resumeTemplate.getPath( this.resume.jsonData, "work", [] ).map(
+      elements: Resume.getPath( this.resume.jsonData, "work", [] ).map(
         function( jsonWork ) {
           return {
-            relevance:      resumeTemplate.getPath( jsonWork, "relevance", 1 ),
-            title:          resumeTemplate.getPath( jsonWork, "position"),
-            icon:           resumeTemplate.getPath( jsonWork, "media.icon"),
-            company:        resumeTemplate.getPath( jsonWork, "company"),
-            website:        resumeTemplate.getPath( jsonWork, "website"),
-            startDate:      resumeTemplate.getPath( jsonWork, "startDate"),
-            endDate:        resumeTemplate.getPath( jsonWork, "endDate", null ),
-            present:        resumeTemplate.getPath( jsonWork, "present", false ),
-            description:    resumeTemplate.getPath( jsonWork, "summary"),
-            tags:           resumeTemplate.getPath( jsonWork, "keywords", [] ).map(
+            relevance:      Resume.getPath( jsonWork, "relevance", 1 ),
+            title:          Resume.getPath( jsonWork, "position"),
+            icon:           Resume.getPath( jsonWork, "media.icon"),
+            company:        Resume.getPath( jsonWork, "company"),
+            website:        Resume.getPath( jsonWork, "website"),
+            startDate:      Resume.getPath( jsonWork, "startDate"),
+            endDate:        Resume.getPath( jsonWork, "endDate", null ),
+            present:        Resume.getPath( jsonWork, "present", false ),
+            description:    Resume.getPath( jsonWork, "summary"),
+            tags:           Resume.getPath( jsonWork, "keywords", [] ).map(
               function x(tag) {
                 return {
                   id: "tag-" + tag,
@@ -540,25 +523,25 @@ function ResumeTemplate( resume ) {
       categoryAnchor:            "academic",
       categoryTitle:             "Academic History",
       elementsTitle:             "academic histories",
-      elements: resumeTemplate.getPath( this.resume.jsonData, "education", [] ).filter(
+      elements: Resume.getPath( this.resume.jsonData, "education", [] ).filter(
         function( jsonEducation ) {
-          return resumeTemplate.getPath( jsonEducation, "studyType", "course" ) != "course";
+          return Resume.getPath( jsonEducation, "studyType", "course" ) != "course";
         }
       ).map(
         function( jsonEducation ) {
           return {
-            relevance:      resumeTemplate.getPath( jsonEducation, "relevance", 1 ),
-            title:          resumeTemplate.getPath( jsonEducation, "studyType") +
+            relevance:      Resume.getPath( jsonEducation, "relevance", 1 ),
+            title:          Resume.getPath( jsonEducation, "studyType") +
                             " in " +
-                            resumeTemplate.getPath( jsonEducation, "area") ,
-            icon:           resumeTemplate.getPath( jsonEducation, "media.icon"),
-            company:        resumeTemplate.getPath( jsonEducation, "institution"),
-            website:        resumeTemplate.getPath( jsonEducation, "website", null),
-            startDate:      resumeTemplate.getPath( jsonEducation, "startDate"),
-            endDate:        resumeTemplate.getPath( jsonEducation, "endDate", null ),
-            present:        resumeTemplate.getPath( jsonEducation, "present", false ),
-            description:    resumeTemplate.getPath( jsonEducation, "summary", null ),
-            tags:           resumeTemplate.getPath( jsonEducation, "keywords", [] ).map(
+                            Resume.getPath( jsonEducation, "area") ,
+            icon:           Resume.getPath( jsonEducation, "media.icon"),
+            company:        Resume.getPath( jsonEducation, "institution"),
+            website:        Resume.getPath( jsonEducation, "website", null),
+            startDate:      Resume.getPath( jsonEducation, "startDate"),
+            endDate:        Resume.getPath( jsonEducation, "endDate", null ),
+            present:        Resume.getPath( jsonEducation, "present", false ),
+            description:    Resume.getPath( jsonEducation, "summary", null ),
+            tags:           Resume.getPath( jsonEducation, "keywords", [] ).map(
               function (tag) {
                 return {
                   id: "tag-" + tag,
@@ -601,24 +584,24 @@ function ResumeTemplate( resume ) {
       categoryAnchor:            "courses",
       categoryTitle:             "Courses History",
       elementsTitle:             "courses histories",
-      elements: resumeTemplate.getPath( this.resume.jsonData, "education", [] ).filter(
+      elements: Resume.getPath( this.resume.jsonData, "education", [] ).filter(
         function( jsonEducation ) {
-          return resumeTemplate.getPath( jsonEducation, "studyType", "course" ) == "course";
+          return Resume.getPath( jsonEducation, "studyType", "course" ) == "course";
         }
       ).map(
         function( jsonEducation ) {
           return {
-            relevance:      resumeTemplate.getPath( jsonEducation, "relevance", 1 ),
-            title:          resumeTemplate.getPath( jsonEducation, "title"),
-            icon:           resumeTemplate.getPath( jsonEducation, "media.icon"),
-            company:        resumeTemplate.getPath( jsonEducation, "institution"),
-            website:        resumeTemplate.getPath( jsonEducation, "website", null),
-            certificate:    resumeTemplate.getPath( jsonEducation, "certificate", null),
-            startDate:      resumeTemplate.getPath( jsonEducation, "startDate"),
-            endDate:        resumeTemplate.getPath( jsonEducation, "endDate", null ),
-            present:        resumeTemplate.getPath( jsonEducation, "present", false ),
-            description:    resumeTemplate.getPath( jsonEducation, "summary", null ),
-            tags:           resumeTemplate.getPath( jsonEducation, "keywords", [] ).map(
+            relevance:      Resume.getPath( jsonEducation, "relevance", 1 ),
+            title:          Resume.getPath( jsonEducation, "title"),
+            icon:           Resume.getPath( jsonEducation, "media.icon"),
+            company:        Resume.getPath( jsonEducation, "institution"),
+            website:        Resume.getPath( jsonEducation, "website", null),
+            certificate:    Resume.getPath( jsonEducation, "certificate", null),
+            startDate:      Resume.getPath( jsonEducation, "startDate"),
+            endDate:        Resume.getPath( jsonEducation, "endDate", null ),
+            present:        Resume.getPath( jsonEducation, "present", false ),
+            description:    Resume.getPath( jsonEducation, "summary", null ),
+            tags:           Resume.getPath( jsonEducation, "keywords", [] ).map(
               function (tag) {
                 return {
                   id: "tag-" + tag,
@@ -663,26 +646,26 @@ function ResumeTemplate( resume ) {
       categoryAnchor:            "scientific-papers",
       categoryTitle:             "Scientific Papers",
       elementsTitle:             "papers",
-      elements: resumeTemplate.getPath( this.resume.jsonData, "papers", [] ).map(
+      elements: Resume.getPath( this.resume.jsonData, "papers", [] ).map(
         function( jsonPaper ) {
           return {
-            relevance:      resumeTemplate.getPath( jsonPaper, "relevance", 1 ),
-            title:          resumeTemplate.getPath( jsonPaper, "title"),
-            icon:           resumeTemplate.getPath( jsonPaper, "media.icon", null ),
-            abbreviation:   resumeTemplate.getPath( jsonPaper, "event.abbreviation",
-                              resumeTemplate.getPath( jsonPaper, "repository.name")
+            relevance:      Resume.getPath( jsonPaper, "relevance", 1 ),
+            title:          Resume.getPath( jsonPaper, "title"),
+            icon:           Resume.getPath( jsonPaper, "media.icon", null ),
+            abbreviation:   Resume.getPath( jsonPaper, "event.abbreviation",
+                              Resume.getPath( jsonPaper, "repository.name")
                             ),
-            company:        resumeTemplate.getPath( jsonPaper, "event.name",
-                              resumeTemplate.getPath( jsonPaper, "repository.institution")
+            company:        Resume.getPath( jsonPaper, "event.name",
+                              Resume.getPath( jsonPaper, "repository.institution")
                             ),
-            website:        resumeTemplate.getPath( jsonPaper, "event.website", null),
-            "see-more":     resumeTemplate.getPath( jsonPaper, "website", null),
-            startDate:      resumeTemplate.getPath( jsonPaper, "releaseDate"),
+            website:        Resume.getPath( jsonPaper, "event.website", null),
+            "see-more":     Resume.getPath( jsonPaper, "website", null),
+            startDate:      Resume.getPath( jsonPaper, "releaseDate"),
             endDate:        null,
             present:        false,
-            description:    resumeTemplate.getPath( jsonPaper, "summary", null ),
-            authors:        resumeTemplate.getPath( jsonPaper, "authors", null ),
-            tags:           resumeTemplate.getPath( jsonPaper, "keywords", [] ).map(
+            description:    Resume.getPath( jsonPaper, "summary", null ),
+            authors:        Resume.getPath( jsonPaper, "authors", null ),
+            tags:           Resume.getPath( jsonPaper, "keywords", [] ).map(
               function (tag) {
                 return {
                   id: "tag-" + tag,
@@ -727,26 +710,26 @@ function ResumeTemplate( resume ) {
       categoryAnchor:            "awards",
       categoryTitle:             "Awards",
       elementsTitle:             "awards",
-      elements: resumeTemplate.getPath( this.resume.jsonData, "awards", [] ).map(
+      elements: Resume.getPath( this.resume.jsonData, "awards", [] ).map(
         function( jsonAwards ) {
           return {
-            relevance:      resumeTemplate.getPath( jsonAwards, "relevance", 1 ),
-            title:          resumeTemplate.getPath( jsonAwards, "title"),
-            icon:           resumeTemplate.getPath( jsonAwards, "media.icon", null ),
-            // abbreviation:   resumeTemplate.getPath( jsonAwards, "event.abbreviation",
-            //                   resumeTemplate.getPath( jsonAwards, "repository.name")
+            relevance:      Resume.getPath( jsonAwards, "relevance", 1 ),
+            title:          Resume.getPath( jsonAwards, "title"),
+            icon:           Resume.getPath( jsonAwards, "media.icon", null ),
+            // abbreviation:   Resume.getPath( jsonAwards, "event.abbreviation",
+            //                   Resume.getPath( jsonAwards, "repository.name")
             //                 ),
-            company:        resumeTemplate.getPath( jsonAwards, "awarder"),
-            //                   resumeTemplate.getPath( jsonAwards, "repository.institution")
+            company:        Resume.getPath( jsonAwards, "awarder"),
+            //                   Resume.getPath( jsonAwards, "repository.institution")
             //                 ),
-            // website:        resumeTemplate.getPath( jsonAwards, "event.website", null),
-            // "see-more":     resumeTemplate.getPath( jsonAwards, "website", null),
-            // startDate:      resumeTemplate.getPath( jsonAwards, "releaseDate"),
+            // website:        Resume.getPath( jsonAwards, "event.website", null),
+            // "see-more":     Resume.getPath( jsonAwards, "website", null),
+            // startDate:      Resume.getPath( jsonAwards, "releaseDate"),
             // endDate:        null,
             // present:        false,
-            description:    resumeTemplate.getPath( jsonAwards, "summary", null ),
-            // authors:        resumeTemplate.getPath( jsonAwards, "authors", null ),
-            tags:           resumeTemplate.getPath( jsonAwards, "keywords", [] ).map(
+            description:    Resume.getPath( jsonAwards, "summary", null ),
+            // authors:        Resume.getPath( jsonAwards, "authors", null ),
+            tags:           Resume.getPath( jsonAwards, "keywords", [] ).map(
               function (tag) {
                 return {
                   id: "tag-" + tag,
@@ -842,12 +825,12 @@ function ResumeTemplate( resume ) {
 
   this.getSocialNetworks = function() {
     return {
-      socialNetworks: resumeTemplate.getPath( this.resume.jsonData, "basics.profiles", [] ).map(
+      socialNetworks: Resume.getPath( this.resume.jsonData, "basics.profiles", [] ).map(
         function( profile ) {
           return {
-            name: resumeTemplate.getPath( profile, "network"),
-            icon: resumeTemplate.getPath( profile, "network").toLowerCase(),
-            link: resumeTemplate.getPath( profile, "url" )
+            name: Resume.getPath( profile, "network"),
+            icon: Resume.getPath( profile, "network").toLowerCase(),
+            link: Resume.getPath( profile, "url" )
           }
         }
       )
@@ -966,6 +949,7 @@ function Resume() {
 
   this.jsonData = null;
   this.resumeTemplate = null;
+  this.trendingTagsGraph = null;
 
   this.loadJson = function () {
     var _this = this;
@@ -979,8 +963,8 @@ function Resume() {
 
   this.applyTemplate = function ( data ) {
     this.jsonData = data;
-    // this.trendingTagsGraph = new TrendingTagsGraph( resume );
-    // this.trendingTagsGraph.renderGraph( graphElement );
+    this.trendingTagsGraph = new TrendingTagsGraph( resume, graphElement );
+    this.trendingTagsGraph.renderGraph();
     this.resumeTemplate = new ResumeTemplate( this );
   }
 
@@ -1053,10 +1037,7 @@ function Resume() {
       this.activeTags.push( tagId );
     }
     this.resumeTemplate.update();
-      // renderExperiences( 'work-panel' );
-      // renderExperiences( 'scholar-panel' );
-      // renderExperiences( 'course-panel' );
-      // renderGraph();
+    this.trendingTagsGraph.renderGraph();
   }
 
   this.clearFilter = function() {
@@ -1068,6 +1049,22 @@ function Resume() {
 
   this.construct();
 }
+
+Resume.getPath = function( objElement, strPath, notFoundValue ) {
+  var arrPath = strPath.split(".").reverse();
+  var strStep;
+  if( notFoundValue === undefined ) {
+    notFoundValue = strPath;
+  }
+  while( strStep = arrPath.pop() ) {
+    objElement = objElement[ strStep ];
+    if( objElement === undefined ) {
+      return notFoundValue;
+    }
+  }
+  return objElement;
+}
+
 
 $( document ).ready(
   function() {
