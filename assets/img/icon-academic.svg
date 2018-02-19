@@ -6,7 +6,7 @@
   viewBox="0 0 16 16"
   style="enable-background:new 0 0 16 16;"
   xml:space="preserve">
-  <g>
+  <g fill="#AAAABB">
     <polygon points="8,2 1,6 8,10 14,6.571 14,11 15,11 15,6  "/>
     <polygon points="3,8.295 3,11 8,14 13,11 13,8.295 8,11.152  "/>
   </g>

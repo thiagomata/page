@@ -101,7 +101,7 @@
           <script id="template-menu-footer" type="text/x-handlebars-template">
             <li>
               <a href="{{link}}">
-                <h3>{{name}}</h3>
+                <h2>{{name}}</h2>
                 {{label}}
                 </a>
             </li>
@@ -320,9 +320,11 @@
                   id="{{categoryId}}">
                   <div class="panel-heading">
                     <div class="row"> <!-- element experience header -->
-                      <div class="col-sm-8">
-                        <a name="{{categoryAnchor}}">
-                          <h4>{{categoryTitle}}</h4>
+                      <div class="col-sm-1  category-{{categoryAnchor}}-icon category-title-icon">
+                      </div>
+                      <div class="col-sm-7">
+                        <a name="{{categoryAnchor}}" class="category-title">
+                          <h3>{{categoryTitle}}</h3>
                         </a>
                       </div>
 
@@ -365,7 +367,7 @@
                           {{/each}}"
                         >
                           <div class="panel-body"> <!-- element experience panel body -->
-                            <h3> {{ title }} </h3>
+                            <h4> {{ title }} </h4>
 
                             <div class="row">
                               {{#if icon }}
@@ -374,7 +376,7 @@
                                   </div>
                                 </div>
                                 <div class="subheading col-lg-8">
-                                    <h4 class="company-name">
+                                    <h5 class="company-name">
                                       {{#if website }}
                                         <a href="{{ website }}">
                                       {{/if}}
@@ -387,7 +389,7 @@
                                       {{#if website }}
                                         </a>
                                       {{/if}}
-                                    </h4>
+                                    </h5>
                                 </div>
                               {{else}}
                                 <div class="subheading col-sm-9">
@@ -532,6 +534,26 @@
                 </div> --><!-- end panel-heading -->
             <!--</div> --><!-- end panel -->
             </div>
+            <div class="row" id="footer">
+              <div class="col-sm-6">
+
+              </div>
+              <div class="col-sm-6">
+              <p>
+              <span class="pull-right"
+                data-template-source="#resume-js-footer"
+                data-template-context="getBasicData"
+                data-template-render-on-update="false"
+              ></span>
+              <script id="resume-js-footer" type="text/x-handlebars-template">
+                Created from
+                <a href="{{jsonresume}}">resume.json</a> file using
+                <a href="https://github.com/thiagomata/resume.js">resume.js</a>.
+              </script>
+              </p>
+              </div>
+            </div>
+            <hr>
           </div><!-- end padding -->
         </div> <!-- end #main -->
       </div><!-- end row-offcanvas -->

@@ -32,10 +32,35 @@
   top: 0px;
 }
 
+.category-title-icon {
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-width: 20px;
+  min-height: 52px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 10px; */
+  /* border-style: solid;
+  border-color: red;
+  border-width: 1px; */
+  /* background-color:red; */
+}
+
+.category-professional-icon {
+  /* mask-image: url("../img/icon-tie.svg");
+  -webkit-mask-image: url("../img/icon-tie.svg"); */
+  background-image: url("../img/icon-tie.svg");
+}
+
 .icons-academic {
   mask-image: url("../img/icon-academic.svg");
   -webkit-mask-image: url("../img/icon-academic.svg");
   top: 0px;
+}
+
+.category-academic-icon {
+  background-image: url("../img/icon-academic.svg");
 }
 
 .icons-course {
@@ -44,16 +69,28 @@
   top: 0px;
 }
 
+.category-courses-icon {
+  background-image: url("../img/icon-diploma.svg");
+}
+
 .icons-paper {
   mask-image: url("../img/icon-paper.png");
   -webkit-mask-image: url("../img/icon-paper.png");
   top: 0px;
 }
 
+.category-scientific-papers-icon {
+  background-image: url("../img/icon-paper.png");
+}
+
 .icons-award {
   mask-image: url("../img/icon-award.png");
   -webkit-mask-image: url("../img/icon-award.png");
   top: 0px;
+}
+
+.category-awards-icon {
+  background-image: url("../img/icon-award.png");
 }
 
 .icons-chart {
@@ -67,10 +104,7 @@ a .icons {
   transition-duration: 1s;
 }
 
-a:hover .icons {
-/*  background-color: rgb(200, 200, 220); */
-  transition-duration: 0.4s;
-}
+a:hover .icons {/* background-color: rgb(200, 200, 220); */transition-duration: 0.4s;}
 
 .with-bkimg {
   height: 300px;
