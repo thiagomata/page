@@ -93,15 +93,25 @@ a:hover .icons {
     border-width: 5px;
     border-style: solid;
 }
+@media(max-width:1200px){
+  .face-circle{
+    border-width: 0;
+    border-style: none;
+  }
+}
 
 .company-icon-box {
-    float: left;
-    height: 40px;
+  background-position:center;
+  background-size:contain;
+  min-height:50px;
+  background-repeat: no-repeat;
+  /* float: left;
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+  /* padding: 39px; */
 }
 
 .company-icon {
@@ -109,7 +119,12 @@ a:hover .icons {
   max-width: 50px;
 }
 .company-name {
-  width: 90%
+  /* width: 90%; */
+}
+@media(max-width:1200px){
+  .company-name {
+    text-align: center;
+  }
 }
 .tags {
 }

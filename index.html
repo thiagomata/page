@@ -367,44 +367,46 @@
                           <div class="panel-body"> <!-- element experience panel body -->
                             <h3> {{ title }} </h3>
 
-                            {{#if icon }}
-                              <div class="subheading col-sm-1">
-                                <div class="company-icon-box">
-                                    <img class="company-icon"
-                                      src="assets/images/{{{ icon }}}"
-                                      alt="{{company }} icon"
-                                    />
+                            <div class="row">
+                              {{#if icon }}
+                                <div class="subheading col-lg-1">
+                                  <div class="company-icon-box" style="background-image: url(assets/images/{{{ icon }}}">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="subheading col-sm-8">
-                                  <h4 class="company-name">
-                                    {{#if website }}
-                                      <a href="{{ website }}">
-                                        {{company}}
-                                      </a>
-                                    {{else}}
-                                      {{company}}
-                                    {{/if}}
-                                  </h4>
-                              </div>
-                          {{else}}
-                            <div class="subheading col-sm-9">
-                                <h4 class="company-name">
-                                  {{#if website }}
-                                    <a href="{{ website }}">
+                                <div class="subheading col-lg-8">
+                                    <h4 class="company-name">
+                                      {{#if website }}
+                                        <a href="{{ website }}">
+                                      {{/if}}
                                       {{#if abbreviation }}
                                         {{abbreviation}} -
                                         {{company}}
                                       {{else}}
                                         {{company}}
                                       {{/if}}
-                                    </a>
-                                  {{else}}
-                                    {{company}}
-                                  {{/if}}
-                                </h4>
-                            </div>
-                          {{/if}}
+                                      {{#if website }}
+                                        </a>
+                                      {{/if}}
+                                    </h4>
+                                </div>
+                              {{else}}
+                                <div class="subheading col-sm-9">
+                                  <h4 class="company-name">
+                                    {{#if website }}
+                                      <a href="{{ website }}">
+                                    {{/if}}
+                                    {{#if abbreviation }}
+                                      {{abbreviation}} -
+                                      {{company}}
+                                    {{else}}
+                                      {{company}}
+                                    {{/if}}
+                                    {{#if website }}
+                                      </a>
+                                    {{/if}}
+                                  </h4>
+                                </div>
+                              {{/if}}
 
                             <div class="col-sm-3"> <!-- element experience duration -->
                               <h4 class="date-range">
@@ -424,20 +426,25 @@
                                     Present
                                   {{/if}}
                               </h4>
-                              {{#if duration}}
-                                <div class="duration" style="float:left">
-                                  {{#if duration.years }}
-                                    {{ duration.years }} years
-                                  {{/if}}
-                                  {{#if duration.months }}
+                            </div>
+                          </div>
+                            {{#if duration}}
+                              <div class="row">
+                                <div class="col-sm-12 col align-self-end"> <!-- element experience duration -->
+                                  <div class=" pull-right">
                                     {{#if duration.years }}
-                                      and
+                                      {{ duration.years }} years
                                     {{/if}}
-                                    {{ duration.months }} months
-                                  {{/if}}
+                                    {{#if duration.months }}
+                                      {{#if duration.years }}
+                                        and
+                                      {{/if}}
+                                      {{ duration.months }} months
+                                    {{/if}}
+                                  </div>
                                 </div>
-                              {{/if}}
-                          </div> <!-- end element experience duration -->
+                              </div>
+                          {{/if}}
                           </div> <!-- end element experience panel body -->
                           <div class="col-sm-12 element-text-description">
                             {{description}}
