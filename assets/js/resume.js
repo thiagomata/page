@@ -104,7 +104,7 @@ function TrendingTagsGraph( resume, tagElementInput ) {
             var endDate = null;
 
             if (
-              n.endDate !== undefined && n.endDate.year !== undefined
+              n.endDate !== undefined
             ) {
               endDate = new Date( n.endDate ).getFullYear();
             }
@@ -201,7 +201,6 @@ function TrendingTagsGraph( resume, tagElementInput ) {
     sort(
       (a, b) => b.totalScore - a.totalScore
     ).
-    head(10).
     map(
       function(node) {
         var scores = self.yearsRange.overlaps(
@@ -212,7 +211,7 @@ function TrendingTagsGraph( resume, tagElementInput ) {
           function getNode( node ) {
             return node.score;
           },
-          null
+          0
         );
         return {
           tag: node.key,
@@ -225,9 +224,29 @@ function TrendingTagsGraph( resume, tagElementInput ) {
   }
 
   self.renderGraph = function() {
-    self.chartData.forEach(
+    self.tagElement.innerHTML = "";
+    self.chartData.
+    filter(
+      (node) => {
+        if( self.resume.activeTags.length == 0 ) {
+          return true;
+        }
+        return self.resume.activeTags.indexOf( node.tag ) > -1;
+      }
+    ).
+    filter(
+      (node) => {
+        if( this.resume.searchTerm == "" ) {
+          return true;
+        }
+
+        return  self.resume.searchTerm.indexOf( node.tag ) > -1 ||
+                node.tag.indexOf( self.resume.searchTerm ) > -1;
+      }
+    ).
+    head(self.maxTags).
+    forEach(
       function( dataChartElement, key ) {
-        console.log(dataChartElement);
         self.renderLineChart(
           [
             {
@@ -289,8 +308,12 @@ function TrendingTagsGraph( resume, tagElementInput ) {
       }
     };
 
+    var tagCanvasContainer = document.createElement("div");
+    tagCanvasContainer.setAttribute("class","canvas-container");
     var tagCanvas = document.createElement("canvas");
-    self.tagElement.append(tagCanvas);
+    self.tagElement.append(tagCanvasContainer);
+    tagCanvas.setAttribute("height",tagCanvas.clientHeight);
+    tagCanvasContainer.append(tagCanvas);
     var ctx = tagCanvas.getContext("2d");
     new Chart(ctx, config);
   }
@@ -302,49 +325,63 @@ function ResumeTemplate( resume ) {
 
   const headerTemplate     = "#template-row-me";
   const headerTarget       = "#template-row-me-out";
-  const pageTitleTemplate  = "#template-page-title";
+
+  const pageTitleTemplate     = "#template-page-title";
+  const pageMetaDescTemplate  = "#template-meta-description";
 
   var templates = {};
   var resumeTemplate = this;
+  var self = this;
+
+  self.filterRelevanceMax = 10;
+  self.filterDateMax = 10;
 
   if( ! resume instanceof Resume ) {
     throw new Error("invalid resume in the resume template" );
   }
-  this.resume = resume;
+  self.resume = resume;
 
   var jsonToTemplate = null;
 
-  this.getJsonToTemplate = function () {
+  self.getJsonToTemplate = function () {
     return {
       basic: {
-        name: this.resume.jsonData.text.name,
+        name: self.resume.jsonData.text.name,
         label: "Software Engineer",
-        picture: this.resume.jsondata.picture
+        picture: self.resume.jsondata.picture
       }
     }
   }
 
-  this.getBasicData = function() {
+  self.getBasicData = function() {
     return {
-      name:    Resume.getPath( this.resume.jsonData, "basics.name" ),
-      picture: Resume.getPath( this.resume.jsonData, "basics.picture", null ),
-      label:   Resume.getPath( this.resume.jsonData, "basics.label", null ),
-      summary: Resume.getPath( this.resume.jsonData, "basics.summary" ),
-      email:   Resume.getPath( this.resume.jsonData, "basics.email" ),
-      phone:   Resume.getPath( this.resume.jsonData, "basics.phone" ),
-      jsonresume: this.resume.getDatabase()
+      name:    Resume.getPath( self.resume.jsonData, "basics.name" ),
+      picture: Resume.getPath( self.resume.jsonData, "basics.picture", null ),
+      label:   Resume.getPath( self.resume.jsonData, "basics.label", null ),
+      summary: Resume.getPath( self.resume.jsonData, "basics.summary" ),
+      email:   Resume.getPath( self.resume.jsonData, "basics.email" ),
+      phone:   Resume.getPath( self.resume.jsonData, "basics.phone" ),
+      jsonresume: self.resume.getDatabase()
     }
   }
 
-  this.renderPageTitle = function() {
-    var source = $(pageTitleTemplate).html();
+  self.renderPageTitle = function() {
+    var source = $(pageMetaDescTemplate).html();
     var template = Handlebars.compile(source);
-    var context  = this.getBasicData();
+    var context  = self.getBasicData();
     var html = template(context);
-    document.title = html;
+    $();
   }
 
-  this.filterByTag = function( experienceNode ) {
+  self.renderMetaDescription = function() {
+    var source = $(pageMetaDescTemplate).html();
+    var template = Handlebars.compile(source);
+    var context  = self.getBasicData();
+    var html = template(context);
+    $("meta[name=description]").attr("content", html);
+  }
+
+  self.filterByTag = function( experienceNode ) {
     if( resumeTemplate.resume.activeTags.length == 0 ) {
       return experienceNode;
     }
@@ -357,7 +394,7 @@ function ResumeTemplate( resume ) {
     return experienceNode;
   }
 
-  this.filterByDate = function( experienceNode ) {
+  self.filterByDate = function( experienceNode ) {
     if( ! resumeTemplate.resume.isActiveFilterByDate ) {
       return experienceNode;
     }
@@ -366,13 +403,11 @@ function ResumeTemplate( resume ) {
       function ( a, b ) {
         return new Date(b.startDate) - new Date( a.startDate );
       }
-    ).head(
-      resumeTemplate.filterPageSize
-    );
+    ).head(self.filterDateMax);
     return experienceNode;
   }
 
-  this.filterByRelevance = function( experienceNode ) {
+  self.filterByRelevance = function( experienceNode ) {
     if( ! resumeTemplate.resume.isActiveFilterByRelevance ) {
       return experienceNode;
     }
@@ -381,9 +416,8 @@ function ResumeTemplate( resume ) {
       function (a,b) {
           return b.relevance - a.relevance;
       }
-    ).head(
-      resumeTemplate.filterPageSize
-    ).sort(
+    ).head(self.filterRelevanceMax).
+    sort(
       function ( elementA, elementB ) {
         return  new Date( elementB.startDate ) - new Date( elementA.startDate );
       }
@@ -391,7 +425,7 @@ function ResumeTemplate( resume ) {
     return experienceNode;
   }
 
-  this.filterBySearchTerm = function( experienceNode ) {
+  self.filterBySearchTerm = function( experienceNode ) {
     var searchTerm = resumeTemplate.resume.searchTerm;
     if(  searchTerm == "" || searchTerm === undefined ) {
       return experienceNode;
@@ -422,7 +456,7 @@ function ResumeTemplate( resume ) {
   const YEAR    = 365 * DAYS;
   const YEARS   = YEAR;
 
-  this.datesDiff = function ( dateA, dateB ) {
+  self.datesDiff = function ( dateA, dateB ) {
 
     if( dateA === null || dateA === undefined || dateB === null || dateB === undefined ) {
       return null;
@@ -458,13 +492,13 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.jsonWorkExperiences;
+  self.jsonWorkExperiences;
 
-  this.loadWorkExperiences = function() {
-    if( this.jsonWorkExperiences !== undefined ) {
-      return this.jsonWorkExperiences;
+  self.loadWorkExperiences = function() {
+    if( self.jsonWorkExperiences !== undefined ) {
+      return self.jsonWorkExperiences;
     }
-    return this.jsonWorkExperiences = {
+    return self.jsonWorkExperiences = {
       categoryAnchor:            "professional",
       categoryTitle:             "Professional Experiences",
       elementsTitle:             "professional experiences",
@@ -483,7 +517,7 @@ function ResumeTemplate( resume ) {
             tags:           Resume.getPath( jsonWork, "keywords", [] ).map(
               function x(tag) {
                 return {
-                  id: "tag-" + tag,
+                  id: tag,
                   label: tag.
                     split("-").
                     map(
@@ -513,17 +547,17 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.jsonAcademicHistory;
+  self.jsonAcademicHistory;
 
-  this.loadAcademicHistory = function() {
-    if( this.jsonAcademicHistory !== undefined ) {
-      return this.jsonAcademicHistory;
+  self.loadAcademicHistory = function() {
+    if( self.jsonAcademicHistory !== undefined ) {
+      return self.jsonAcademicHistory;
     }
-    return this.jsonAcademicHistory = {
+    return self.jsonAcademicHistory = {
       categoryAnchor:            "academic",
       categoryTitle:             "Academic History",
       elementsTitle:             "academic histories",
-      elements: Resume.getPath( this.resume.jsonData, "education", [] ).filter(
+      elements: Resume.getPath( self.resume.jsonData, "education", [] ).filter(
         function( jsonEducation ) {
           return Resume.getPath( jsonEducation, "studyType", "course" ) != "course";
         }
@@ -544,7 +578,7 @@ function ResumeTemplate( resume ) {
             tags:           Resume.getPath( jsonEducation, "keywords", [] ).map(
               function (tag) {
                 return {
-                  id: "tag-" + tag,
+                  id: tag,
                   label: tag.
                     split("-").
                     map(
@@ -574,17 +608,17 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.jsonAcademicHistory;
+  self.jsonAcademicHistory;
 
-  this.loadCoursesHistory = function() {
-    if( this.jsonCourseHistory !== undefined ) {
-      return this.jsonCourseHistory;
+  self.loadCoursesHistory = function() {
+    if( self.jsonCourseHistory !== undefined ) {
+      return self.jsonCourseHistory;
     }
-    return this.jsonCourseHistory = {
+    return self.jsonCourseHistory = {
       categoryAnchor:            "courses",
       categoryTitle:             "Courses History",
       elementsTitle:             "courses histories",
-      elements: Resume.getPath( this.resume.jsonData, "education", [] ).filter(
+      elements: Resume.getPath( self.resume.jsonData, "education", [] ).filter(
         function( jsonEducation ) {
           return Resume.getPath( jsonEducation, "studyType", "course" ) == "course";
         }
@@ -604,7 +638,7 @@ function ResumeTemplate( resume ) {
             tags:           Resume.getPath( jsonEducation, "keywords", [] ).map(
               function (tag) {
                 return {
-                  id: "tag-" + tag,
+                  id: tag,
                   label: tag.
                     split("-").
                     map(
@@ -638,15 +672,15 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.loadPapersHistory = function() {
-    if( this.jsonPaperHistory !== undefined ) {
-      return this.jsonPaperHistory;
+  self.loadPapersHistory = function() {
+    if( self.jsonPaperHistory !== undefined ) {
+      return self.jsonPaperHistory;
     }
-    return this.jsonPaperHistory = {
+    return self.jsonPaperHistory = {
       categoryAnchor:            "scientific-papers",
       categoryTitle:             "Scientific Papers",
       elementsTitle:             "papers",
-      elements: Resume.getPath( this.resume.jsonData, "papers", [] ).map(
+      elements: Resume.getPath( self.resume.jsonData, "papers", [] ).map(
         function( jsonPaper ) {
           return {
             relevance:      Resume.getPath( jsonPaper, "relevance", 1 ),
@@ -668,7 +702,7 @@ function ResumeTemplate( resume ) {
             tags:           Resume.getPath( jsonPaper, "keywords", [] ).map(
               function (tag) {
                 return {
-                  id: "tag-" + tag,
+                  id: tag,
                   label: tag.
                     split("-").
                     map(
@@ -702,15 +736,15 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.loadAwardsHistory = function() {
-    if( this.jsonAwardsHistory !== undefined ) {
-      return this.jsonAwardsHistory;
+  self.loadAwardsHistory = function() {
+    if( self.jsonAwardsHistory !== undefined ) {
+      return self.jsonAwardsHistory;
     }
-    return this.jsonAwardsHistory = {
+    return self.jsonAwardsHistory = {
       categoryAnchor:            "awards",
       categoryTitle:             "Awards",
       elementsTitle:             "awards",
-      elements: Resume.getPath( this.resume.jsonData, "awards", [] ).map(
+      elements: Resume.getPath( self.resume.jsonData, "awards", [] ).map(
         function( jsonAwards ) {
           return {
             relevance:      Resume.getPath( jsonAwards, "relevance", 1 ),
@@ -732,7 +766,7 @@ function ResumeTemplate( resume ) {
             tags:           Resume.getPath( jsonAwards, "keywords", [] ).map(
               function (tag) {
                 return {
-                  id: "tag-" + tag,
+                  id: tag,
                   label: tag.
                     split("-").
                     map(
@@ -766,7 +800,7 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.filterExperienceNode = function( fullNode ) {
+  self.filterExperienceNode = function( fullNode ) {
     var filteredNode = JSON.parse( JSON.stringify( fullNode ) );
     filteredNode.isActiveFilterByDate = this.resume.isActiveFilterByDate;
     filteredNode.isActiveFilterByRelevance = this.resume.isActiveFilterByRelevance;
@@ -783,11 +817,11 @@ function ResumeTemplate( resume ) {
     );
 
     resumeTemplate.filterByTag( filteredNode );
+    resumeTemplate.filterBySearchTerm( filteredNode );
     resumeTemplate.filterByRelevance( filteredNode );
     resumeTemplate.filterByDate( filteredNode );
-    resumeTemplate.filterBySearchTerm( filteredNode );
 
-    filteredNode.searchFilter        =this.getSearchFilter();
+    filteredNode.searchFilter        = self.getSearchFilter();
     filteredNode.hasElements         = fullNode.elements.length     > 0;
     filteredNode.hasVisibileElements = filteredNode.elements.length > 0;
     filteredNode.hasHiddenElements   =
@@ -798,34 +832,34 @@ function ResumeTemplate( resume ) {
     return filteredNode;
   }
 
-  this.getWorkExperiences = function() {
+  self.getWorkExperiences = function() {
     var fullNode     = resumeTemplate.loadWorkExperiences();
     return resumeTemplate.filterExperienceNode( fullNode );
   }
 
-  this.getAcademicHistory = function() {
+  self.getAcademicHistory = function() {
     var fullNode     = resumeTemplate.loadAcademicHistory();
     return resumeTemplate.filterExperienceNode( fullNode );
   }
 
-  this.getCoursesHistory = function() {
+  self.getCoursesHistory = function() {
     var fullNode     = resumeTemplate.loadCoursesHistory();
     return resumeTemplate.filterExperienceNode( fullNode );
   }
 
-  this.getPapersHistory = function() {
+  self.getPapersHistory = function() {
     var fullNode     = resumeTemplate.loadPapersHistory();
     return resumeTemplate.filterExperienceNode( fullNode );
   }
 
-  this.getAwardsHistory = function() {
+  self.getAwardsHistory = function() {
     var fullNode     = resumeTemplate.loadAwardsHistory();
     return resumeTemplate.filterExperienceNode( fullNode );
   }
 
-  this.getSocialNetworks = function() {
+  self.getSocialNetworks = function() {
     return {
-      socialNetworks: Resume.getPath( this.resume.jsonData, "basics.profiles", [] ).map(
+      socialNetworks: Resume.getPath( self.resume.jsonData, "basics.profiles", [] ).map(
         function( profile ) {
           return {
             name: Resume.getPath( profile, "network"),
@@ -837,7 +871,7 @@ function ResumeTemplate( resume ) {
     }
   }
 
-  this.getTemplateBySourceId = function( sourceId ) {
+  self.getTemplateBySourceId = function( sourceId ) {
     if( templates[ sourceId ] !== undefined ) {
       return template[ sourceId ];
     }
@@ -847,27 +881,27 @@ function ResumeTemplate( resume ) {
     return template;
   }
 
-  this.getActiveTags = function() {
+  self.getActiveTags = function() {
     return {
-      tags: this.resume.activeTags
+      tags: self.resume.activeTags
     };
   }
 
-  this.getSearchFilter = function() {
-    if( this.resume.isActiveFilterByDate ) {
-      return this.resume.getFilterByDateValue();
+  self.getSearchFilter = function() {
+    if( self.resume.isActiveFilterByDate ) {
+      return self.resume.getFilterByDateValue();
     }
-    if( this.resume.isActiveFilterByRelevance ) {
-      return this.resume.getFilterByRelevanceValue();
+    if( self.resume.isActiveFilterByRelevance ) {
+      return self.resume.getFilterByRelevanceValue();
     }
-    return this.resume.getNoFilterValue();
+    return self.resume.getNoFilterValue();
   }
 
-  this.isActiveFilterByRelevance = function() {
-    return this.resume.isActiveFilterByDate;
+  self.isActiveFilterByRelevance = function() {
+    return self.resume.isActiveFilterByDate;
   }
 
-  this.renderTemplates = function( booOnUpdate ) {
+  self.renderTemplates = function( booOnUpdate ) {
     $("[data-template-source]").filter(
       function( key, element ) {
         var $element = $(element);
@@ -908,34 +942,35 @@ function ResumeTemplate( resume ) {
     )
   }
 
-  this.render = function () {
-    this.renderPageTitle();
-    this.renderTemplates( false );
+  self.render = function () {
+    self.renderPageTitle();
+    self.renderMetaDescription();
+    self.renderTemplates( false );
   }
 
-  this.update = function() {
-    this.renderTemplates( true );
+  self.update = function() {
+    self.renderTemplates( true );
   }
 
-  this.construct = function () {
+  self.construct = function () {
     Handlebars.registerHelper('ifCond', function(v1, v2, options) {
       if(v1 === v2) {
-        return options.fn(this);
+        return options.fn(self);
       }
-      return options.inverse(this);
+      return options.inverse(self);
     });
 
     Handlebars.registerHelper('ifArraySize', function(v1, v2, options) {
       if(v1.length === v2) {
-        return options.fn(this);
+        return options.fn(self);
       }
-      return options.inverse(this);
+      return options.inverse(self);
     });
 
-    this.render();
+    self.render();
   }
 
-  this.construct();
+  self.construct();
 }
 
 function Resume() {
@@ -945,11 +980,13 @@ function Resume() {
     return database;
   }
 
-  const graphElement = $("#canvas-box");
+  const graphElement = $("#canvas-box").get(0);
 
   this.jsonData = null;
   this.resumeTemplate = null;
   this.trendingTagsGraph = null;
+  this.totalTagsOnMetaByScore = 5;
+  this.totalTagsOnMetaLastYear = 5;
 
   this.loadJson = function () {
     var _this = this;
@@ -965,6 +1002,20 @@ function Resume() {
     this.jsonData = data;
     this.trendingTagsGraph = new TrendingTagsGraph( resume, graphElement );
     this.trendingTagsGraph.renderGraph();
+    $("meta[name=keywords]").attr("content",
+      $("meta[name=keywords]").attr("content") + " " +
+      this.trendingTagsGraph.chartData.slice(0).sort(
+        (a, b) => b.totalScore - a.totalScore
+      ).head( self.totalTagsOnMetaByScore ).map(
+        node => node.tag
+      ).concat(
+        this.trendingTagsGraph.chartData.slice(0).sort(
+          (a, b) => b.years.max() - a.years.max()
+        ).reverse().head( self.totalTagsOnMetaLastYear ).map(
+          node => node.tag
+        )
+      ).unique().join(" ")
+    );
     this.resumeTemplate = new ResumeTemplate( this );
   }
 
@@ -1027,6 +1078,7 @@ function Resume() {
   this.updateSearchTerm = function( searchElement ) {
     this.searchTerm = searchElement.value;
     this.resumeTemplate.update();
+    this.trendingTagsGraph.renderGraph();
   }
 
   this.clickTag = function( tagId ) {

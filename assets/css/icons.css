@@ -217,3 +217,7 @@ a:hover .icons {/* background-color: rgb(200, 200, 220); */transition-duration: 
   background-color: #4444DD;
   color: white;
 }
+
+.canvas-container{
+  min-height: 300px;
+}
