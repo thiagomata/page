@@ -829,13 +829,14 @@ function ResumeTemplate( resume ) {
 
   self.filterExperienceNode = function( fullNode ) {
     var filteredNode = JSON.parse( JSON.stringify( fullNode ) );
+    var resume = self.resume;
     filteredNode.isActiveFilterByDate = this.resume.isActiveFilterByDate;
     filteredNode.isActiveFilterByRelevance = this.resume.isActiveFilterByRelevance;
     filteredNode.elements = filteredNode.elements.map(
       function (element) {
         element.tags = element.tags.map(
           function (tag) {
-            tag.active = this.resume.activeTags.indexOf( tag.id ) > -1;
+            tag.active = resume.activeTags.indexOf( tag.id ) > -1;
             return tag;
           }
         );
@@ -1001,7 +1002,11 @@ function ResumeTemplate( resume ) {
   self.construct();
 }
 
-function Resume() {
+function Resume( jsonData ) {
+
+  if( jsonData === undefined ) {
+    jsonData = null;
+  }
 
   var self = this;
 
@@ -1012,24 +1017,15 @@ function Resume() {
 
   const graphElement = $("#canvas-box").get(0);
 
-  self.jsonData = null;
+  self.jsonData = jsonData;
   self.resumeTemplate = null;
   self.trendingTagsGraph = null;
   self.totalTagsOnMetaByScore = 5;
   self.totalTagsOnMetaLastYear = 5;
 
-  self.loadJson = function () {
-    $.getJSON(
-      database,
-      function( data ) {
-        self.applyTemplate( data )
-      }
-    )
-  }
-
   self.applyTemplate = function ( data ) {
     self.jsonData = data;
-    self.trendingTagsGraph = new TrendingTagsGraph( resume, graphElement );
+    self.trendingTagsGraph = new TrendingTagsGraph( self, graphElement );
     self.trendingTagsGraph.renderGraph();
     self.drawKeywords();
     self.resumeTemplate = new ResumeTemplate( this );
@@ -1055,6 +1051,19 @@ function Resume() {
   self.construct = function () {
     self.searchTerm = Resume.getUrlParameter( "q", "" );
     self.loadJson();
+  }
+
+  self.loadJson = function () {
+    if( self.jsonData === null ) {
+      $.getJSON(
+        database,
+        function( data ) {
+          self.applyTemplate( data )
+        }
+      )
+    } else {
+      self.applyTemplate( self.jsonData );
+    }
   }
 
   self.activeTags = [];
@@ -1133,7 +1142,7 @@ function Resume() {
     self.resumeTemplate.update();
   }
 
-  this.construct();
+  self.construct();
 }
 
 Resume.getPath = function( objElement, strPath, notFoundValue ) {
@@ -1172,8 +1181,13 @@ Resume.getUrlParameter = function ( sParam, notFoundValue ) {
   return notFoundValue;
 };
 
-$( document ).ready(
-  function() {
-      window.resume = new Resume();
-  }
-)
+Resume.jsonp = function( data ) {
+  window.resume = new Resume( data );
+}
+// $( document ).ready(
+  // function() {
+  //     if( window.resume === undefined ) {
+  //       window.resume = new Resume();
+  //     }
+  // }
+// );
