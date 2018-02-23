@@ -1,4 +1,12 @@
 {
+  "meta": {
+    "analytics": {
+      "google": {
+        "link": "https://www.googletagmanager.com/gtag/js?id=UA-114687205-1",
+        "id": "UA-114687205-1"
+      }
+    }
+  },
   "basics": {
     "name": "Thiago Mata",
     "fullName": "Thiago Henrique Ramos da Mata",

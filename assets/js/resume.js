@@ -390,6 +390,24 @@ function ResumeTemplate( resume ) {
     $("meta[name=description]").attr("content", html);
   }
 
+  self.renderAnalytics = function() {
+    var analytics = Resume.getPath( self.resume.jsonData, "meta.analytics.google.link", null );
+    if( analytics !== null ) {
+      var $script = $(document.createElement("script"));
+      $script.attr("async","");
+      $script.attr("src", self.resume.jsonData.analytics );
+      $(document.body).append( $script );
+    }
+
+    var analyticsId = Resume.getPath(self.resume.jsonData, "meta.analytics.google.id", null );
+    if( analyticsId !== null ) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', analyticsId);
+    }
+  }
+
   self.filterByTag = function( experienceNode ) {
     if( resumeTemplate.resume.activeTags.length == 0 ) {
       return experienceNode;
@@ -955,6 +973,7 @@ function ResumeTemplate( resume ) {
     self.renderPageTitle();
     self.renderMetaDescription();
     self.renderTemplates( false );
+    self.renderAnalytics();
   }
 
   self.update = function() {
@@ -984,33 +1003,39 @@ function ResumeTemplate( resume ) {
 
 function Resume() {
 
+  var self = this;
+
   const database = "./assets/json/resume.json";
-  this.getDatabase = function(){
+  self.getDatabase = function(){
     return database;
   }
 
   const graphElement = $("#canvas-box").get(0);
 
-  this.jsonData = null;
-  this.resumeTemplate = null;
-  this.trendingTagsGraph = null;
-  this.totalTagsOnMetaByScore = 5;
-  this.totalTagsOnMetaLastYear = 5;
+  self.jsonData = null;
+  self.resumeTemplate = null;
+  self.trendingTagsGraph = null;
+  self.totalTagsOnMetaByScore = 5;
+  self.totalTagsOnMetaLastYear = 5;
 
-  this.loadJson = function () {
-    var _this = this;
+  self.loadJson = function () {
     $.getJSON(
       database,
       function( data ) {
-        _this.applyTemplate( data )
+        self.applyTemplate( data )
       }
     )
   }
 
-  this.applyTemplate = function ( data ) {
-    this.jsonData = data;
-    this.trendingTagsGraph = new TrendingTagsGraph( resume, graphElement );
-    this.trendingTagsGraph.renderGraph();
+  self.applyTemplate = function ( data ) {
+    self.jsonData = data;
+    self.trendingTagsGraph = new TrendingTagsGraph( resume, graphElement );
+    self.trendingTagsGraph.renderGraph();
+    self.drawKeywords();
+    self.resumeTemplate = new ResumeTemplate( this );
+  }
+
+  self.drawKeywords = function() {
     $("meta[name=keywords]").attr("content",
       $("meta[name=keywords]").attr("content") + " " +
       this.trendingTagsGraph.chartData.slice(0).sort(
@@ -1025,87 +1050,86 @@ function Resume() {
         )
       ).unique().join(" ")
     );
-    this.resumeTemplate = new ResumeTemplate( this );
   }
 
-  this.construct = function () {
+  self.construct = function () {
     this.loadJson();
   }
 
-  this.activeTags = [];
+  self.activeTags = [];
 
-  this.searchTerm = "";
+  self.searchTerm = "";
 
   /**
    * Filter the experiences to just shows
    * the most relevant ones
    */
-  this.isActiveFilterByRelevance = true;
+  self.isActiveFilterByRelevance = true;
 
   /**
    * Filter the experiences to just shows
    * the most recent ones
    */
-  this.isActiveFilterByDate = false;
+  self.isActiveFilterByDate = false;
 
   const filterByRelevanceValue = "relevants";
-  this.getFilterByRelevanceValue = () => filterByRelevanceValue
+  self.getFilterByRelevanceValue = () => filterByRelevanceValue
 
   const filterByDateValue = "last";
-  this.getFilterByDateValue = () => filterByDateValue
+  self.getFilterByDateValue = () => filterByDateValue
 
   const noFilterValue = "all";
-  this.getNoFilterValue = () => noFilterValue
+  self.getNoFilterValue = () => noFilterValue
 
 
   /**
    * If some sort filter is being applied,
    * how many results should return max
    */
-  this.filterPageSize = 5;
+  self.filterPageSize = 5;
 
-  this.onSelectFilterChange = function( selectElement ) {
+  self.onSelectFilterChange = function( selectElement ) {
     switch( selectElement.value ) {
       case noFilterValue:
-        this.isActiveFilterByDate      = false;
-        this.isActiveFilterByRelevance = false;
+        self.isActiveFilterByDate      = false;
+        self.isActiveFilterByRelevance = false;
         break;
       case filterByDateValue:
-        this.isActiveFilterByDate      = true;
-        this.isActiveFilterByRelevance = false;
+        self.isActiveFilterByDate      = true;
+        self.isActiveFilterByRelevance = false;
         break;
       case filterByRelevanceValue:
-        this.isActiveFilterByDate      = false;
-        this.isActiveFilterByRelevance = true;
+        self.isActiveFilterByDate      = false;
+        self.isActiveFilterByRelevance = true;
         break;
       default:
         throw Error("Unknow selectElement.value " + selectElement.value );
     }
-    this.resumeTemplate.update();
+    self.resumeTemplate.update();
   }
 
-  this.updateSearchTerm = function( searchElement ) {
-    this.searchTerm = searchElement.value;
-    this.resumeTemplate.update();
-    this.trendingTagsGraph.renderGraph();
+  self.updateSearchTerm = function( searchElement ) {
+    self.searchTerm = searchElement.value;
+    self.resumeTemplate.update();
+    self.trendingTagsGraph.renderGraph();
   }
 
-  this.clickTag = function( tagId ) {
-    var pos = this.activeTags.indexOf( tagId );
+  self.clickTag = function( tagId ) {
+    var pos = self.activeTags.indexOf( tagId );
     if( pos != -1 ) {
-      this.activeTags.splice( pos, 1 );
+      self.activeTags.splice( pos, 1 );
     } else {
-      this.activeTags.push( tagId );
+      self.activeTags.push( tagId );
     }
-    this.resumeTemplate.update();
-    this.trendingTagsGraph.renderGraph();
+    self.resumeTemplate.update();
+    self.trendingTagsGraph.renderGraph();
   }
 
-  this.clearFilter = function() {
-    this.isActiveFilterByDate      = false;
-    this.isActiveFilterByRelevance = false
-    this.searchTerm                = "";
-    this.resumeTemplate.update();
+  self.clearFilter = function() {
+    self.isActiveFilterByDate      = false;
+    self.isActiveFilterByRelevance = false
+    self.searchTerm                = "";
+    self.resumeTemplate.update();
   }
 
   this.construct();
