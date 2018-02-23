@@ -1053,7 +1053,8 @@ function Resume() {
   }
 
   self.construct = function () {
-    this.loadJson();
+    self.searchTerm = Resume.getUrlParameter( "q", "" );
+    self.loadJson();
   }
 
   self.activeTags = [];
@@ -1150,6 +1151,26 @@ Resume.getPath = function( objElement, strPath, notFoundValue ) {
   return objElement;
 }
 
+Resume.getUrlParameter = function ( sParam, notFoundValue ) {
+  var sPageURL = decodeURIComponent(window.location.search.substring(1));
+  var sURLVariables = sPageURL.split('&');
+
+  if( notFoundValue === undefined ) {
+    notFoundValue = null;
+  }
+
+  var sParameterName;
+  var i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : sParameterName[1];
+    }
+  }
+  return notFoundValue;
+};
 
 $( document ).ready(
   function() {
