@@ -395,7 +395,7 @@ function ResumeTemplate( resume ) {
     if( analytics !== null ) {
       var $script = $(document.createElement("script"));
       $script.attr("async","");
-      $script.attr("src", self.resume.jsonData.analytics );
+      $script.attr("src", analytics );
       $(document.body).append( $script );
     }
 
