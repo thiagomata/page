@@ -370,7 +370,16 @@ function ResumeTemplate( resume ) {
     var template = Handlebars.compile(source);
     var context  = self.getBasicData();
     var html = template(context);
-    $();
+    var titleSelector = $("title");
+    if( titleSelector.size() ) {
+      titleTag = titleSelector[0];
+      titleTag.textContent = html;
+    } else {
+      titleTag = document.createElement("title");
+      titleTag.textContent = html;
+      document.body.appendChild(titleTag);
+    }
+    document.title = html;
   }
 
   self.renderMetaDescription = function() {

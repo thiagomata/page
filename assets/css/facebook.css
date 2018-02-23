@@ -150,7 +150,7 @@ hr {
 /* bootstrap overrides */
 
 h1,h2,h3 {
-   font-weight:800;
+   font-weight: 600;
 }
 
 .navbar-toggle, .close {
