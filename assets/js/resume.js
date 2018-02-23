@@ -377,7 +377,7 @@ function ResumeTemplate( resume ) {
     } else {
       titleTag = document.createElement("title");
       titleTag.textContent = html;
-      document.body.appendChild(titleTag);
+      document.head.appendChild(titleTag);
     }
     document.title = html;
   }
