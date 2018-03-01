@@ -93,6 +93,14 @@
           <!--
           Menu footer
           -->
+          <script id="template-menu-footer" type="text/x-handlebars-template">
+            <li>
+              <a href="{{link}}">
+                <h1>{{name}}</h1>
+                {{label}}
+                </a>
+            </li>
+          </script>
           <ul class="list-unstyled hidden-xs" id="sidebar-footer" data-template-source="#template-menu-footer" data-template-context="getBasicData">
             <li>
               <a href="">
@@ -105,24 +113,29 @@
           Mobile version of the side bar menu
           -->
           <!-- tiny only nav-->
+          <script id="template-social-networks-short" type="text/x-handlebars-template">
+            <li class="list-unstyled hidden-xs">
+            </li>
+            {{#each socialNetworks }}
+              <li>
+                  <a href="{{link}}">
+                    <div class="icons icons-social-{{icon}}">
+                    </div>
+                  </a>
+                </li>
+            {{/each}}
+          </script>
           <ul class="nav visible-xs" id="xs-menu" data-template-source="#template-social-networks-short" data-template-context="getSocialNetworks">
             <li class="active">
-              <a href="index.php?page=document">
+              <a href="index.html#document">
                 <i class="glyphicon glyphicon-list-alt"></i>
               </a>
             </li>
             <li>
-              <a href="index.php?page=stories">
+              <a href="index.html#stories">
                 <i class="glyphicon glyphicon-list"></i>
               </a>
             </li>
-            <!--
-            <li>
-              <a href="index.php?page=timeline">
-                <div class="icons icons-timeline"></div>
-              </a>
-            </li>
-            -->
             <li class="list-unstyled hidden-xs">
             </li>
               <li>
@@ -211,6 +224,61 @@
           <!-- /top nav -->
           <div class="padding">
             <div class="full col-sm-12">
+              <script id="template-row-me" type="text/x-handlebars-template">
+                {{#if picture}}
+                  <div class="col-sm-2">
+                    <div class="face-circle">
+                      <img src="{{picture}}" alt="one picture of {{name}}"/>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 me-description">
+                    <h4>{{name}}</h4>
+                    <p> {{summary}}
+                    </p>
+                    <p>
+                      {{#if email}}
+                        <a href="mailto:{{email}}">
+                          {{email}}
+                        </a>
+                      {{/if}}
+                      {{#if phone}}
+                        <a href="tel:{{phone}}">
+                          {{phone}}
+                        </a>
+                      {{/if}}
+                      {{#if jsonresume}}
+                        <a href="{{jsonresume}}">
+                          resume.json
+                        </a>
+                      {{/if}}
+                    </p>
+                  </div><!-- end me-description -->
+                {{else}}
+                  <div class="col-sm-12 me-description">
+                    <h4>{{name}}</h4>
+                    <p>
+                      {{summary}}
+                    </p>
+                    <p>
+                      {{#if email}}
+                        <a href="mailto:{{email}}">
+                          {{email}}
+                        </a>
+                      {{/if}}
+                      {{#if phone}}
+                        <a href="tel:{{phone}}">
+                          {{phone}}
+                        </a>
+                      {{/if}}
+                      {{#if jsonresume}}
+                        <a href="{{jsonresume}}">
+                          resume.json
+                        </a>
+                      {{/if}}
+                    </p>
+                  </div><!-- end me-description -->
+                {{/if}}
+              </script>
               <div class="row me" data-template-source="#template-row-me" data-template-context="getBasicData" data-template-render-on-update="false">
                   <div class="col-sm-2">
                     <div class="face-circle">
