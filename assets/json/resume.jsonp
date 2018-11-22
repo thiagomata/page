@@ -56,8 +56,10 @@ $(document).ready(
           ],
           "keywords": [
             "java", "python", "google cloud platform", "apache beam",
+            "cloud computing",
             "apache spark", "rest", "javascript", "machine learning",
-            "bpmn", "scrum"
+            "continous integration", "continuos delivery",
+            "scrum"
           ],
           "media": {
             "icon": "slisystems-icon.png",
@@ -75,7 +77,8 @@ $(document).ready(
           "keywords": [
             "scala", "php", "laravel", "aws", "oracle cloud", "postgres",
             "hadoop", "apache spark", "machine learning", "elasticsearch",
-            "javascript", "uml", "bpmn", "scrum", "r-language", "bpmn"
+            "cloud computing",
+            "javascript", "uml", "scrum", "r-language"
           ],
           "highlights": [
             "Migration of Cloud infrastructure",
@@ -96,8 +99,8 @@ $(document).ready(
           "summary": "Adjetiva was a tech company with center on the mobile and web interactions. Here, I could work creating great projects for big brands.The company was acquired by the Ideia Big Data in 2014. ",
           "keywords": [
             "java", "node.js", "rest", "angular2", "laravel",
-            "mongodb", "postgres", "uml", "bpmn", "scrum",
-            "cordova", "node-webkit"
+            "mongodb", "postgres", "uml", "scrum",
+            "cordova", "node-webkit", "phaser"
           ],
           "highlights": [
             "Development of the Embratur Brand Channel in Laravel",
@@ -119,12 +122,12 @@ $(document).ready(
           "relevance": 9,
           "summary": "Otimicar it is an hardware more app solution that converts any car into a smart car. In the Otimicar, I worked with the specification and development of the first version of the OtimiCar server.",
           "keywords": [
-            "java", "node.js", "rest", "soap", "mongodb", "uml", "bpmn", "scrum"
+            "java", "node.js", "rest", "soap", "mongodb", "uml", "bpmn", "scrum", "google web app", "google cloud platform"
           ],
           "highlights": [
             "Processes Analysis",
             "Prototyping",
-            "Database Modeling",
+            "Database Modelling",
             "Google Web Application"
           ],
           "media": {
@@ -138,7 +141,7 @@ $(document).ready(
           "startDate": "2012-04-01",
           "endDate": "2013-09-28",
           "relevance": 4,
-          "summary": "Returning to the private sector, I worked with modeling, specification, validation, evaluation and development of many projects.",
+          "summary": "Returning to the private sector, I worked with modelling, specification, validation, evaluation and development of many projects.",
           "highlights": [
             "Formalization of a career path in the company",
             "Training for the analysis team",
@@ -222,7 +225,7 @@ $(document).ready(
           "startDate": "2005-09-01",
           "endDate": "2006-11-28",
           "relevance": 8,
-          "summary": "Working in the AgênciaClick - Isobar we could work in the development some great PHP projects with high quality user interfaces and ux ",
+          "summary": "Working in the AgênciaClick - Isobar we could work in the development some great PHP projects with high quality user interfaces and ux.",
           "highlights": [
             "System of Control of the Communication Actions - <a href='http://sistema2.planalto.gov.br/sisac'> SISAC </a> to the Presidency of the Republic of Brazil;",
             "Development of the <a href='http://visitbrasil.com/en/'>BrazilTour</a> in PHP;",
@@ -254,8 +257,8 @@ $(document).ready(
           "startDate": "2003-04-01",
           "endDate": "2004-02-28",
           "relevance": 2,
-          "summary": "Here we work on the development of computer based training using Macromedia Authoware, Adobe Flash, Javascript and ToolBook.",
-          "keywords": ["javascript", "toolbook", "adobe flash", "authoware"],
+          "summary": "Here we work on the development of computer-based training using Macromedia Authoware, Adobe Flash, Javascript and ToolBook.",
+          "keywords": ["javascript", "computer-based training", "adobe flash"],
           "media": {
             "icon": "msd-icon.png",
             "background": "computer_studying.jpg",
@@ -356,7 +359,7 @@ $(document).ready(
             "Intelligent Systems in Biomedical Engineering",
             "Biological Signal Processing",
             "Biostatistics in Biomedical Engineering",
-            "Study Orientated in Modeling of Phenomena and Biological Systems 1",
+            "Study Orientated in Modelling of Phenomena and Biological Systems 1",
             "Fundamentals of Electronics for Biomedical Engineering",
             "Mathematical Methods for Biomedical Engineering",
             "Teaching Internship",
@@ -404,7 +407,7 @@ $(document).ready(
           "studyType": "course",
           "startDate": "2017-11-13",
           "relevance": 8,
-          "title": "Google Cloud Plataform - Essentials",
+          "title": "Google Cloud Platform - Essentials",
           "summary": "This courses guides to a first hands-on experience with Google Cloud. Get comfortable with the basics, like spinning up a VM and configuring key infrastructure tools, through working with more advanced Stackdriver and Kubernetes concepts.",
           "keywords": ["google cloud platform", "kubernetes", "cloud launcher"],
           "website": "https://google.qwiklabs.com/quests/23?locale=en",
@@ -439,7 +442,7 @@ $(document).ready(
           "title": "Leveraging Unstructured Data with Cloud Dataproc on Google Cloud Platform",
           "summary": "This course shows how to create and manage computing clusters to run Hadoop, Spark, Pig and/or Hive jobs on Google Cloud Platform.  Also shows how to access various cloud storage options from their compute clusters and integrate Google’s machine learning capabilities into their analytics programs, how to manage Dataproc Clusters using the Web Console and the CLI, and use cluster to run Spark and Pig jobs. It shows how to create iPython notebooks that integrate with BigQuery and storage and utilize Spark. Finally, it shows houw to integrate the machine learning APIs into data analysis.",
           "keywords": [
-            "google cloud platform", "hadoop", "pig", "spark", "google cloud datastore", "machine learning", "google cloud dataproc", "python", "google bigquery"
+            "google cloud platform", "hadoop", "pig", "apache spark", "google cloud datastore", "machine learning", "google cloud dataproc", "python", "google bigquery"
           ],
           "website": "https://www.coursera.org/learn/leveraging-unstructured-data-dataproc-gcp",
           "certificate": "https://www.coursera.org/account/accomplishments/verify/EZABLESW7TNH",
@@ -531,9 +534,9 @@ $(document).ready(
           "startDate": "2016-10-22",
           "relevance": 7,
           "title":"Exploratory Data Analysis",
-          "summary": "This course covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modeling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data.",
+          "summary": "This course covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modelling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data.",
           "website": "https://www.coursera.org/learn/exploratory-data-analysis",
-          "tags": [
+          "keywords": [
             "r-language", "data visualization", "data exploration"
           ],
           "certificate": "https://www.coursera.org/account/accomplishments/verify/MSM9U9CDWYCU",
@@ -614,7 +617,7 @@ $(document).ready(
           "title": "Scrum Master",
           "summary": "This course teachs how a Scrum Master can helps project teams properly use Scrum, increasing the likelihood of the project 's overall success. It presents the Scrum values, practices, and applications. The Scrum master must act as \"servant leaders,\" helping the rest of the Scrum team work together and learn the Scrum framework also protect them from both internal and external distractions.",
           "keywords": [
-            "scrum", "agile"
+            "scrum"
           ],
           "website": "https://www.scrumalliance.org/certifications/practitioners/certified-scrummaster-csm",
           "certificate": "https://www.scrumalliance.org/community/profile/tmata/",

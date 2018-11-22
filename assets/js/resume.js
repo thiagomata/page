@@ -1022,8 +1022,8 @@ function Resume( jsonData ) {
   self.jsonData = jsonData;
   self.resumeTemplate = null;
   self.trendingTagsGraph = null;
-  self.totalTagsOnMetaByScore = 5;
-  self.totalTagsOnMetaLastYear = 5;
+  self.totalTagsOnMetaByScore = 15;
+  self.totalTagsOnMetaLastYear = 15;
 
   self.applyTemplate = function ( data ) {
     self.jsonData = data;
