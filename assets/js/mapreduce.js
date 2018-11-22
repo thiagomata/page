@@ -123,7 +123,7 @@ Array.prototype.overlaps = function( ys, fSearch, fGet, valueEmpty ) {
   )
 }
 
-Array.prototype.error = function(otherArray) {
+Array.prototype.errorComparing = function( otherArray) {
   return this.aggregate(otherArray, (x, y) => Math.round(x - y));
 };
 

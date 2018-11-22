@@ -570,7 +570,7 @@
         "thumbnail": "duke.png"
       }
     },{
-      "organization": "Johns Hopkins University",
+      "institution": "Johns Hopkins University",
       "area": "Data Science",
       "studyType": "course",
       "startDate": "2016-05-24",
@@ -600,7 +600,7 @@
         "background": "stanford.jpg"
       }
     },{
-      "organization": "Scrum Alliance",
+      "institution": "Scrum Alliance",
       "area": "Managment",
       "studyType": "course",
       "startDate": "2010-06-10",

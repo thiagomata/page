@@ -97,8 +97,7 @@ function TrendingTagsGraph( resume, tagElementInput ) {
 
     return allEvents.map(
       function(n) {
-        return Array.
-        asArray( n.keywords ).
+        return Array.asArray( n.keywords ).
         map(
           function( t ) {
             var endDate = null;
