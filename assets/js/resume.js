@@ -35,7 +35,7 @@ function TrendingTagsGraph( resume, tagElementInput ) {
   /**
    * Define the max of tags to use into the graph
    */
-  self.maxTags   = 30;
+  self.maxTags   = 50;
 
 
   construct = function() {
@@ -239,8 +239,8 @@ function TrendingTagsGraph( resume, tagElementInput ) {
           return true;
         }
 
-        return  self.resume.searchTerm.indexOf( node.tag ) > -1 ||
-                node.tag.indexOf( self.resume.searchTerm ) > -1;
+        return  self.resume.searchTerm.toLowerCase().indexOf( node.tag.toLowerCase() ) > -1 ||
+                node.tag.toLowerCase().indexOf( self.resume.searchTerm.toLowerCase() ) > -1;
       }
     ).
     head(self.maxTags).
@@ -256,7 +256,7 @@ function TrendingTagsGraph( resume, tagElementInput ) {
               fill: false
             }
           ],
-          dataChartElement.tag + " trend"
+          ""//dataChartElement.tag + " trend"
         );
       }
     )
@@ -835,7 +835,6 @@ function ResumeTemplate( resume ) {
       function (element) {
         element.tags = element.tags.map(
           function (tag) {
-            debugger
             onTagList = resume.activeTags.indexOf( tag.id ) > -1;
             onSearchTerm = tag.label.toLowerCase() == resume.searchTerm.toLowerCase();
             tag.active =  onTagList || onSearchTerm ;
@@ -1022,8 +1021,8 @@ function Resume( jsonData ) {
   self.jsonData = jsonData;
   self.resumeTemplate = null;
   self.trendingTagsGraph = null;
-  self.totalTagsOnMetaByScore = 15;
-  self.totalTagsOnMetaLastYear = 15;
+  self.totalTagsOnMetaByScore = 10;
+  self.totalTagsOnMetaLastYear = 10;
 
   self.applyTemplate = function ( data ) {
     self.jsonData = data;
@@ -1038,12 +1037,17 @@ function Resume( jsonData ) {
       $("meta[name=keywords]").attr("content") + " " +
       this.trendingTagsGraph.chartData.slice(0).sort(
         (a, b) => b.years.max() - a.years.max()
-      ).reverse().head( self.totalTagsOnMetaLastYear ).map(
+      ).reverse()
+      // .head( self.totalTagsOnMetaLastYear )
+      .map(
         node => node.tag
       ).concat(
-        this.trendingTagsGraph.chartData.slice(0).sort(
+        this.trendingTagsGraph.chartData.slice(0)
+        .sort(
           (a, b) => b.totalScore - a.totalScore
-        ).head( self.totalTagsOnMetaByScore ).map(
+        )
+        // .head( self.totalTagsOnMetaByScore )
+        .map(
           node => node.tag
         )
       ).unique().join(" ")
