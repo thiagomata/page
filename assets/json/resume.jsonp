@@ -59,7 +59,7 @@ Resume.jsonp({
       "keywords": [
         "java", "python", "google cloud platform", "apache beam",
         "cloud computing",
-        "apache spark", "rest", "javascript", "machine learning",
+        "rest", "javascript", "machine learning",
         "continous integration", "continuos delivery",
         "scrum"
       ],
