@@ -1,939 +1,943 @@
-Resume.jsonp({
-  "meta": {
-    "analytics": {
-      "google": {
-        "link": "https://www.googletagmanager.com/gtag/js?id=UA-114687205-1",
-        "id": "UA-114687205-1"
-      }
-    }
-  } ,
-  "basics": {
-    "name": "Thiago Mata",
-    "fullName": "Thiago Henrique Ramos da Mata",
-    "label": "Software Enginner",
-    "picture": "assets/images/thiago_face.jpg",
-    "email": "thiago.henrique.mata@gmail.com",
-    "phone": "+64 0211787915",
-    "website": "http://thiagomata.com",
-    "summary": "I am developer by passion. Working with web languages for the last 15 years, I could learn a lot and be part of some great projects. In the last years, I have learning and worked with Big Data and Machine Learning.",
-    "location": {
-      "address": "Bangor St",
-      "postalCode": "8011",
-      "city": "Chirstchurch",
-      "countryCode": "NZ",
-      "region": "Canterburry"
-    },
-    "profiles": [
-      {
-      "network": "Twitter",
-      "username": "thiagomata",
-      "url": "http://twitter.com/thiagomata"
-      }, {
-      "network": "Linkedin",
-      "username": "thiagomata",
-      "url": "https://www.linkedin.com/in/thiagomata/"
-      }, {
-      "network": "Stack Overflow",
-      "username": "thiagomata",
-      "url": "https://stackoverflow.com/users/456164/thiago-mata"
-      }
-    ]
-  },
-  "work": [
-    {
-      "company": "SLI Systems",
-      "position": "Senior Data Engineer",
-      "website": "https://www.sli-systems.com/",
-      "startDate": "2017-09-15",
-      "present": true,
-      "relevance": 10,
-      "summary": "The SLI Systems provides many products to maximize the results to e-commerce clients. Here I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
-      "highlights": [
-        "Google Cloud Platform",
-        "System Process Modelling"
-      ],
-      "keywords": [
-        "java", "python", "google cloud platform", "apache beam",
-        "apache spark", "rest", "javascript", "machine learning",
-        "bpmn", "scrum"
-      ],
-      "media": {
-        "icon": "slisystems-icon.png",
-        "thumbnail": "slisystems.png"
-      }
-    },
-    {
-      "company": "Ideia Big Data",
-      "position": "Chief Technology Officer",
-      "website": "http://ideiabigdata.com/en/",
-      "startDate": "2014-11-01",
-      "endDate": "2017-08-30",
-      "relevance": 10,
-      "summary": "Here at the Ideia Big Data we could work with research, microtargeting, communication and statistics using clusters, distributed storage, distributed search engines, machine learning, functional programming and streaming running into a cloud computing.",
-      "keywords": [
-        "scala", "php", "laravel", "aws", "oracle cloud", "postgres",
-        "hadoop", "apache spark", "machine learning", "elasticsearch",
-        "javascript", "uml", "bpmn", "scrum", "r-language", "bpmn"
-      ],
-      "highlights": [
-        "Migration of Cloud infrastructure",
-        "Development of the Alexandria Digital"
-      ],
-      "media": {
-        "icon": "ideia-bigdata-icon.png",
-        "thumbnail": "ideia.png"
-      }
-    },
-    {
-      "company": "Adjetiva",
-      "position": "Senior Programmer",
-      "website": "http://www.facebook.com/adjetiva",
-      "startDate": "2014-03-01",
-      "endDate": "2014-11-28",
-      "relevance": 8,
-      "summary": "Adjetiva was a tech company with center on the mobile and web interactions. Here, I could work creating great projects for big brands.The company was acquired by the Ideia Big Data in 2014. ",
-      "keywords": [
-        "java", "node.js", "rest", "angular2", "laravel",
-        "mongodb", "postgres", "uml", "bpmn", "scrum",
-        "cordova", "node-webkit"
-      ],
-      "highlights": [
-        "Development of the Embratur Brand Channel in Laravel",
-        "Development of the World Cup Events Locator in Cordova",
-        "Development of the Fiat EcoDrive desktop app in Node WebKit",
-        "Development of the SAT-JF14 mobile app in Cordova"
-      ],
-      "media": {
-        "icon": "adjetiva-icon.png",
-        "background": "black-android.jpg"
-      }
-    },
-    {
-      "company": "Otimicar",
-      "position": "Co-Founder",
-      "website": "http://otimicar.com",
-      "startDate": "2013-09-01",
-      "endDate": "2014-01-01",
-      "relevance": 9,
-      "summary": "Otimicar it is an hardware more app solution that converts any car into a smart car. In the Otimicar, I worked with the specification and development of the first version of the OtimiCar server.",
-      "keywords": [
-        "java", "node.js", "rest", "soap", "mongodb", "uml", "bpmn", "scrum"
-      ],
-      "highlights": [
-        "Processes Analysis",
-        "Prototyping",
-        "Database Modeling",
-        "Google Web Application"
-      ],
-      "media": {
-        "icon": "otimicar-icon.png",
-        "thumbnail": "otimicar.png"
-      }
-    },
-    {
-      "company": "954 Business Consulting",
-      "position": "Senior Coordinator",
-      "startDate": "2012-04-01",
-      "endDate": "2013-09-28",
-      "relevance": 4,
-      "summary": "Returning to the private sector, I worked with modeling, specification, validation, evaluation and development of many projects.",
-      "highlights": [
-        "Formalization of a career path in the company",
-        "Training for the analysis team",
-        "Risk analysis",
-        "Requirements elicitation"
-      ],
-      "keywords": [
-        "php", "mssql", "postgres", "oracle", "bpmn", "uml", "scrum", "angular2"
-      ],
-      "media": {
-        "icon": "954-icon.png",
-        "thumbnail": "954.png"
-      }
-    },
-    {
-      "company": "INEP - Instituto Nacional de Pesquisas Educacionais",
-      "position": "Process Analyts",
-      "website": "http://inep.gov.br",
-      "startDate": "2009-04-08",
-      "endDate": "2012-04-09",
-      "relevance": 6,
-      "summary": "Into the INEP, as public agent, I worked with Specification and development of softwares with high availability for millions of simultaneous users dealing with high data volumes and complex financial flows.",
-      "highlights": [
-        "Specification and development of the E-MEC System Fees",
-        "Specification and development of the National Exam to Revalidation of Medical Diplomas",
-        "Analyst at System of Control of Production and Escorted Delivery of Assessments."
-      ],
-      "keywords": [
-        "php", "oracle", "postgres", "java",
-        "java-seam", "bpmn", "uml", "scrum", "zend"
-      ],
-      "media": {
-        "icon": "inep-icon.png",
-        "thumbnail": "inep.png",
-        "background": "kidbook.jpg"
-      }
-    },
-    {
-      "company": "Bancoob - Sicoob",
-      "position": "Senior Systems Analyst",
-      "website": "https://www.bancoob.com.br/",
-      "startDate": "2007-09-03",
-      "endDate": "2008-11-03",
-      "relevance": 7,
-      "summary": "Into the Bancoob - The Cooperative Bank of Brazil, I could work in the development of the System for transfer of credit portfolios using Microsoft SQL Server and Visual Basic.This system demands a safe management of a big volume of financial accounting and loans transactions.",
-      "highlights": [
-        "Complex flows using Microsoft SQL Server",
-        "Test Driven Development to database procedure development",
-        "Speed optimization of Microsoft SQL procedures"
-      ],
-      "keywords": [
-        "visual basic", "mssql server", "java", "uml"
-      ],
-      "media": {
-        "icon": "sicoob-icon.png",
-        "thumbnail": "sicoob.png"
-      }
-    },
-    {
-      "company": "MEC - Ministry of Education of Brazil",
-      "position": "Developer",
-      "website": "https://mec.gov.br",
-      "startDate": "2006-11-01",
-      "endDate": "2007-09-20",
-      "relevance": 5,
-      "summary": "Here I could work into the development of internal systems using PHP, Postgres and Zend.",
-      "highlights": [
-        "Development of the <a href='http://sistec.mec.gov.br'>Sistec</a> - System of Information and Supervision of Professional Education and Technology",
-        "Development of the <a href='http://simec.mec.gov.br'>Simec</a> - System Integrated Planning, Budget and Finance of the Ministry of Education"
-      ],
-      "keywords": ["php", "postgres", "javascript", "zend", "uml"],
-      "media": {
-        "icon": "mec-icon.png",
-        "thumbnail": "mec.png"
-      }
-    },
-    {
-      "company": "AgênciaClick - Isobar",
-      "position": "Senior Developer",
-      "website": "http://www.isobar.com/global/en",
-      "startDate": "2005-09-01",
-      "endDate": "2006-11-28",
-      "relevance": 8,
-      "summary": "Working in the AgênciaClick - Isobar we could work in the development some great PHP projects with high quality user interfaces and ux ",
-      "highlights": [
-        "System of Control of the Communication Actions - <a href='http://sistema2.planalto.gov.br/sisac'> SISAC </a> to the Presidency of the Republic of Brazil;",
-        "Development of the <a href='http://visitbrasil.com/en/'>BrazilTour</a> in PHP;",
-        "Coordinator of the PHP Development Team in the <a href='http://rma.org.br/'>RMA</a> - Network of NGOs of the Atlantic Forest."
-      ],
-      "keywords": ["php", "oracle", "postgres", "javascript"],
-      "media": {
-        "icon": "isobar_orange.png",
-        "background": "land-isobar.png",
-        "thumbnail": "isobar_white.png"
-      }
-    },
-    {
-      "company": "S.A.M.U. - Emergency Medical Service",
-      "position": "Developer",
-      "startDate": "2005-04-01",
-      "endDate": "2005-09-28",
-      "relevance": 3,
-      "summary": "The S.A.M.U. is a critial call center software to deal with emergency calls and connect the pacient, ambulance driver and medical into one call. There, I could be a front - end Sofware Developer working with Java Struts Taglibs, JSTL, CSS and JavaScript to create the Rich Internet Aplications of the Internal System of Ambulance Request Manager.",
-      "keywords": ["java", "jstl", "css", "javascript", "struts"],
-      "media": {
-        "icon": "samu-icon.png",
-        "thumbnail": "samu.jpg"
-      }
-    },
-    {
-      "company": "M.S.D.",
-      "position": "Developer",
-      "startDate": "2003-04-01",
-      "endDate": "2004-02-28",
-      "relevance": 2,
-      "summary": "Here we work on the development of computer based training using Macromedia Authoware, Adobe Flash, Javascript and ToolBook.",
-      "keywords": ["javascript", "toolbook", "adobe flash", "authoware"],
-      "media": {
-        "icon": "msd-icon.png",
-        "background": "computer_studying.jpg",
-        "background-color": "rgb(60,30,0)"
-      }
-    },
-    {
-      "company": "ABEN Nacional - Brazilian Nurse Association",
-      "position": "Developer",
-      "startDate": "2002-09-01",
-      "endDate": "2003-04-30",
-      "relevance": 1,
-      "summary": "In the ABEN Nacional- Brazilian Nurse Association was my first job as web developer.",
-      "keywords": ["php", "javascript", "mysql"],
-      "highlights": [
-        "creation of the internal system of news",
-        "maintenance of the company website."
-      ],
-      "media": {
-        "icon": "logo_aben.png",
-        "thumbnail": "logo_aben.png",
-        "background": "aben.jpg"
-      }
-    }
-  ],
-  "education": [
-    {
-      "institution": "UnB - Universidade de Brasília",
-      "website": "http://www.cic.unb.br/",
-      "area": "Computer Science",
-      "studyType": "Degree",
-      "relevance": 10,
-      "startDate": "2002-06-01",
-      "endDate": "2008-06-01",
-      "courses": [
-        "Calculus 1",
-        "Calculus 2",
-        "Physics 1",
-        "Logic 1",
-        "Introduction to Computer Science",
-        "Probability and Statistics",
-        "Introduction to Microinformatics",
-        "Portuguese Instrumental 1",
-        "English Instrumental 1",
-        "Introduction to Education",
-        "Organization of Brazilian Education",
-        "Basic Computing",
-        "Psychological Development of Teaching",
-        "Data Structure",
-        "Programming Languages",
-        "Information Systems",
-        "Architecture of Digital Processors",
-        "Learning in Education",
-        "Fundamental Teaching",
-        "Files Organization",
-        "Software Engineering",
-        "Informatics and Society",
-        "Languages for Artificial Intelligence",
-        "Advanced Programming",
-        "Fundamental Teaching",
-        "Algebra 1",
-        "Computer Theory",
-        "Databases",
-        "Data Transmission",
-        "Operational Systems",
-        "Automata and Computability",
-        "Theory and Pedagogical Practice 1",
-        "Theory and Pedagogical Practice 2",
-        "Introduction to Philosophy",
-        "Introduction to Business Management",
-        "Junior Company 1",
-        "Junior Company 2",
-        "Organizational Management",
-        "Functional Programming",
-        "Studies in Artificial Intelligence",
-        "Degree Project 1",
-        "Degree Project 2"
-      ],
-      "media": {
-        "background": "unb_photo.png",
-        "icon": "logo_unb2.png",
-        "thumbnail": "logo_unb.png"
-      }
-    },
-    {
-      "institution": "UnB - Universidade de Brasília",
-      "area": "Biomedical Enginnering",
-      "studyType": "Master Degree",
-      "startDate": "2011-01-01",
-      "endDate": "2013-06-01",
-      "relevance": 10,
-      "website": "https://fga.unb.br/pgengbiomedica",
-      "courses": [
-        "Transduction of Quantities",
-        "Research Methodologies in Biomedical Engineering",
-        "Medical Physiology",
-        "Electromedical Instrumentation",
-        "Intelligent Systems in Biomedical Engineering",
-        "Biological Signal Processing",
-        "Biostatistics in Biomedical Engineering",
-        "Study Orientated in Modeling of Phenomena and Biological Systems 1",
-        "Fundamentals of Electronics for Biomedical Engineering",
-        "Mathematical Methods for Biomedical Engineering",
-        "Teaching Internship",
-        "Master Degree Project 1",
-        "Master Degree Project 2"
-      ],
-      "media": {
-        "background": "unb_photo.png",
-        "icon": "logo_unb2.png",
-        "thumbnail": "logo_unb.png"
-      }
-    },{
-      "institution": "DataCamp",
-      "area": "Machine Learning",
-      "studyType": "course",
-      "startDate": "2017-12-01",
-      "relevance": 8,
-      "title": "Deep Learning in Python Course",
-      "summary": "This hands-on course teachs python deep learning using Keras 2.0.",
-      "website": "https://www.datacamp.com/courses/deep-learning-in-python",
-      "certificate": "https://www.datacamp.com/statement-of-accomplishment/course/b9a1948c5911be133e945549e9f2f9d176ee0440",
-      "keywords": ["python", "deep learning", "keras"],
-      "media": {
-        "icon": "datacamp-icon.png",
-        "thumbnail": "datacamp.png"
-      }
-    },{
-      "institution": "Udemy - V2 Maestros",
-      "area": "Big Data",
-      "studyType": "course",
-      "startDate": "2017-11-16",
-      "relevance": 7,
-      "title": "Apache Spark 2.0 + Scala : DO Big Data Analytics & ML",
-      "summary": "This course teachs with hands-on practices, Spark Streaming, Scala Setup and building real world applications.",
-      "keywords": ["scala", "apache spark", "machine learning", "streaming"],
-      "website": "https://www.udemy.com/apache-spark-scala-do-big-data-analytics-ml",
-      "certificate": "https://www.udemy.com/certificate/UC-U94HF85G",
-      "media": {
-        "icon": "udemy-icon.png",
-        "thumbnail": "udemy.png"
-      }
-    },{
-      "institution": "Qwiklabs",
-      "area": "Cloud Computing",
-      "studyType": "course",
-      "startDate": "2017-11-13",
-      "relevance": 8,
-      "title": "Google Cloud Plataform - Essentials",
-      "summary": "This courses guides to a first hands-on experience with Google Cloud. Get comfortable with the basics, like spinning up a VM and configuring key infrastructure tools, through working with more advanced Stackdriver and Kubernetes concepts.",
-      "keywords": ["google cloud platform", "kubernetes", "cloud launcher"],
-      "website": "https://google.qwiklabs.com/quests/23?locale=en",
-      "certificate": "https://google.qwiklabs.com/public_profiles/2bcf866e-f918-4b64-808b-7203c377e3e2",
-      "media": {
-        "icon": "qwiklabs-icon.png",
-        "thumbnail": "qwiklabs.png"
-      }
-    },{
-      "institution": "Google Cloud",
-      "area": "Cloud Computing",
-      "studyType": "course",
-      "startDate": "2017-11-09",
-      "relevance": 8,
-      "title": "Google Cloud Platform Big Data and Machine Learning Fundamentals",
-      "summary": "This course introduces participants to the Big Data and Machine Learning capabilities of Google Cloud Platform (GCP). It provides a quick overview of the Google Cloud Platform and a deeper dive of the data processing capabilities.",
-      "keywords": [
-        "google cloud platform", "machine learning", "google pub/sub", "google dataflow", "google cloudsql", "google bigquery", "google cloud datalab", "google cloud datastore", "tensorflow"
-      ],
-      "certificate": "https://www.coursera.org/account/accomplishments/certificate/U5KV9EFK9PGS",
-      "media": {
-        "icon": "google-cloud-icon.png",
-        "thumbnail": "google-cloud.png",
-        "website": "https://www.coursera.org/learn/gcp-big-data-ml-fundamentals"
-      }
-    },{
-      "institution": "Google Cloud",
-      "area": "Big Data",
-      "studyType": "course",
-      "startDate": "2017-11-29",
-      "relevance": 8,
-      "title": "Leveraging Unstructured Data with Cloud Dataproc on Google Cloud Platform",
-      "summary": "This course shows how to create and manage computing clusters to run Hadoop, Spark, Pig and/or Hive jobs on Google Cloud Platform.  Also shows how to access various cloud storage options from their compute clusters and integrate Google’s machine learning capabilities into their analytics programs, how to manage Dataproc Clusters using the Web Console and the CLI, and use cluster to run Spark and Pig jobs. It shows how to create iPython notebooks that integrate with BigQuery and storage and utilize Spark. Finally, it shows houw to integrate the machine learning APIs into data analysis.",
-      "keywords": [
-        "google cloud platform", "hadoop", "pig", "spark", "google cloud datastore", "machine learning", "google cloud dataproc", "python", "google bigquery"
-      ],
-      "website": "https://www.coursera.org/learn/leveraging-unstructured-data-dataproc-gcp",
-      "certificate": "https://www.coursera.org/account/accomplishments/verify/EZABLESW7TNH",
-      "media": {
-        "icon": "google-cloud-icon.png",
-        "thumbnail": "google-cloud.png"
-      }
-    },{
-      "institution": "Udemy - Packt Publishing",
-      "area": "Functional Programming",
-      "studyType": "course",
-      "startDate": "2017-08-29",
-      "relevance": 6,
-      "title": "Functional Programming with Streams in Java 9",
-      "summary": "This course introduces the key functional features of Java 8 and 9, and explain how they can be used to write code that is more expressive and easily amenable to parallelization. It discuss lambda functions and functional interface and also explores the predefined functional interfaces of the Java API, like Comparator and Runnable. Then, it shows how to use the full benefits of lambda functions with streams. Finally, it presents the details related to parallel execution, such as side-effect and the fork-join execution model.",
-      "keywords": ["functional programming", "java", "streams"],
-      "website": "https://www.udemy.com/functional-programming-with-streams-in-java-9",
-      "certificate": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-6UQK209P.pdf",
-      "media": {
-        "icon": "udemy-icon.png",
-        "thumbnail": "udemy.png"
-      }
-    },{
-      "institution": "DataCamp",
-      "area": "Data Science",
-      "studyType": "course",
-      "startDate": "2017-08-15",
-      "relevance": 6,
-      "title": "Introdution to R Course",
-      "summary": "This course presents the basics of the R language, this beautiful open source language, including factors, lists and data frame.",
-      "keywords": ["r-language"],
-      "website": "https://www.datacamp.com/courses/free-introduction-to-r",
-      "certificate": "https://www.datacamp.com/statement-of-accomplishment/course/b31f303251b9c82372f6c57ab16f4238527c5ddb",
-      "media": {
-        "icon": "datacamp-icon.png",
-        "thumbnail": "datacamp.png"
-      }
-    },{
-      "institution": "DataCamp",
-      "area": "Data Science",
-      "studyType": "course",
-      "startDate": "2017-05-12",
-      "relevance": 6,
-      "title": "Intro to Python for Data Science Course",
-      "summary": "This course focuses on Python specifically for data science. It teachs about powerful ways to store and manipulate data as well as cool data science tools to execute analyses.",
-      "keywords": ["python", "data science"],
-      "website": "https://www.datacamp.com/courses/intro-to-python-for-data-science",
-      "certificate": "https://www.datacamp.com/statement-of-accomplishment/course/b31f303251b9c82372f6c57ab16f4238527c5ddb",
-      "media": {
-        "icon": "datacamp-icon.png",
-        "thumbnail": "datacamp.png"
-      }
-    },{
-      "institution": "Johns Hopkins University",
-      "area": "Research",
-      "studyType": "course",
-      "startDate": "2017-04-25",
-      "relevance": 9,
-      "title": "Reproducible Research",
-      "summary": "This course from the Johns Hopkins University focuses on the concepts and tools behind reporting modern data analyses in a reproducible manner. Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them.",
-      "keywords": ["r-language", "markdown", "latex", "open-data"],
-      "website": "https://www.coursera.org/learn/reproducible-research",
-      "certificate": "https://www.coursera.org/account/accomplishments/verify/4HGZWSPKS4SQ",
-      "media": {
-        "background": "johns-hopkins.jpg",
-        "icon": "johns-hopkins-icon.png",
-        "thumbnail": "johns-hopkins.png"
-      }
-    },{
-      "institution": "École Polytechnique Fédérale",
-      "area": "Functional Programming",
-      "studyType": "course",
-      "startDate": "2016-11-01",
-      "relevance": 7,
-      "title": "Functional Programming Principles in Scala",
-      "summary": "This course of the École Polytechnique Fédérale de Lausanne presents the elements of the functional programming style and learn how to apply them usefully in daily programming tasks. It also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.",
-      "keywords": ["functional programming", "scala"],
-      "website": "https://www.coursera.org/learn/progfun1",
-      "certificate": "https://www.coursera.org/account/accomplishments/verify/6PF6MMF4356U",
-      "media": {
-        "background": "ecole.jpg",
-        "icon": "ecole-icon.png",
-        "thumbnail": "ecole.png"
-      }
-    },{
-      "institution": "Johns Hopkins University",
-      "area": "Data Science",
-      "studyType": "course",
-      "startDate": "2016-10-22",
-      "relevance": 7,
-      "title":"Exploratory Data Analysis",
-      "summary": "This course covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modeling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data.",
-      "website": "https://www.coursera.org/learn/exploratory-data-analysis",
-      "tags": [
-        "r-language", "data visualization", "data exploration"
-      ],
-      "certificate": "https://www.coursera.org/account/accomplishments/verify/MSM9U9CDWYCU",
-      "media": {
-        "background": "johns-hopkins.jpg",
-        "icon": "johns-hopkins-icon.png",
-        "thumbnail": "johns-hopkins.png"
-      }
-    },{
-      "institution": "Johns Hopkins University",
-      "area": "Data Science",
-      "studyType": "course",
-      "startDate": "2016-09-01",
-      "relevance": 7,
-      "title": "Getting and Cleaning Data",
-      "summary": "This course covers obtaining data from the web, from APIs, from databases and from colleagues in various formats. It will also cover the basics of data cleaning and how to make data “tidy”. Tidy data dramatically speed downstream data analysis tasks. The course will also cover the components of a complete data set including raw data, processing instructions, codebooks, and processed data. Finally, it covers the basics needed for collecting, cleaning, and sharing data.",
-      "website": "https://www.coursera.org/learn/data-cleaning",
-      "certificate": "https://www.coursera.org/account/accomplishments/verify/9ZUMB8XUB458",
-      "media": {
-        "background": "johns-hopkins.jpg",
-        "icon": "johns-hopkins-icon.png",
-        "thumbnail": "johns-hopkins.png"
-      }
-    },{
-      "institution": "Duke University",
-      "area": "Data Science",
-      "studyType": "course",
-      "startDate": "2016-06-02",
-      "relevance": 5,
-      "title": "Introduction to Probability and Data",
-      "summary": "This course introduces the sampling and exploring data, as well as basic probability theory and Bayes' rule. It presents various types of sampling methods, and discuss how such methods can impact the scope of inference. A variety of exploratory data analysis techniques will be covered, including numeric summary statistics and basic data visualization using R and RStudio for lab exercises and a final project.",
-      "keywords": [
-        "r-language", "probability", "data visualization"
-      ],
-      "website": "https://www.coursera.org/learn/probability-intro",
-      "certificate": "https://www.coursera.org/account/accomplishments/certificate/F65Q5H5XA9XB",
-      "media": {
-        "background": "duke.jpg",
-        "icon": "duke-icon.png",
-        "thumbnail": "duke.png"
-      }
-    },{
-      "institution": "Johns Hopkins University",
-      "area": "Data Science",
-      "studyType": "course",
-      "startDate": "2016-05-24",
-      "relevance": 4,
-      "title": "The Data Scientist’s Toolbox",
-      "summary": "This course gives an overview of the data, questions, and tools that data analysts and data scientists work with.",
-      "keywords": [
-        "r-language", "markdown", "data analyses"
-      ],
-      "website": "https://www.coursera.org/learn/data-scientists-tools",
-      "certificate": "https://www.coursera.org/account/accomplishments/verify/2WWGW253DNH3",
-      "media": {
-        "background": "johns-hopkins.jpg",
-        "icon": "johns-hopkins-icon.png",
-        "thumbnail": "johns-hopkins.png"
-      }
-    },{
-      "institution": "Stanford University",
-      "area": "Machine Learning",
-      "studyType": "course",
-      "startDate": "2011-12-01",
-      "title": "Advanced Track of Introduction to Artificial Intelligence",
-      "summary": "This course present advanced topics in Artificial Intelligence (AI). It begin by defining the term \"software agent\" and discussing how software agents differ from programs in general. This course is focused on presents how to build and search graph data structures needed to create software agents, an approach that is useful for solving many problems in AI.  It also shows how to \"break down\" larger problems into a number of more specific, manageable sub-problems. It reviews the study of logic and conceptualize the differences between propositional logic, first-order logic, fuzzy logic, and default logic.  After learning about statistical tools commonly used in AI and about the basic symbol system used to represent knowledge, it focuses on artificial neural network and machine learning, which are essential components of computational and statistical methods, and theoretical computer science.  The course concludes with a study of the Turing machine and a discussion of the questionable claims that human thinking is a symbol manipulation.",
-      "media": {
-        "icon": "stanford-icon.png",
-        "thumbnail": "stanford.png",
-        "background": "stanford.jpg"
-      }
-    },{
-      "institution": "Scrum Alliance",
-      "area": "Managment",
-      "studyType": "course",
-      "startDate": "2010-06-10",
-      "relevance": 6,
-      "title": "Scrum Master",
-      "summary": "This course teachs how a Scrum Master can helps project teams properly use Scrum, increasing the likelihood of the project 's overall success. It presents the Scrum values, practices, and applications. The Scrum master must act as \"servant leaders,\" helping the rest of the Scrum team work together and learn the Scrum framework also protect them from both internal and external distractions.",
-      "keywords": [
-        "scrum", "agile"
-      ],
-      "website": "https://www.scrumalliance.org/certifications/practitioners/certified-scrummaster-csm",
-      "certificate": "https://www.scrumalliance.org/community/profile/tmata/",
-      "media": {
-        "icon": "scrum-alliance-icon.png",
-        "thumbnail": "scrum-alliance2.png",
-        "background": "workplace2.jpg"
-      }
-    }
-  ],
-  "papers":[
-    {
-      "title": "Usability and Accessibility Criteria for 3D Web Application Evaluation",
-      "releaseDate": "2015-10-26",
-      "event": {
-        "abbreviation": "LACLO 2015",
-        "name": "Latin American Conference on Learning Objects and Technologies 2015",
-        "website": "http://ic.ufal.br/evento/cbie_laclo2015/",
-        "institution": "Universidade Federal de Alagoas"
+$(document).ready(
+  () => {
+    Resume.jsonp({
+      "meta": {
+        "analytics": {
+          "google": {
+            "link": "https://www.googletagmanager.com/gtag/js?id=UA-114687205-1",
+            "id": "UA-114687205-1"
+          }
+        }
+      } ,
+      "basics": {
+        "name": "Thiago Mata",
+        "fullName": "Thiago Henrique Ramos da Mata",
+        "label": "Software Enginner",
+        "picture": "assets/images/thiago_face.jpg",
+        "email": "thiago.henrique.mata@gmail.com",
+        "phone": "+64 0211787915",
+        "website": "http://thiagomata.com",
+        "summary": "I am developer by passion. Working with web languages for the last 15 years, I could learn a lot and be part of some great projects. In the last years, I have learning and worked with Big Data and Machine Learning.",
+        "location": {
+          "address": "Bangor St",
+          "postalCode": "8011",
+          "city": "Chirstchurch",
+          "countryCode": "NZ",
+          "region": "Canterburry"
+        },
+        "profiles": [
+          {
+          "network": "Twitter",
+          "username": "thiagomata",
+          "url": "http://twitter.com/thiagomata"
+          }, {
+          "network": "Linkedin",
+          "username": "thiagomata",
+          "url": "https://www.linkedin.com/in/thiagomata/"
+          }, {
+          "network": "Stack Overflow",
+          "username": "thiagomata",
+          "url": "https://stackoverflow.com/users/456164/thiago-mata"
+          }
+        ]
       },
-      "website": "http://www.br-ie.org/pub/index.php/teste/article/view/5827/4117",
-      "summary": "We published this paper that describes part of a search result, after extensive research in published articles, magazine annals, scientific journal and recommendations of the W3C consortium. This research was exploratory with qualitative approach. The starting point was looking for recommendations on accessibility and usability for the Web that were particularly suitable for 3D Web applications. The demand stems from the medical field that uses such applications in different contexts: scientific, educational and can assist in the diagnosis and treatment indication. This article received an honorable mention in this event.",
-      "authors": [
+      "work": [
         {
-          "name": "André Barros de Sales",
-          "email": "andrebdes@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "AB Sales"
+          "company": "SLI Systems",
+          "position": "Senior Data Engineer",
+          "website": "https://www.sli-systems.com/",
+          "startDate": "2017-09-15",
+          "present": true,
+          "relevance": 10,
+          "summary": "The SLI Systems provides many products to maximize the results to e-commerce clients. Here I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
+          "highlights": [
+            "Google Cloud Platform",
+            "System Process Modelling"
+          ],
+          "keywords": [
+            "java", "python", "google cloud platform", "apache beam",
+            "apache spark", "rest", "javascript", "machine learning",
+            "bpmn", "scrum"
+          ],
+          "media": {
+            "icon": "slisystems-icon.png",
+            "thumbnail": "slisystems.png"
+          }
         },
         {
-          "name": "Thiago Henrique Ramos da Mata",
-          "email": "thiago.henrique.mata@gmail.com",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "THR Mata"
+          "company": "Ideia Big Data",
+          "position": "Chief Technology Officer",
+          "website": "http://ideiabigdata.com/en/",
+          "startDate": "2014-11-01",
+          "endDate": "2017-08-30",
+          "relevance": 10,
+          "summary": "Here at the Ideia Big Data we could work with research, microtargeting, communication and statistics using clusters, distributed storage, distributed search engines, machine learning, functional programming and streaming running into a cloud computing.",
+          "keywords": [
+            "scala", "php", "laravel", "aws", "oracle cloud", "postgres",
+            "hadoop", "apache spark", "machine learning", "elasticsearch",
+            "javascript", "uml", "bpmn", "scrum", "r-language", "bpmn"
+          ],
+          "highlights": [
+            "Migration of Cloud infrastructure",
+            "Development of the Alexandria Digital"
+          ],
+          "media": {
+            "icon": "ideia-bigdata-icon.png",
+            "thumbnail": "ideia.png"
+          }
         },
         {
-          "name": "Marcelino M Andrade",
-          "email": "andrade@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "MM Andrade"
+          "company": "Adjetiva",
+          "position": "Senior Programmer",
+          "website": "http://www.facebook.com/adjetiva",
+          "startDate": "2014-03-01",
+          "endDate": "2014-11-28",
+          "relevance": 8,
+          "summary": "Adjetiva was a tech company with center on the mobile and web interactions. Here, I could work creating great projects for big brands.The company was acquired by the Ideia Big Data in 2014. ",
+          "keywords": [
+            "java", "node.js", "rest", "angular2", "laravel",
+            "mongodb", "postgres", "uml", "bpmn", "scrum",
+            "cordova", "node-webkit"
+          ],
+          "highlights": [
+            "Development of the Embratur Brand Channel in Laravel",
+            "Development of the World Cup Events Locator in Cordova",
+            "Development of the Fiat EcoDrive desktop app in Node WebKit",
+            "Development of the SAT-JF14 mobile app in Cordova"
+          ],
+          "media": {
+            "icon": "adjetiva-icon.png",
+            "background": "black-android.jpg"
+          }
         },
         {
-          "name": "Márcia Barros de Sales",
-          "email": "marcia.barros@ufsc.br",
-          "institution": "Universidade Federal De Santa Catarina - UFSC",
-          "abbreviation": "MB Sales"
+          "company": "Otimicar",
+          "position": "Co-Founder",
+          "website": "http://otimicar.com",
+          "startDate": "2013-09-01",
+          "endDate": "2014-01-01",
+          "relevance": 9,
+          "summary": "Otimicar it is an hardware more app solution that converts any car into a smart car. In the Otimicar, I worked with the specification and development of the first version of the OtimiCar server.",
+          "keywords": [
+            "java", "node.js", "rest", "soap", "mongodb", "uml", "bpmn", "scrum"
+          ],
+          "highlights": [
+            "Processes Analysis",
+            "Prototyping",
+            "Database Modeling",
+            "Google Web Application"
+          ],
+          "media": {
+            "icon": "otimicar-icon.png",
+            "thumbnail": "otimicar.png"
+          }
+        },
+        {
+          "company": "954 Business Consulting",
+          "position": "Senior Coordinator",
+          "startDate": "2012-04-01",
+          "endDate": "2013-09-28",
+          "relevance": 4,
+          "summary": "Returning to the private sector, I worked with modeling, specification, validation, evaluation and development of many projects.",
+          "highlights": [
+            "Formalization of a career path in the company",
+            "Training for the analysis team",
+            "Risk analysis",
+            "Requirements elicitation"
+          ],
+          "keywords": [
+            "php", "mssql", "postgres", "oracle", "bpmn", "uml", "scrum", "angular2"
+          ],
+          "media": {
+            "icon": "954-icon.png",
+            "thumbnail": "954.png"
+          }
+        },
+        {
+          "company": "INEP - Instituto Nacional de Pesquisas Educacionais",
+          "position": "Process Analyts",
+          "website": "http://inep.gov.br",
+          "startDate": "2009-04-08",
+          "endDate": "2012-04-09",
+          "relevance": 6,
+          "summary": "Into the INEP, as public agent, I worked with Specification and development of softwares with high availability for millions of simultaneous users dealing with high data volumes and complex financial flows.",
+          "highlights": [
+            "Specification and development of the E-MEC System Fees",
+            "Specification and development of the National Exam to Revalidation of Medical Diplomas",
+            "Analyst at System of Control of Production and Escorted Delivery of Assessments."
+          ],
+          "keywords": [
+            "php", "oracle", "postgres", "java",
+            "java-seam", "bpmn", "uml", "scrum", "zend"
+          ],
+          "media": {
+            "icon": "inep-icon.png",
+            "thumbnail": "inep.png",
+            "background": "kidbook.jpg"
+          }
+        },
+        {
+          "company": "Bancoob - Sicoob",
+          "position": "Senior Systems Analyst",
+          "website": "https://www.bancoob.com.br/",
+          "startDate": "2007-09-03",
+          "endDate": "2008-11-03",
+          "relevance": 7,
+          "summary": "Into the Bancoob - The Cooperative Bank of Brazil, I could work in the development of the System for transfer of credit portfolios using Microsoft SQL Server and Visual Basic.This system demands a safe management of a big volume of financial accounting and loans transactions.",
+          "highlights": [
+            "Complex flows using Microsoft SQL Server",
+            "Test Driven Development to database procedure development",
+            "Speed optimization of Microsoft SQL procedures"
+          ],
+          "keywords": [
+            "visual basic", "mssql server", "java", "uml"
+          ],
+          "media": {
+            "icon": "sicoob-icon.png",
+            "thumbnail": "sicoob.png"
+          }
+        },
+        {
+          "company": "MEC - Ministry of Education of Brazil",
+          "position": "Developer",
+          "website": "https://mec.gov.br",
+          "startDate": "2006-11-01",
+          "endDate": "2007-09-20",
+          "relevance": 5,
+          "summary": "Here I could work into the development of internal systems using PHP, Postgres and Zend.",
+          "highlights": [
+            "Development of the <a href='http://sistec.mec.gov.br'>Sistec</a> - System of Information and Supervision of Professional Education and Technology",
+            "Development of the <a href='http://simec.mec.gov.br'>Simec</a> - System Integrated Planning, Budget and Finance of the Ministry of Education"
+          ],
+          "keywords": ["php", "postgres", "javascript", "zend", "uml"],
+          "media": {
+            "icon": "mec-icon.png",
+            "thumbnail": "mec.png"
+          }
+        },
+        {
+          "company": "AgênciaClick - Isobar",
+          "position": "Senior Developer",
+          "website": "http://www.isobar.com/global/en",
+          "startDate": "2005-09-01",
+          "endDate": "2006-11-28",
+          "relevance": 8,
+          "summary": "Working in the AgênciaClick - Isobar we could work in the development some great PHP projects with high quality user interfaces and ux ",
+          "highlights": [
+            "System of Control of the Communication Actions - <a href='http://sistema2.planalto.gov.br/sisac'> SISAC </a> to the Presidency of the Republic of Brazil;",
+            "Development of the <a href='http://visitbrasil.com/en/'>BrazilTour</a> in PHP;",
+            "Coordinator of the PHP Development Team in the <a href='http://rma.org.br/'>RMA</a> - Network of NGOs of the Atlantic Forest."
+          ],
+          "keywords": ["php", "oracle", "postgres", "javascript"],
+          "media": {
+            "icon": "isobar_orange.png",
+            "background": "land-isobar.png",
+            "thumbnail": "isobar_white.png"
+          }
+        },
+        {
+          "company": "S.A.M.U. - Emergency Medical Service",
+          "position": "Developer",
+          "startDate": "2005-04-01",
+          "endDate": "2005-09-28",
+          "relevance": 3,
+          "summary": "The S.A.M.U. is a critial call center software to deal with emergency calls and connect the pacient, ambulance driver and medical into one call. There, I could be a front - end Sofware Developer working with Java Struts Taglibs, JSTL, CSS and JavaScript to create the Rich Internet Aplications of the Internal System of Ambulance Request Manager.",
+          "keywords": ["java", "jstl", "css", "javascript", "struts"],
+          "media": {
+            "icon": "samu-icon.png",
+            "thumbnail": "samu.jpg"
+          }
+        },
+        {
+          "company": "M.S.D.",
+          "position": "Developer",
+          "startDate": "2003-04-01",
+          "endDate": "2004-02-28",
+          "relevance": 2,
+          "summary": "Here we work on the development of computer based training using Macromedia Authoware, Adobe Flash, Javascript and ToolBook.",
+          "keywords": ["javascript", "toolbook", "adobe flash", "authoware"],
+          "media": {
+            "icon": "msd-icon.png",
+            "background": "computer_studying.jpg",
+            "background-color": "rgb(60,30,0)"
+          }
+        },
+        {
+          "company": "ABEN Nacional - Brazilian Nurse Association",
+          "position": "Developer",
+          "startDate": "2002-09-01",
+          "endDate": "2003-04-30",
+          "relevance": 1,
+          "summary": "In the ABEN Nacional- Brazilian Nurse Association was my first job as web developer.",
+          "keywords": ["php", "javascript", "mysql"],
+          "highlights": [
+            "creation of the internal system of news",
+            "maintenance of the company website."
+          ],
+          "media": {
+            "icon": "logo_aben.png",
+            "thumbnail": "logo_aben.png",
+            "background": "aben.jpg"
+          }
         }
       ],
-      "relevance": 8,
-      "media": {
-        "icon": "laclo_2015.png",
-        "background": "book3.jpg"
-      },
-      "keywords": ["matlab", "latex", "usability", "accessibility", "evaluation", "web-3d" ]
-    },{
-      "title": "Accessibility for Web 3D Anatomical Manikins",
-      "releaseDate": "2013-05-07",
-      "event": {
-        "abbreviation": "SETI 2013",
-        "name": "I Symposium on Inclusive Education and Technologies",
-        "website": "http://www.santoangelo.uri.br/seti2013/",
-        "institution": "URI - Universidade Regional Integrada do Alto Uruguai e das Missões"
-      },
-      "website": "http://www.santoangelo.uri.br/seti2013/?page_id=153",
-      "summary": "This paper evaluates the accessibility of virtual anatomical manikins 3D for Web. Was evaluated the hypothesis of a correlation between the complexity of the interfaces and lack of accessibility of the same. After assessed by the Guide criteria of Web Content Accessibility - WCAG 2.0, was possible to conclude that there is no evidence of a correlation between the complexity of these interface and it's accessibility. Furthermore, it became evident the lack of accessibility of these manikins.",
-      "authors": [
+      "education": [
         {
-          "name": "Thiago Henrique Ramos da Mata",
-          "email": "thiago.henrique.mata@gmail.com",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "THR Mata"
+          "institution": "UnB - Universidade de Brasília",
+          "website": "http://www.cic.unb.br/",
+          "area": "Computer Science",
+          "studyType": "Degree",
+          "relevance": 10,
+          "startDate": "2002-06-01",
+          "endDate": "2008-06-01",
+          "courses": [
+            "Calculus 1",
+            "Calculus 2",
+            "Physics 1",
+            "Logic 1",
+            "Introduction to Computer Science",
+            "Probability and Statistics",
+            "Introduction to Microinformatics",
+            "Portuguese Instrumental 1",
+            "English Instrumental 1",
+            "Introduction to Education",
+            "Organization of Brazilian Education",
+            "Basic Computing",
+            "Psychological Development of Teaching",
+            "Data Structure",
+            "Programming Languages",
+            "Information Systems",
+            "Architecture of Digital Processors",
+            "Learning in Education",
+            "Fundamental Teaching",
+            "Files Organization",
+            "Software Engineering",
+            "Informatics and Society",
+            "Languages for Artificial Intelligence",
+            "Advanced Programming",
+            "Fundamental Teaching",
+            "Algebra 1",
+            "Computer Theory",
+            "Databases",
+            "Data Transmission",
+            "Operational Systems",
+            "Automata and Computability",
+            "Theory and Pedagogical Practice 1",
+            "Theory and Pedagogical Practice 2",
+            "Introduction to Philosophy",
+            "Introduction to Business Management",
+            "Junior Company 1",
+            "Junior Company 2",
+            "Organizational Management",
+            "Functional Programming",
+            "Studies in Artificial Intelligence",
+            "Degree Project 1",
+            "Degree Project 2"
+          ],
+          "media": {
+            "background": "unb_photo.png",
+            "icon": "logo_unb2.png",
+            "thumbnail": "logo_unb.png"
+          }
         },
         {
-          "name": "André Barros de Sales",
-          "email": "andrebdes@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "AB Sales"
-        },
-        {
-          "name": "Marcelino M Andrade",
-          "email": "andrade@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "MM Andrade"
-        }
-      ],
-      "relevance": 5,
-      "media": {
-        "icon": "uri-icon.png",
-        "background": "book2.jpg"
-      },
-      "keywords": [
-        "matlab", "latex", "w3c", "wcag", "usability", "accessibility", "medical-applications", "evaluation", "web-3d", "webgl", "javascript"
-      ]
-    },{
-      "event": {
-        "abbreviation": "PAHCE 2013",
-        "name": "Pan American Health Care Exchanges",
-        "website": "http://www.pahce.org"
-      },
-      "title": "Definition of Computational Criteria to Evaluation of 3D Anatomical Web Manikins for Teaching in Health Science and for Medical Applications",
-      "releaseDate": "2015-05-01",
-      "summary": "The use of virtual anatomical manikins has gained space in health science teaching. Its use helps in the study of anatomy and medical simulation of patients with diseases, acute illnesses and traumas. Recent technologies have made possible the rise of several virtual three-dimensional manikins for Web. For the best selection of these virtual manikins for teaching in health science or medical applications, we defined a set of evaluation criteria focused on computational context.",
-      "authors": [
-        {
-          "name": "Thiago Henrique Ramos da Mata",
-          "email": "thiago.henrique.mata@gmail.com",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "THR Mata"
-        },
-        {
-          "name": "André Barros de Sales",
-          "email": "andrebdes@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "AB Sales"
-        },
-        {
-          "name": "Marcelino M Andrade",
-          "email": "andrade@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "MM Andrade"
-        }
-      ],
-      "website": "http://www.pahce.org/PAHCESP7/P7ProgramallEN.htm",
-      "relevance": 9,
-      "media": {
-        "background": "desk.jpg"
-      },
-      "keywords": [
-        "matlab", "latex", "usability", "medical-applications", "accessibility", "evaluation", "web-3d"
-      ]
-    },{
-      "event": {
-        "abbreviation": "Extensio 2012",
-        "name": "Extensio: Revista Eletrônica de Extensão - Portal de Periódicos UFSC",
-        "website": "https://periodicos.ufsc.br/index.php/extensio",
-        "alt-link":
-        "http://repositorio.unb.br/handle/10482/17103",
-        "institution": "Universidade Federal de Santa Catarina - UFSC"
-      },
-      "title": "Definition of criteria for evaluating 3D anatomical manikins on the web for education in healthcare or medical applications",
-      "releaseDate": "2012-12-01",
-      "website": "http://www.br-ie.org/pub/index.php/teste/article/view/5827/4117",
-      "summary": "The use of virtual anatomical manikin has reached within the health science education. Its use helps in the study of anatomy and medical simulation in patients with pathologies, acute illnesses and injuries. Recent technologies have made possible the availability of several virtual three-dimensional anatomical manikins in the Web. The next step was the definition of criteria for evaluation and selection of these manikins with the focus on the education in healthcare or medical applications in order to assist in choosing the most appropriate manikin as each setting.",
-      "authors": [
-        {
-          "name": "Thiago Henrique Ramos da Mata",
-          "email": "thiago.henrique.mata@gmail.com",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "THR Mata"
-        },
-        {
-          "name": "André Barros de Sales",
-          "email": "andrebdes@unb.br",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "AB Sales"
-        }
-      ],
-      "relevance": 6,
-      "media": {
-        "icon": "ufsc.svg",
-        "background": "handwriting.jpg"
-      },
-      "keywords": [
-        "matlab", "latex", "usability", "accessibility", "evaluation", "web-3d", "medical-applications"
-      ]
-    },{
-      "title": "Access to Content of Digital Biomedical Repositories through a Web Interface with 3D Anatomical Manikin",
-      "releaseDate": "2014-01-28",
-      "repository": {
-        "name": "Repositório institucional",
-        "website": "http://repositorio.unb.br",
-        "institution": "Universidade de Brasília - UnB"
-      },
-      "website": "http://repositorio.unb.br/handle/10482/15036?mode=full",
-      "authors": [
-        {
-          "name": "Thiago Henrique Ramos da Mata",
-          "email": "thiago.henrique.mata@gmail.com",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "THR Mata"
-        }
-      ],
-      "summary": "The biomedical repositories have gained prominence in the scientific, clinical and educational. However, problems of accessibility, usability, reporting and lack of customization can reduce the success of some of these repositories with their communities (DUNCAN, 2003). This paper reports the development of an interface with Web 3D anatomical manikin as a facilitator of the use of biomedical repositories. It begins with a literature search on biomedical repositories, being selected the 10 most referenced. To evaluate them, we applied the criteria for evaluating learning objects from Leacock and Nesbit (2007). Subsequently, we conducted a literature review of Web 3D Anatomical Manikins, of which seven matches. To evaluate them, we performed a literature search in which it was found the lack of evaluation criteria to web anatomical manikins. Therefore, based on the usability requirements advocated by Nielsen (2003) and Sommerville (2011), on the recommendations of the WCAG (2008) and on the evaluation criteria of Leacock and Nesbit (2007) and Youngblood et al. (2005), was proposed a set of eight criteria for evaluating Web 3D Anatomical Manikins. They are accessibility, interactivity, interoperability, technological independence, license and terms of use, navigability, realism and three-dimensionality.",
-      "keywords": [
-         "usability", "accessibility", "evaluation", "web-3d", "medical-applications", "w3c", "wcag", "webgl", "javascript", "interactivity"
-      ],
-      "relevance": 8,
-      "media": {
-        "background": "unb_photo.png",
-        "icon": "logo_unb2.png",
-        "thumbnail": "logo_unb.png"
-      }
-    },{
-      "title": "Interactive Hypertext for Visually Impaired Users",
-      "releaseDate": "2007-12-10",
-      "repository": {
-        "name": "Repositório institucional",
-        "website": "http://monografias.cic.unb.br",
-        "institution": "Universidade de Brasília - UnB"
-      },
-      "website":  "http://monografias.cic.unb.br/dspace/handle/123456789/133",
-      "summary": "This study consists of an investigation of the assistive technologies limitations to provide hypertext manipulations at the web environment, under low-vision and blind users perspective. The solution suggested is raised on the context where technical and cultural aspects run into the perception of accessibility and usability of digital contents, and technology is understood as a social inclusion tool.",
-      "authors": [
-        {
-          "name": "Thiago Henrique Ramos da Mata",
-          "email": "thiago.henrique.mata@gmail.com",
-          "institution": "Universidade de Brasília - UnB",
-          "abbreviation": "THR Mata"
+          "institution": "UnB - Universidade de Brasília",
+          "area": "Biomedical Enginnering",
+          "studyType": "Master Degree",
+          "startDate": "2011-01-01",
+          "endDate": "2013-06-01",
+          "relevance": 10,
+          "website": "https://fga.unb.br/pgengbiomedica",
+          "courses": [
+            "Transduction of Quantities",
+            "Research Methodologies in Biomedical Engineering",
+            "Medical Physiology",
+            "Electromedical Instrumentation",
+            "Intelligent Systems in Biomedical Engineering",
+            "Biological Signal Processing",
+            "Biostatistics in Biomedical Engineering",
+            "Study Orientated in Modeling of Phenomena and Biological Systems 1",
+            "Fundamentals of Electronics for Biomedical Engineering",
+            "Mathematical Methods for Biomedical Engineering",
+            "Teaching Internship",
+            "Master Degree Project 1",
+            "Master Degree Project 2"
+          ],
+          "media": {
+            "background": "unb_photo.png",
+            "icon": "logo_unb2.png",
+            "thumbnail": "logo_unb.png"
+          }
         },{
-          "name": "Renê de Lima Barbosa",
-          "email": "renedelima@gmail.com",
-          "institution": "Universidade de Brasília - UnB"
+          "institution": "DataCamp",
+          "area": "Machine Learning",
+          "studyType": "course",
+          "startDate": "2017-12-01",
+          "relevance": 8,
+          "title": "Deep Learning in Python Course",
+          "summary": "This hands-on course teachs python deep learning using Keras 2.0.",
+          "website": "https://www.datacamp.com/courses/deep-learning-in-python",
+          "certificate": "https://www.datacamp.com/statement-of-accomplishment/course/b9a1948c5911be133e945549e9f2f9d176ee0440",
+          "keywords": ["python", "deep learning", "keras"],
+          "media": {
+            "icon": "datacamp-icon.png",
+            "thumbnail": "datacamp.png"
+          }
+        },{
+          "institution": "Udemy - V2 Maestros",
+          "area": "Big Data",
+          "studyType": "course",
+          "startDate": "2017-11-16",
+          "relevance": 7,
+          "title": "Apache Spark 2.0 + Scala : DO Big Data Analytics & ML",
+          "summary": "This course teachs with hands-on practices, Spark Streaming, Scala Setup and building real world applications.",
+          "keywords": ["scala", "apache spark", "machine learning", "streaming"],
+          "website": "https://www.udemy.com/apache-spark-scala-do-big-data-analytics-ml",
+          "certificate": "https://www.udemy.com/certificate/UC-U94HF85G",
+          "media": {
+            "icon": "udemy-icon.png",
+            "thumbnail": "udemy.png"
+          }
+        },{
+          "institution": "Qwiklabs",
+          "area": "Cloud Computing",
+          "studyType": "course",
+          "startDate": "2017-11-13",
+          "relevance": 8,
+          "title": "Google Cloud Plataform - Essentials",
+          "summary": "This courses guides to a first hands-on experience with Google Cloud. Get comfortable with the basics, like spinning up a VM and configuring key infrastructure tools, through working with more advanced Stackdriver and Kubernetes concepts.",
+          "keywords": ["google cloud platform", "kubernetes", "cloud launcher"],
+          "website": "https://google.qwiklabs.com/quests/23?locale=en",
+          "certificate": "https://google.qwiklabs.com/public_profiles/2bcf866e-f918-4b64-808b-7203c377e3e2",
+          "media": {
+            "icon": "qwiklabs-icon.png",
+            "thumbnail": "qwiklabs.png"
+          }
+        },{
+          "institution": "Google Cloud",
+          "area": "Cloud Computing",
+          "studyType": "course",
+          "startDate": "2017-11-09",
+          "relevance": 8,
+          "title": "Google Cloud Platform Big Data and Machine Learning Fundamentals",
+          "summary": "This course introduces participants to the Big Data and Machine Learning capabilities of Google Cloud Platform (GCP). It provides a quick overview of the Google Cloud Platform and a deeper dive of the data processing capabilities.",
+          "keywords": [
+            "google cloud platform", "machine learning", "google pub/sub", "google dataflow", "google cloudsql", "google bigquery", "google cloud datalab", "google cloud datastore", "tensorflow"
+          ],
+          "certificate": "https://www.coursera.org/account/accomplishments/certificate/U5KV9EFK9PGS",
+          "media": {
+            "icon": "google-cloud-icon.png",
+            "thumbnail": "google-cloud.png",
+            "website": "https://www.coursera.org/learn/gcp-big-data-ml-fundamentals"
+          }
+        },{
+          "institution": "Google Cloud",
+          "area": "Big Data",
+          "studyType": "course",
+          "startDate": "2017-11-29",
+          "relevance": 8,
+          "title": "Leveraging Unstructured Data with Cloud Dataproc on Google Cloud Platform",
+          "summary": "This course shows how to create and manage computing clusters to run Hadoop, Spark, Pig and/or Hive jobs on Google Cloud Platform.  Also shows how to access various cloud storage options from their compute clusters and integrate Google’s machine learning capabilities into their analytics programs, how to manage Dataproc Clusters using the Web Console and the CLI, and use cluster to run Spark and Pig jobs. It shows how to create iPython notebooks that integrate with BigQuery and storage and utilize Spark. Finally, it shows houw to integrate the machine learning APIs into data analysis.",
+          "keywords": [
+            "google cloud platform", "hadoop", "pig", "spark", "google cloud datastore", "machine learning", "google cloud dataproc", "python", "google bigquery"
+          ],
+          "website": "https://www.coursera.org/learn/leveraging-unstructured-data-dataproc-gcp",
+          "certificate": "https://www.coursera.org/account/accomplishments/verify/EZABLESW7TNH",
+          "media": {
+            "icon": "google-cloud-icon.png",
+            "thumbnail": "google-cloud.png"
+          }
+        },{
+          "institution": "Udemy - Packt Publishing",
+          "area": "Functional Programming",
+          "studyType": "course",
+          "startDate": "2017-08-29",
+          "relevance": 6,
+          "title": "Functional Programming with Streams in Java 9",
+          "summary": "This course introduces the key functional features of Java 8 and 9, and explain how they can be used to write code that is more expressive and easily amenable to parallelization. It discuss lambda functions and functional interface and also explores the predefined functional interfaces of the Java API, like Comparator and Runnable. Then, it shows how to use the full benefits of lambda functions with streams. Finally, it presents the details related to parallel execution, such as side-effect and the fork-join execution model.",
+          "keywords": ["functional programming", "java", "streams"],
+          "website": "https://www.udemy.com/functional-programming-with-streams-in-java-9",
+          "certificate": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-6UQK209P.pdf",
+          "media": {
+            "icon": "udemy-icon.png",
+            "thumbnail": "udemy.png"
+          }
+        },{
+          "institution": "DataCamp",
+          "area": "Data Science",
+          "studyType": "course",
+          "startDate": "2017-08-15",
+          "relevance": 6,
+          "title": "Introdution to R Course",
+          "summary": "This course presents the basics of the R language, this beautiful open source language, including factors, lists and data frame.",
+          "keywords": ["r-language"],
+          "website": "https://www.datacamp.com/courses/free-introduction-to-r",
+          "certificate": "https://www.datacamp.com/statement-of-accomplishment/course/b31f303251b9c82372f6c57ab16f4238527c5ddb",
+          "media": {
+            "icon": "datacamp-icon.png",
+            "thumbnail": "datacamp.png"
+          }
+        },{
+          "institution": "DataCamp",
+          "area": "Data Science",
+          "studyType": "course",
+          "startDate": "2017-05-12",
+          "relevance": 6,
+          "title": "Intro to Python for Data Science Course",
+          "summary": "This course focuses on Python specifically for data science. It teachs about powerful ways to store and manipulate data as well as cool data science tools to execute analyses.",
+          "keywords": ["python", "data science"],
+          "website": "https://www.datacamp.com/courses/intro-to-python-for-data-science",
+          "certificate": "https://www.datacamp.com/statement-of-accomplishment/course/b31f303251b9c82372f6c57ab16f4238527c5ddb",
+          "media": {
+            "icon": "datacamp-icon.png",
+            "thumbnail": "datacamp.png"
+          }
+        },{
+          "institution": "Johns Hopkins University",
+          "area": "Research",
+          "studyType": "course",
+          "startDate": "2017-04-25",
+          "relevance": 9,
+          "title": "Reproducible Research",
+          "summary": "This course from the Johns Hopkins University focuses on the concepts and tools behind reporting modern data analyses in a reproducible manner. Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them.",
+          "keywords": ["r-language", "markdown", "latex", "open-data"],
+          "website": "https://www.coursera.org/learn/reproducible-research",
+          "certificate": "https://www.coursera.org/account/accomplishments/verify/4HGZWSPKS4SQ",
+          "media": {
+            "background": "johns-hopkins.jpg",
+            "icon": "johns-hopkins-icon.png",
+            "thumbnail": "johns-hopkins.png"
+          }
+        },{
+          "institution": "École Polytechnique Fédérale",
+          "area": "Functional Programming",
+          "studyType": "course",
+          "startDate": "2016-11-01",
+          "relevance": 7,
+          "title": "Functional Programming Principles in Scala",
+          "summary": "This course of the École Polytechnique Fédérale de Lausanne presents the elements of the functional programming style and learn how to apply them usefully in daily programming tasks. It also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.",
+          "keywords": ["functional programming", "scala"],
+          "website": "https://www.coursera.org/learn/progfun1",
+          "certificate": "https://www.coursera.org/account/accomplishments/verify/6PF6MMF4356U",
+          "media": {
+            "background": "ecole.jpg",
+            "icon": "ecole-icon.png",
+            "thumbnail": "ecole.png"
+          }
+        },{
+          "institution": "Johns Hopkins University",
+          "area": "Data Science",
+          "studyType": "course",
+          "startDate": "2016-10-22",
+          "relevance": 7,
+          "title":"Exploratory Data Analysis",
+          "summary": "This course covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modeling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data.",
+          "website": "https://www.coursera.org/learn/exploratory-data-analysis",
+          "tags": [
+            "r-language", "data visualization", "data exploration"
+          ],
+          "certificate": "https://www.coursera.org/account/accomplishments/verify/MSM9U9CDWYCU",
+          "media": {
+            "background": "johns-hopkins.jpg",
+            "icon": "johns-hopkins-icon.png",
+            "thumbnail": "johns-hopkins.png"
+          }
+        },{
+          "institution": "Johns Hopkins University",
+          "area": "Data Science",
+          "studyType": "course",
+          "startDate": "2016-09-01",
+          "relevance": 7,
+          "title": "Getting and Cleaning Data",
+          "summary": "This course covers obtaining data from the web, from APIs, from databases and from colleagues in various formats. It will also cover the basics of data cleaning and how to make data “tidy”. Tidy data dramatically speed downstream data analysis tasks. The course will also cover the components of a complete data set including raw data, processing instructions, codebooks, and processed data. Finally, it covers the basics needed for collecting, cleaning, and sharing data.",
+          "website": "https://www.coursera.org/learn/data-cleaning",
+          "certificate": "https://www.coursera.org/account/accomplishments/verify/9ZUMB8XUB458",
+          "media": {
+            "background": "johns-hopkins.jpg",
+            "icon": "johns-hopkins-icon.png",
+            "thumbnail": "johns-hopkins.png"
+          }
+        },{
+          "institution": "Duke University",
+          "area": "Data Science",
+          "studyType": "course",
+          "startDate": "2016-06-02",
+          "relevance": 5,
+          "title": "Introduction to Probability and Data",
+          "summary": "This course introduces the sampling and exploring data, as well as basic probability theory and Bayes' rule. It presents various types of sampling methods, and discuss how such methods can impact the scope of inference. A variety of exploratory data analysis techniques will be covered, including numeric summary statistics and basic data visualization using R and RStudio for lab exercises and a final project.",
+          "keywords": [
+            "r-language", "probability", "data visualization"
+          ],
+          "website": "https://www.coursera.org/learn/probability-intro",
+          "certificate": "https://www.coursera.org/account/accomplishments/certificate/F65Q5H5XA9XB",
+          "media": {
+            "background": "duke.jpg",
+            "icon": "duke-icon.png",
+            "thumbnail": "duke.png"
+          }
+        },{
+          "institution": "Johns Hopkins University",
+          "area": "Data Science",
+          "studyType": "course",
+          "startDate": "2016-05-24",
+          "relevance": 4,
+          "title": "The Data Scientist’s Toolbox",
+          "summary": "This course gives an overview of the data, questions, and tools that data analysts and data scientists work with.",
+          "keywords": [
+            "r-language", "markdown", "data analyses"
+          ],
+          "website": "https://www.coursera.org/learn/data-scientists-tools",
+          "certificate": "https://www.coursera.org/account/accomplishments/verify/2WWGW253DNH3",
+          "media": {
+            "background": "johns-hopkins.jpg",
+            "icon": "johns-hopkins-icon.png",
+            "thumbnail": "johns-hopkins.png"
+          }
+        },{
+          "institution": "Stanford University",
+          "area": "Machine Learning",
+          "studyType": "course",
+          "startDate": "2011-12-01",
+          "title": "Advanced Track of Introduction to Artificial Intelligence",
+          "summary": "This course present advanced topics in Artificial Intelligence (AI). It begin by defining the term \"software agent\" and discussing how software agents differ from programs in general. This course is focused on presents how to build and search graph data structures needed to create software agents, an approach that is useful for solving many problems in AI.  It also shows how to \"break down\" larger problems into a number of more specific, manageable sub-problems. It reviews the study of logic and conceptualize the differences between propositional logic, first-order logic, fuzzy logic, and default logic.  After learning about statistical tools commonly used in AI and about the basic symbol system used to represent knowledge, it focuses on artificial neural network and machine learning, which are essential components of computational and statistical methods, and theoretical computer science.  The course concludes with a study of the Turing machine and a discussion of the questionable claims that human thinking is a symbol manipulation.",
+          "media": {
+            "icon": "stanford-icon.png",
+            "thumbnail": "stanford.png",
+            "background": "stanford.jpg"
+          }
+        },{
+          "institution": "Scrum Alliance",
+          "area": "Managment",
+          "studyType": "course",
+          "startDate": "2010-06-10",
+          "relevance": 6,
+          "title": "Scrum Master",
+          "summary": "This course teachs how a Scrum Master can helps project teams properly use Scrum, increasing the likelihood of the project 's overall success. It presents the Scrum values, practices, and applications. The Scrum master must act as \"servant leaders,\" helping the rest of the Scrum team work together and learn the Scrum framework also protect them from both internal and external distractions.",
+          "keywords": [
+            "scrum", "agile"
+          ],
+          "website": "https://www.scrumalliance.org/certifications/practitioners/certified-scrummaster-csm",
+          "certificate": "https://www.scrumalliance.org/community/profile/tmata/",
+          "media": {
+            "icon": "scrum-alliance-icon.png",
+            "thumbnail": "scrum-alliance2.png",
+            "background": "workplace2.jpg"
+          }
         }
       ],
-      "relevance": 7,
-      "media": {
-        "background": "unb_photo.png",
-        "icon": "logo_unb2.png",
-        "thumbnail": "logo_unb.png"
-      },
-      "keywords": [
-        "accessibility", "assistive technology", "hypertext", "standards", "web", "internet", "open source", "browser", "speech synthesizer", "screen reader", "php", "javascript", "xul"
+      "papers":[
+        {
+          "title": "Usability and Accessibility Criteria for 3D Web Application Evaluation",
+          "releaseDate": "2015-10-26",
+          "event": {
+            "abbreviation": "LACLO 2015",
+            "name": "Latin American Conference on Learning Objects and Technologies 2015",
+            "website": "http://ic.ufal.br/evento/cbie_laclo2015/",
+            "institution": "Universidade Federal de Alagoas"
+          },
+          "website": "http://www.br-ie.org/pub/index.php/teste/article/view/5827/4117",
+          "summary": "We published this paper that describes part of a search result, after extensive research in published articles, magazine annals, scientific journal and recommendations of the W3C consortium. This research was exploratory with qualitative approach. The starting point was looking for recommendations on accessibility and usability for the Web that were particularly suitable for 3D Web applications. The demand stems from the medical field that uses such applications in different contexts: scientific, educational and can assist in the diagnosis and treatment indication. This article received an honorable mention in this event.",
+          "authors": [
+            {
+              "name": "André Barros de Sales",
+              "email": "andrebdes@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "AB Sales"
+            },
+            {
+              "name": "Thiago Henrique Ramos da Mata",
+              "email": "thiago.henrique.mata@gmail.com",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "THR Mata"
+            },
+            {
+              "name": "Marcelino M Andrade",
+              "email": "andrade@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "MM Andrade"
+            },
+            {
+              "name": "Márcia Barros de Sales",
+              "email": "marcia.barros@ufsc.br",
+              "institution": "Universidade Federal De Santa Catarina - UFSC",
+              "abbreviation": "MB Sales"
+            }
+          ],
+          "relevance": 8,
+          "media": {
+            "icon": "laclo_2015.png",
+            "background": "book3.jpg"
+          },
+          "keywords": ["matlab", "latex", "usability", "accessibility", "evaluation", "web-3d" ]
+        },{
+          "title": "Accessibility for Web 3D Anatomical Manikins",
+          "releaseDate": "2013-05-07",
+          "event": {
+            "abbreviation": "SETI 2013",
+            "name": "I Symposium on Inclusive Education and Technologies",
+            "website": "http://www.santoangelo.uri.br/seti2013/",
+            "institution": "URI - Universidade Regional Integrada do Alto Uruguai e das Missões"
+          },
+          "website": "http://www.santoangelo.uri.br/seti2013/?page_id=153",
+          "summary": "This paper evaluates the accessibility of virtual anatomical manikins 3D for Web. Was evaluated the hypothesis of a correlation between the complexity of the interfaces and lack of accessibility of the same. After assessed by the Guide criteria of Web Content Accessibility - WCAG 2.0, was possible to conclude that there is no evidence of a correlation between the complexity of these interface and it's accessibility. Furthermore, it became evident the lack of accessibility of these manikins.",
+          "authors": [
+            {
+              "name": "Thiago Henrique Ramos da Mata",
+              "email": "thiago.henrique.mata@gmail.com",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "THR Mata"
+            },
+            {
+              "name": "André Barros de Sales",
+              "email": "andrebdes@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "AB Sales"
+            },
+            {
+              "name": "Marcelino M Andrade",
+              "email": "andrade@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "MM Andrade"
+            }
+          ],
+          "relevance": 5,
+          "media": {
+            "icon": "uri-icon.png",
+            "background": "book2.jpg"
+          },
+          "keywords": [
+            "matlab", "latex", "w3c", "wcag", "usability", "accessibility", "medical-applications", "evaluation", "web-3d", "webgl", "javascript"
+          ]
+        },{
+          "event": {
+            "abbreviation": "PAHCE 2013",
+            "name": "Pan American Health Care Exchanges",
+            "website": "http://www.pahce.org"
+          },
+          "title": "Definition of Computational Criteria to Evaluation of 3D Anatomical Web Manikins for Teaching in Health Science and for Medical Applications",
+          "releaseDate": "2015-05-01",
+          "summary": "The use of virtual anatomical manikins has gained space in health science teaching. Its use helps in the study of anatomy and medical simulation of patients with diseases, acute illnesses and traumas. Recent technologies have made possible the rise of several virtual three-dimensional manikins for Web. For the best selection of these virtual manikins for teaching in health science or medical applications, we defined a set of evaluation criteria focused on computational context.",
+          "authors": [
+            {
+              "name": "Thiago Henrique Ramos da Mata",
+              "email": "thiago.henrique.mata@gmail.com",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "THR Mata"
+            },
+            {
+              "name": "André Barros de Sales",
+              "email": "andrebdes@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "AB Sales"
+            },
+            {
+              "name": "Marcelino M Andrade",
+              "email": "andrade@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "MM Andrade"
+            }
+          ],
+          "website": "http://www.pahce.org/PAHCESP7/P7ProgramallEN.htm",
+          "relevance": 9,
+          "media": {
+            "background": "desk.jpg"
+          },
+          "keywords": [
+            "matlab", "latex", "usability", "medical-applications", "accessibility", "evaluation", "web-3d"
+          ]
+        },{
+          "event": {
+            "abbreviation": "Extensio 2012",
+            "name": "Extensio: Revista Eletrônica de Extensão - Portal de Periódicos UFSC",
+            "website": "https://periodicos.ufsc.br/index.php/extensio",
+            "alt-link":
+            "http://repositorio.unb.br/handle/10482/17103",
+            "institution": "Universidade Federal de Santa Catarina - UFSC"
+          },
+          "title": "Definition of criteria for evaluating 3D anatomical manikins on the web for education in healthcare or medical applications",
+          "releaseDate": "2012-12-01",
+          "website": "http://www.br-ie.org/pub/index.php/teste/article/view/5827/4117",
+          "summary": "The use of virtual anatomical manikin has reached within the health science education. Its use helps in the study of anatomy and medical simulation in patients with pathologies, acute illnesses and injuries. Recent technologies have made possible the availability of several virtual three-dimensional anatomical manikins in the Web. The next step was the definition of criteria for evaluation and selection of these manikins with the focus on the education in healthcare or medical applications in order to assist in choosing the most appropriate manikin as each setting.",
+          "authors": [
+            {
+              "name": "Thiago Henrique Ramos da Mata",
+              "email": "thiago.henrique.mata@gmail.com",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "THR Mata"
+            },
+            {
+              "name": "André Barros de Sales",
+              "email": "andrebdes@unb.br",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "AB Sales"
+            }
+          ],
+          "relevance": 6,
+          "media": {
+            "icon": "ufsc.svg",
+            "background": "handwriting.jpg"
+          },
+          "keywords": [
+            "matlab", "latex", "usability", "accessibility", "evaluation", "web-3d", "medical-applications"
+          ]
+        },{
+          "title": "Access to Content of Digital Biomedical Repositories through a Web Interface with 3D Anatomical Manikin",
+          "releaseDate": "2014-01-28",
+          "repository": {
+            "name": "Repositório institucional",
+            "website": "http://repositorio.unb.br",
+            "institution": "Universidade de Brasília - UnB"
+          },
+          "website": "http://repositorio.unb.br/handle/10482/15036?mode=full",
+          "authors": [
+            {
+              "name": "Thiago Henrique Ramos da Mata",
+              "email": "thiago.henrique.mata@gmail.com",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "THR Mata"
+            }
+          ],
+          "summary": "The biomedical repositories have gained prominence in the scientific, clinical and educational. However, problems of accessibility, usability, reporting and lack of customization can reduce the success of some of these repositories with their communities (DUNCAN, 2003). This paper reports the development of an interface with Web 3D anatomical manikin as a facilitator of the use of biomedical repositories. It begins with a literature search on biomedical repositories, being selected the 10 most referenced. To evaluate them, we applied the criteria for evaluating learning objects from Leacock and Nesbit (2007). Subsequently, we conducted a literature review of Web 3D Anatomical Manikins, of which seven matches. To evaluate them, we performed a literature search in which it was found the lack of evaluation criteria to web anatomical manikins. Therefore, based on the usability requirements advocated by Nielsen (2003) and Sommerville (2011), on the recommendations of the WCAG (2008) and on the evaluation criteria of Leacock and Nesbit (2007) and Youngblood et al. (2005), was proposed a set of eight criteria for evaluating Web 3D Anatomical Manikins. They are accessibility, interactivity, interoperability, technological independence, license and terms of use, navigability, realism and three-dimensionality.",
+          "keywords": [
+            "usability", "accessibility", "evaluation", "web-3d", "medical-applications", "w3c", "wcag", "webgl", "javascript", "interactivity"
+          ],
+          "relevance": 8,
+          "media": {
+            "background": "unb_photo.png",
+            "icon": "logo_unb2.png",
+            "thumbnail": "logo_unb.png"
+          }
+        },{
+          "title": "Interactive Hypertext for Visually Impaired Users",
+          "releaseDate": "2007-12-10",
+          "repository": {
+            "name": "Repositório institucional",
+            "website": "http://monografias.cic.unb.br",
+            "institution": "Universidade de Brasília - UnB"
+          },
+          "website":  "http://monografias.cic.unb.br/dspace/handle/123456789/133",
+          "summary": "This study consists of an investigation of the assistive technologies limitations to provide hypertext manipulations at the web environment, under low-vision and blind users perspective. The solution suggested is raised on the context where technical and cultural aspects run into the perception of accessibility and usability of digital contents, and technology is understood as a social inclusion tool.",
+          "authors": [
+            {
+              "name": "Thiago Henrique Ramos da Mata",
+              "email": "thiago.henrique.mata@gmail.com",
+              "institution": "Universidade de Brasília - UnB",
+              "abbreviation": "THR Mata"
+            },{
+              "name": "Renê de Lima Barbosa",
+              "email": "renedelima@gmail.com",
+              "institution": "Universidade de Brasília - UnB"
+            }
+          ],
+          "relevance": 7,
+          "media": {
+            "background": "unb_photo.png",
+            "icon": "logo_unb2.png",
+            "thumbnail": "logo_unb.png"
+          },
+          "keywords": [
+            "accessibility", "assistive technology", "hypertext", "standards", "web", "internet", "open source", "browser", "speech synthesizer", "screen reader", "php", "javascript", "xul"
+          ]
+        }
+      ],
+      "awards": [
+        {
+          "title": "Cannes Lions - Bronze Lion - Category Promo & Activation",
+          "date": "2014-06-01",
+          "awarder": "Adjetiva",
+          "summary": "Winner of the Cannes Bronze Lion in Promo & Activation category with the Mobile Application SAT-JF14.",
+          "website": "https://issuu.com/lionsdailynews/docs/d4_turner/42",
+          "relevance": 10,
+          "media": {
+            "background": "bronze-lion.jpg",
+            "icon": "bronze-lion-icon.png"
+          }
+        },
+        {
+          "title": "Cannes Lions - Silver Lion - Category PR",
+          "date": "2014-06-02",
+          "awarder": "Adjetiva",
+          "summary": "Winner of the Cannes Silver Lion in the PR category with the Mobile Application SAT-JF14.",
+          "website": "https://issuu.com/lionsdailynews/docs/d3_turner/31",
+          "relevance": 10,
+          "media": {
+            "background": "silver-lion.jpg",
+            "icon": "silver-lion-icon.png"
+          }
+        },{
+          "title": "Cannes Lions - Gold Lion - Category PR",
+          "date": "2014-06-03",
+          "awarder": "Adjetiva",
+          "summary": "Winner of the Cannes Gold Lion in the Mobile category with the Mobile Application SAT-JF14.",
+          "website": "https://issuu.com/lionsdailynews/docs/d4_turner/42",
+          "relevance": 10,
+          "media": {
+            "background": "gold-lion.jpg",
+            "icon": "gold-lion-icon.png"
+          }
+        }
+      ],
+      "skills": [
+        {
+          "name": "Web Development",
+          "level": "Advanced",
+          "keywords": [
+            "html", "css", "javascript", "php", "angular",
+            "zend", "node.js", "gulp", "grunt", "compass",
+            "webgl", "svg", "java"
+          ]
+        },{
+          "name": "Database",
+          "level": "Advanced",
+          "keywords": [
+            "sql", "postgres", "mysql", "oracle", "mssql server", "elasticsearch", "mongodb", "spark"
+          ]
+        },{
+          "name": "Cloud Computing",
+          "level": "Intermediate",
+          "keywords": [
+            "google cloud platform", "aws", "oracle cloud", "linux", "apache", "nginx", "debian", "centos",
+            "docker", "vagrant", "kubernetes"
+          ]
+        },{
+          "name": "Management",
+          "level": "Advanced",
+          "keywords": [
+            "scrum", "lean strategy deployment", "planning",
+            "evaluate", "guidance", "risk managment"
+          ]
+        },{
+          "name": "Executive",
+          "level": "Advanced",
+          "keywords": [
+            "inovation managment", "company vision", "company strategy", "infrastructure managment", "business strategy", "cost managment", "risk managment", "partnerships"
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "level": "Good"
+        }
+      ],
+      "interests": [
+        {
+          "name": "Data Science",
+          "keywords": [
+            "machine learning", "linear regression", "deep learning", "big data", "statistical inference"
+          ]
+        },{
+          "name": "Big Data",
+          "keywords": [
+            "spark", "hadoop", "scala", "funcional programming", "python", "r-language", "python", "apache beam"
+          ]
+        },{
+          "name": "Lean Strategy",
+          "keywords": [
+            "knowledge validation", "value offer validation", "data driven decisions"
+          ]
+        }
       ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Cannes Lions - Bronze Lion - Category Promo & Activation",
-      "date": "2014-06-01",
-      "awarder": "Adjetiva",
-      "summary": "Winner of the Cannes Bronze Lion in Promo & Activation category with the Mobile Application SAT-JF14.",
-      "website": "https://issuu.com/lionsdailynews/docs/d4_turner/42",
-      "relevance": 10,
-      "media": {
-        "background": "bronze-lion.jpg",
-        "icon": "bronze-lion-icon.png"
-      }
-    },
-    {
-      "title": "Cannes Lions - Silver Lion - Category PR",
-      "date": "2014-06-02",
-      "awarder": "Adjetiva",
-      "summary": "Winner of the Cannes Silver Lion in the PR category with the Mobile Application SAT-JF14.",
-      "website": "https://issuu.com/lionsdailynews/docs/d3_turner/31",
-      "relevance": 10,
-      "media": {
-        "background": "silver-lion.jpg",
-        "icon": "silver-lion-icon.png"
-      }
-    },{
-      "title": "Cannes Lions - Gold Lion - Category PR",
-      "date": "2014-06-03",
-      "awarder": "Adjetiva",
-      "summary": "Winner of the Cannes Gold Lion in the Mobile category with the Mobile Application SAT-JF14.",
-      "website": "https://issuu.com/lionsdailynews/docs/d4_turner/42",
-      "relevance": 10,
-      "media": {
-        "background": "gold-lion.jpg",
-        "icon": "gold-lion-icon.png"
-      }
-    }
-  ],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Advanced",
-      "keywords": [
-        "html", "css", "javascript", "php", "angular",
-        "zend", "node.js", "gulp", "grunt", "compass",
-        "webgl", "svg", "java"
-      ]
-    },{
-      "name": "Database",
-      "level": "Advanced",
-      "keywords": [
-        "sql", "postgres", "mysql", "oracle", "mssql server", "elasticsearch", "mongodb", "spark"
-      ]
-    },{
-      "name": "Cloud Computing",
-      "level": "Intermediate",
-      "keywords": [
-        "google cloud platform", "aws", "oracle cloud", "linux", "apache", "nginx", "debian", "centos",
-        "docker", "vagrant", "kubernetes"
-      ]
-    },{
-      "name": "Management",
-      "level": "Advanced",
-      "keywords": [
-        "scrum", "lean strategy deployment", "planning",
-        "evaluate", "guidance", "risk managment"
-      ]
-    },{
-      "name": "Executive",
-      "level": "Advanced",
-      "keywords": [
-        "inovation managment", "company vision", "company strategy", "infrastructure managment", "business strategy", "cost managment", "risk managment", "partnerships"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "name": "English",
-      "level": "Good"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Data Science",
-      "keywords": [
-        "machine learning", "linear regression", "deep learning", "big data", "statistical inference"
-      ]
-    },{
-      "name": "Big Data",
-      "keywords": [
-        "spark", "hadoop", "scala", "funcional programming", "python", "r-language", "python", "apache beam"
-      ]
-    },{
-      "name": "Lean Strategy",
-      "keywords": [
-        "knowledge validation", "value offer validation", "data driven decisions"
-      ]
-    }
-  ]
-})
+    })
+  }
+)

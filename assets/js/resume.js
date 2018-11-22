@@ -835,7 +835,10 @@ function ResumeTemplate( resume ) {
       function (element) {
         element.tags = element.tags.map(
           function (tag) {
-            tag.active = resume.activeTags.indexOf( tag.id ) > -1;
+            debugger
+            onTagList = resume.activeTags.indexOf( tag.id ) > -1;
+            onSearchTerm = tag.label.toLowerCase() == resume.searchTerm.toLowerCase();
+            tag.active =  onTagList || onSearchTerm ;
             return tag;
           }
         );
