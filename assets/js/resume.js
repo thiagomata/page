@@ -1047,8 +1047,24 @@ function Resume( jsonData ) {
     );
   }
 
+  /**
+   * Filter the experiences to just shows
+   * the most relevant ones
+   */
+  self.isActiveFilterByRelevance = true;
+
+  /**
+   * Filter the experiences to just shows
+   * the most recent ones
+   */
+  self.isActiveFilterByDate = false;
+
   self.construct = function () {
     self.searchTerm = Resume.getUrlParameter( "q", "" );
+    if( self.searchTerm.length > 0 ) {
+      self.isActiveFilterByDate      = false;
+      self.isActiveFilterByRelevance = false;
+    }
     self.loadJson();
   }
 
@@ -1068,18 +1084,6 @@ function Resume( jsonData ) {
   self.activeTags = [];
 
   self.searchTerm = "";
-
-  /**
-   * Filter the experiences to just shows
-   * the most relevant ones
-   */
-  self.isActiveFilterByRelevance = true;
-
-  /**
-   * Filter the experiences to just shows
-   * the most recent ones
-   */
-  self.isActiveFilterByDate = false;
 
   const filterByRelevanceValue = "relevants";
   self.getFilterByRelevanceValue = () => filterByRelevanceValue
