@@ -32,6 +32,10 @@ Resume.jsonp({
       "network": "Linkedin",
       "username": "thiagomata",
       "url": "https://www.linkedin.com/in/thiagomata/"
+      }, {
+      "network": "Stack Overflow",
+      "username": "thiagomata",
+      "url": "https://stackoverflow.com/users/456164/thiago-mata"
       }
     ]
   },

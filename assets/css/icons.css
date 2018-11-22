@@ -26,6 +26,11 @@
   -webkit-mask-image: url("../img/icon-linkedin.svg");
 }
 
+.icons-social-stack-overflow {
+  mask-image: url("../img/icon-stackoverflow.svg");
+  -webkit-mask-image: url("../img/icon-stackoverflow.svg");
+}
+
 .icons-work-tie {
   mask-image: url("../img/icon-tie.svg");
   -webkit-mask-image: url("../img/icon-tie.svg");

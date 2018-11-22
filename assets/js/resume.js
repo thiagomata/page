@@ -890,7 +890,7 @@ function ResumeTemplate( resume ) {
         function( profile ) {
           return {
             name: Resume.getPath( profile, "network"),
-            icon: Resume.getPath( profile, "network").toLowerCase(),
+            icon: Resume.getPath( profile, "network").split(" ").join("-").toLowerCase(),
             link: Resume.getPath( profile, "url" )
           }
         }
