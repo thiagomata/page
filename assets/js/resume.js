@@ -1037,13 +1037,13 @@ function Resume( jsonData ) {
     $("meta[name=keywords]").attr("content",
       $("meta[name=keywords]").attr("content") + " " +
       this.trendingTagsGraph.chartData.slice(0).sort(
-        (a, b) => b.totalScore - a.totalScore
-      ).head( self.totalTagsOnMetaByScore ).map(
+        (a, b) => b.years.max() - a.years.max()
+      ).reverse().head( self.totalTagsOnMetaLastYear ).map(
         node => node.tag
       ).concat(
         this.trendingTagsGraph.chartData.slice(0).sort(
-          (a, b) => b.years.max() - a.years.max()
-        ).reverse().head( self.totalTagsOnMetaLastYear ).map(
+          (a, b) => b.totalScore - a.totalScore
+        ).head( self.totalTagsOnMetaByScore ).map(
           node => node.tag
         )
       ).unique().join(" ")
@@ -1188,12 +1188,9 @@ Resume.getUrlParameter = function ( sParam, notFoundValue ) {
 };
 
 Resume.jsonp = function( data ) {
-  window.resume = new Resume( data );
+  $(document).ready(
+    () => {
+      window.resume = new Resume( data );
+    }
+  );
 }
-// $( document ).ready(
-  // function() {
-  //     if( window.resume === undefined ) {
-  //       window.resume = new Resume();
-  //     }
-  // }
-// );

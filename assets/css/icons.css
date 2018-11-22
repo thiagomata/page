@@ -31,6 +31,11 @@
   -webkit-mask-image: url("../img/icon-stackoverflow.svg");
 }
 
+.icons-social-github {
+  mask-image: url("../img/icon-github.png");
+  -webkit-mask-image: url("../img/icon-github.png");
+}
+
 .icons-work-tie {
   mask-image: url("../img/icon-tie.svg");
   -webkit-mask-image: url("../img/icon-tie.svg");
