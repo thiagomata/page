@@ -51,7 +51,7 @@ Resume.jsonp({
       "startDate": "2017-09-15",
       "present": true,
       "relevance": 10,
-      "summary": "The SLI Systems provides many products to maximize the results to e-commerce clients. Here, I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
+      "summary": "The SLI Systems provides many products to improve the results to e-commerce clients. Here I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
       "highlights": [
         "Google Cloud Platform",
         "System Process Modelling"
@@ -165,7 +165,7 @@ Resume.jsonp({
       "startDate": "2009-04-08",
       "endDate": "2012-04-09",
       "relevance": 6,
-      "summary": "Into the INEP, as public agent, I worked with Specification and development of softwares with high availability for millions of simultaneous users dealing with high data volumes and complex financial flows.",
+      "summary": "Into the INEP, as a public agent, I worked with Specification and development of software with high availability for millions of simultaneous users dealing with high data volumes and complex financial flows.",
       "highlights": [
         "Specification and development of the E-MEC System Fees",
         "Specification and development of the National Exam to Revalidation of Medical Diplomas",
@@ -188,7 +188,7 @@ Resume.jsonp({
       "startDate": "2007-09-03",
       "endDate": "2008-11-03",
       "relevance": 7,
-      "summary": "Into the Bancoob - The Cooperative Bank of Brazil, I could work in the development of the System for transfer of credit portfolios using Microsoft SQL Server and Visual Basic.This system demands a safe management of a big volume of financial accounting and loans transactions.",
+      "summary": "Into the Bancoob - The Cooperative Bank of Brazil, I could work in the development of the System for transfer of credit portfolios using Microsoft SQL Server and Visual Basic. This system demands safe management of a significant volume of financial accounting and loans transactions.",
       "highlights": [
         "Complex flows using Microsoft SQL Server",
         "Test Driven Development to database procedure development",
@@ -227,7 +227,7 @@ Resume.jsonp({
       "startDate": "2005-09-01",
       "endDate": "2006-11-28",
       "relevance": 8,
-      "summary": "Working in the AgênciaClick - Isobar we could work in the development some great PHP projects with high quality user interfaces and ux.",
+      "summary": "Working in the AgênciaClick - Isobar we could work in the development of some great PHP projects with high-quality user interfaces and UX.",
       "highlights": [
         "System of Control of the Communication Actions - <a href='http://sistema2.planalto.gov.br/sisac'> SISAC </a> to the Presidency of the Republic of Brazil;",
         "Development of the <a href='http://visitbrasil.com/en/'>BrazilTour</a> in PHP;",
@@ -246,7 +246,7 @@ Resume.jsonp({
       "startDate": "2005-04-01",
       "endDate": "2005-09-28",
       "relevance": 3,
-      "summary": "The S.A.M.U. is a critial call center software to deal with emergency calls and connect the pacient, ambulance driver and medical into one call. There, I could be a front - end Sofware Developer working with Java Struts Taglibs, JSTL, CSS and JavaScript to create the Rich Internet Aplications of the Internal System of Ambulance Request Manager.",
+      "summary": "The S.A.M.U. is a critical call centre software to deal with emergency calls and connect the patient, ambulance driver and medical into one call. There, I could be a front-end Sofware Developer working with Java Struts Taglibs, JSTL, CSS and JavaScript to create the Rich Internet Applications of the Internal System of Ambulance Request Manager.",
       "keywords": ["java", "jstl", "css", "javascript", "struts"],
       "media": {
         "icon": "samu-icon.png",
