@@ -51,7 +51,7 @@ Resume.jsonp({
       "startDate": "2017-09-15",
       "present": true,
       "relevance": 10,
-      "summary": "The SLI Systems provides many products to maximize the results to e-commerce clients. Here I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
+      "summary": "The SLI Systems provides many products to maximize the results to e-commerce clients. Here, I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
       "highlights": [
         "Google Cloud Platform",
         "System Process Modelling"
@@ -75,7 +75,7 @@ Resume.jsonp({
       "startDate": "2014-11-01",
       "endDate": "2017-08-30",
       "relevance": 10,
-      "summary": "Here at the Ideia Big Data we could work with research, microtargeting, communication and statistics using clusters, distributed storage, distributed search engines, machine learning, functional programming and streaming running into a cloud computing.",
+      "summary": "In the Ideia Big Data, we could work with research, microtargeting, communication and statistics using clusters, distributed storage, distributed search engines, machine learning, functional programming and streaming running into a cloud computing.",
       "keywords": [
         "scala", "php", "laravel", "aws", "oracle cloud", "postgres",
         "hadoop", "apache spark", "machine learning", "elasticsearch",
@@ -98,7 +98,7 @@ Resume.jsonp({
       "startDate": "2014-03-01",
       "endDate": "2014-11-28",
       "relevance": 8,
-      "summary": "Adjetiva was a tech company with center on the mobile and web interactions. Here, I could work creating great projects for big brands.The company was acquired by the Ideia Big Data in 2014. ",
+      "summary": "Adjetiva was a tech company centred on mobile and web interactions. Here, I could work on great projects for big brands. The company was acquired by the Ideia Big Data in 2014.",
       "keywords": [
         "java", "node.js", "rest", "angular2", "laravel",
         "mongodb", "postgres", "uml", "scrum",
