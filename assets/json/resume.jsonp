@@ -122,7 +122,7 @@ Resume.jsonp({
       "startDate": "2013-09-01",
       "endDate": "2014-01-01",
       "relevance": 9,
-      "summary": "Otimicar it is an hardware more app solution that converts any car into a smart car. In the Otimicar, I worked with the specification and development of the first version of the OtimiCar server.",
+      "summary": "Otimicar it is a hardware more app solution that converts any car into a smart car. In the Otimicar, I worked with the specification and development of the first version of the OtimiCar server.",
       "keywords": [
         "java", "node.js", "rest", "soap", "mongodb", "uml", "bpmn", "scrum", "google web app", "google cloud platform"
       ],
