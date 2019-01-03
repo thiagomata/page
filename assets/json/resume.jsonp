@@ -389,6 +389,21 @@ Resume.jsonp({
         "thumbnail": "datacamp.png"
       }
     },{
+      "institution": "AWS",
+      "area": "Cloud Computing",
+      "studyType": "course",
+      "startDate": "2019-01-03",
+      "relevance": 8,
+      "title": "AWS Fundamentals: Going Cloud-Native",
+      "summary": "This course introduces the Amazon Web Services (AWS) core services and infrastructure.",
+      "website": "https://www.coursera.org/learn/aws-fundamentals-going-cloud-native",
+      "certificate": "https://www.coursera.org/account/accomplishments/certificate/X6XQEZ42CVLT",
+      "keywords": ["aws", "cloud computing"],
+      "media": {
+        "icon": "aws_logo.png",
+        "thumbnail": "aws_logo.png"
+      }
+    },{
       "institution": "Udemy - V2 Maestros",
       "area": "Big Data",
       "studyType": "course",
