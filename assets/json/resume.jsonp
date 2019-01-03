@@ -77,10 +77,10 @@ Resume.jsonp({
       "relevance": 10,
       "summary": "In the Ideia Big Data, we could work with research, microtargeting, communication and statistics using clusters, distributed storage, distributed search engines, machine learning, functional programming and streaming running into a cloud computing.",
       "keywords": [
-        "scala", "php", "laravel", "aws", "oracle cloud", "postgres",
+        "scala", "php", "laravel", "aws", "oracle cloud", "postgres", "redis",
         "hadoop", "apache spark", "machine learning", "elasticsearch",
-        "cloud computing",
-        "javascript", "uml", "scrum", "r-language"
+        "cloud computing", "r-language",
+        "javascript", "angular2", "d3.js", "jsPDF", "uml", "scrum", 
       ],
       "highlights": [
         "Migration of Cloud infrastructure",
@@ -398,7 +398,7 @@ Resume.jsonp({
       "summary": "This course introduces the Amazon Web Services (AWS) core services and infrastructure.",
       "website": "https://www.coursera.org/learn/aws-fundamentals-going-cloud-native",
       "certificate": "https://www.coursera.org/account/accomplishments/certificate/X6XQEZ42CVLT",
-      "keywords": ["aws", "cloud computing"],
+      "keywords": ["aws", "cloud computing", "AWS EC2","AWS EBS ","AWS S3","AWS EFS","AWS VPC","AWS ELB","AWS RDS","AWS ELB","AWS KMS","AWS DynamoDB","AWS CloudWatch","AWS Budgets"],
       "media": {
         "icon": "aws_logo.png",
         "thumbnail": "aws_logo.png"
