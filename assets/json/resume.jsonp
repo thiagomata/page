@@ -389,7 +389,7 @@ Resume.jsonp({
         "thumbnail": "datacamp.png"
       }
     },{
-      "institution": "AWS",
+      "institution": "Amazon Web Services",
       "area": "Cloud Computing",
       "studyType": "course",
       "startDate": "2019-01-03",
