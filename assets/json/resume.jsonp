@@ -403,7 +403,7 @@ Resume.jsonp({
       "keywords": [
         "r-language", "machine learning", "statistics", "random forest", "naive bayes",
         "regression model", "classification trees", "predictive modeling", "model error rates"
-      ]
+      ],
       "website": "https://www.coursera.org/learn/practical-machine-learning",
       "certificate": "https://www.coursera.org/account/accomplishments/certificate/TKXGWCZF4FUE",
       "media": {
