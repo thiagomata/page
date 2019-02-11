@@ -445,7 +445,7 @@ Resume.jsonp({
       "institution": "Pluralsight",
       "area": "Front End",
       "studyType": "course",
-      "startDate": "2018-30-12",
+      "startDate": "2018-12-30",
       "relevance": 4,
       "title": "Build iOS Apps with React Native",
       "summary": "Leverage the existing web development skills to easily build slick native iOS apps.",
