@@ -380,7 +380,7 @@ Resume.jsonp({
       "startDate": "2019-02-09",
       "relevance": 9,
       "title": "Regression Model",
-      "summary": "This course covers the basic components of building and applying prediction functions with an emphasis on practical applications. It provides basic grounding in concepts such as training and tests sets, overfitting, and error rates. It also introduce a range of model based and algorithmic machine learning methods including regression, classification trees, Naive Bayes, and random forests.",
+      "summary": "Regression models, a subset of linear models, are the most important statistical analysis tool in a data scientist’s toolkit. This course covers regression analysis, least squares and inference using regression models. Special cases of the regression model, ANOVA and ANCOVA will be covered as well. Analysis of residuals and variability will be investigated."
       "keywords": [
         "r-language", "machine learning", "statistics", "residual analysis", "variability analysis", "model selection",
         "regression model", "generalized linear model", "regression analysis", "model error rates"
