@@ -450,7 +450,7 @@ Resume.jsonp({
       "title": "Build iOS Apps with React Native",
       "summary": "Leverage the existing web development skills to easily build slick native iOS apps.",
       "keywords": [
-        "react", "react native", "ios apps", "javacript", "node.js"
+        "react", "react native", "ios apps", "javascript", "node.js"
       ],
       "website": "https://www.pluralsight.com/courses/build-ios-apps-react-native",
       "media": {
