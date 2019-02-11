@@ -442,6 +442,23 @@ Resume.jsonp({
         "thumbnail": "aws_logo.png"
       }
     },{
+      "institution": "Pluralsight",
+      "area": "Front End",
+      "studyType": "course",
+      "startDate": "2018-30-12",
+      "relevance": 4,
+      "title": "Build iOS Apps with React Native",
+      "summary": "Leverage the existing web development skills to easily build slick native iOS apps.",
+      "keywords": [
+        "react", "react native", "ios apps", "javacript", "node.js"
+      ],
+      "website": "https://www.pluralsight.com/courses/build-ios-apps-react-native",
+      "media": {
+        "background": "pluralsight.png",
+        "icon": "pluralsight.png",
+        "thumbnail": "pluralsight.png"
+      }
+    },{
       "institution": "Udemy - V2 Maestros",
       "area": "Big Data",
       "studyType": "course",
