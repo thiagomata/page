@@ -374,6 +374,25 @@ Resume.jsonp({
         "thumbnail": "logo_unb.png"
       }
     },{
+      "institution": "Johns Hopkins University",
+      "area": "Data Science",
+      "studyType": "course",
+      "startDate": "2019-02-01",
+      "relevance": 9,
+      "title": "Regression Model",
+      "summary": "This course covers the basic components of building and applying prediction functions with an emphasis on practical applications. It provides basic grounding in concepts such as training and tests sets, overfitting, and error rates. It also introduce a range of model based and algorithmic machine learning methods including regression, classification trees, Naive Bayes, and random forests.",
+      "keywords": [
+        "r-language", "machine learning", "statistics", "residual analysis", "variability analysis", "model selection",
+        "regression model", "generalized linear model", "regression analysis", "model error rates"
+      ],
+      "website": "https://www.coursera.org/learn/regression-models",
+      "certificate": "https://www.coursera.org/account/accomplishments/certificate/UBYKBZXWTXBR",
+      "media": {
+        "background": "johns-hopkins.jpg",
+        "icon": "johns-hopkins-icon.png",
+        "thumbnail": "johns-hopkins.png"
+      }
+    },{
       "institution": "DataCamp",
       "area": "Machine Learning",
       "studyType": "course",
