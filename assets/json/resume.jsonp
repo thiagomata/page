@@ -260,7 +260,7 @@ Resume.jsonp({
       "startDate": "2003-04-01",
       "endDate": "2004-02-28",
       "relevance": 2,
-      "summary": "Here we work on the development of computer-based training using Macromedia Authoware, Adobe Flash, Javascript and ToolBook.",
+      "summary": "Here we work on the development of computer-based training using Adobe Authorware, Adobe Flash, Javascript and ToolBook.",
       "keywords": ["javascript", "computer-based training", "adobe flash"],
       "media": {
         "icon": "msd-icon.png",
@@ -275,7 +275,7 @@ Resume.jsonp({
       "startDate": "2002-09-01",
       "endDate": "2003-04-30",
       "relevance": 1,
-      "summary": "In the ABEN Nacional- Brazilian Nurse Association was my first job as web developer.",
+      "summary": "Maintain the PHP website.",
       "keywords": ["php", "javascript", "mysql"],
       "highlights": [
         "creation of the internal system of news",
