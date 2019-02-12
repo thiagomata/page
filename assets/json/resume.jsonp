@@ -242,7 +242,7 @@ Resume.jsonp({
     },
     {
       "company": "S.A.M.U. - Emergency Medical Service",
-      "website": "https://www.cissulsamu.com.br/"
+      "website": "https://www.cissulsamu.com.br/",
       "position": "Developer",
       "startDate": "2005-04-01",
       "endDate": "2005-09-28",
