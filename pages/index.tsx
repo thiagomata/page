@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Layout from '../components/MyLayout';
-import { Show } from '../data/Show'
+import { Show } from '../model/Show'
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 
