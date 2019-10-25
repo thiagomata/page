@@ -1,0 +1,55 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/index.tsx": 0,
+      "multi private-next-pages/p/[id].tsx": 1,
+      "multi next/dist/pages/_app": 2,
+      "multi next/dist/pages/_error": 3,
+      "multi next/dist/pages/_document": 4
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/sC2SUOg5aRp24qdK8ilVB/pages/_app.js": 0,
+      "static/sC2SUOg5aRp24qdK8ilVB/pages/_document.js": 1,
+      "static/sC2SUOg5aRp24qdK8ilVB/pages/_error.js": 2,
+      "static/sC2SUOg5aRp24qdK8ilVB/pages/index.js": 3,
+      "static/sC2SUOg5aRp24qdK8ilVB/pages/p/[id].js": 4,
+      "static/0g--Zi7PTfMoeLFfxc--N/pages/_app.js": 5,
+      "static/0g--Zi7PTfMoeLFfxc--N/pages/_document.js": 6,
+      "static/0g--Zi7PTfMoeLFfxc--N/pages/_error.js": 7,
+      "static/0g--Zi7PTfMoeLFfxc--N/pages/index.js": 8,
+      "static/0g--Zi7PTfMoeLFfxc--N/pages/p/[id].js": 9,
+      "static/Fb9_pacbuYtd9F8fapfzt/pages/_app.js": 0,
+      "static/Fb9_pacbuYtd9F8fapfzt/pages/_document.js": 1,
+      "static/Fb9_pacbuYtd9F8fapfzt/pages/_error.js": 2,
+      "static/Fb9_pacbuYtd9F8fapfzt/pages/index.js": 3,
+      "static/Fb9_pacbuYtd9F8fapfzt/pages/p/[id].js": 4,
+      "static/DE3UBAE9OYfdvkzSDC6oG/pages/_app.js": 5,
+      "static/DE3UBAE9OYfdvkzSDC6oG/pages/_document.js": 6,
+      "static/DE3UBAE9OYfdvkzSDC6oG/pages/_error.js": 7,
+      "static/DE3UBAE9OYfdvkzSDC6oG/pages/index.js": 8,
+      "static/DE3UBAE9OYfdvkzSDC6oG/pages/p/[id].js": 9,
+      "static/dtaioOIDZNnEoLmw6LpN0/pages/_app.js": 0,
+      "static/dtaioOIDZNnEoLmw6LpN0/pages/_document.js": 1,
+      "static/dtaioOIDZNnEoLmw6LpN0/pages/_error.js": 2,
+      "static/dtaioOIDZNnEoLmw6LpN0/pages/index.js": 3,
+      "static/dtaioOIDZNnEoLmw6LpN0/pages/p/[id].js": 4
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}
