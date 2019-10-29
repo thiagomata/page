@@ -47,17 +47,21 @@ Resume.jsonp({
     {
       "company": "ROKT",
       "position": "Senior Software Engineer",
+      "website": "https://www.rokt.com/",
       "startDate": "2019-06-01",
       "present": true,
       "relevance": 10,
-      "higlights": [
+      "highlights": [
         "AWS"
       ],
-      "sumary": "Working in the Data Architec team creating the data network to the company products.",
+      "media": {
+        "icon": "rokt.svg"
+      },
+      "summary": "Working in the Data Architec team creating the data network to the company products.",
       "keywords": [
          "python", "go-lang", "java", "aws", "neptune", "redshift", "dynamodb", "aws lambda", "aws ec2", "aws eks", "aws cloudformation"
       ]
-    },    
+    },
     {
       "company": "SLI Systems",
       "position": "Senior Data Engineer",
@@ -94,7 +98,7 @@ Resume.jsonp({
         "scala", "php", "laravel", "aws", "oracle cloud", "postgres", "redis",
         "hadoop", "apache spark", "machine learning", "elasticsearch",
         "cloud computing", "r-language",
-        "javascript", "angular2", "d3.js", "jsPDF", "uml", "scrum", 
+        "javascript", "angular2", "d3.js", "jsPDF", "uml", "scrum",
       ],
       "highlights": [
         "Migration of Cloud infrastructure",
@@ -284,7 +288,7 @@ Resume.jsonp({
     },
     {
       "company": "ABEN Nacional - Brazilian Nurse Association",
-      "website": "http://www.abennacional.org.br/",      
+      "website": "http://www.abennacional.org.br/",
       "position": "Developer",
       "startDate": "2002-09-01",
       "endDate": "2003-04-30",
@@ -422,7 +426,7 @@ Resume.jsonp({
       "media": {
         "icon": "datacamp-icon.png",
         "thumbnail": "datacamp.png"
-      }      
+      }
     },{
       "institution": "Johns Hopkins University",
       "area": "Data Science",
