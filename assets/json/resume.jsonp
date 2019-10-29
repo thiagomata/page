@@ -55,7 +55,7 @@ Resume.jsonp({
         "AWS"
       ],
       "media": {
-        "icon": "rokt.svg"
+        "icon": "rokt.png"
       },
       "summary": "Working in the Data Architect team creating the data network to the company products.",
       "keywords": [
