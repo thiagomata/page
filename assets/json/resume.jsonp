@@ -45,6 +45,19 @@ Resume.jsonp({
   },
   "work": [
     {
+      "company": "ROKT",
+      "startDate": "2019-06-01",
+      "present": true,
+      "relevance": 10,
+      "higlights": [
+        "AWS"
+      ],
+      "sumary": "Working in the Data Architec team creating the data network to the company products.",
+      "keywords": [
+         "python", "go-lang", "java", "aws", "neptune", "redshift", "dynamodb", "aws lambda", "aws ec2", "aws eks", "aws cloudformation"
+      ]
+    },    
+    {
       "company": "SLI Systems",
       "position": "Senior Data Engineer",
       "website": "https://www.sli-systems.com/",
