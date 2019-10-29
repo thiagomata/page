@@ -57,7 +57,7 @@ Resume.jsonp({
       "media": {
         "icon": "rokt.svg"
       },
-      "summary": "Working in the Data Architec team creating the data network to the company products.",
+      "summary": "Working in the Data Architect team creating the data network to the company products.",
       "keywords": [
          "python", "go-lang", "java", "aws", "neptune", "redshift", "dynamodb", "aws lambda", "aws ec2", "aws eks", "aws cloudformation"
       ]
@@ -67,7 +67,6 @@ Resume.jsonp({
       "position": "Senior Data Engineer",
       "website": "https://www.sli-systems.com/",
       "startDate": "2017-09-15",
-      "present": true,
       "relevance": 10,
       "summary": "The SLI Systems provides many products to improve the results to e-commerce clients. Here I am working on the new version of some products of the company and prototyping and testing new learning strategies.",
       "highlights": [
