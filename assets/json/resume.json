@@ -47,7 +47,8 @@
 	         "AWS"
       ],
       "media": {
-        "icon": "rokt.png"
+        "icon": "rokt.png",
+        "thumbnail": "rokt.png"
       },
       "summary": "Working in the Data Architect team creating the data network to the ROKT products.",
       "keywords": [
