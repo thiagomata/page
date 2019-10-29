@@ -46,6 +46,7 @@ Resume.jsonp({
   "work": [
     {
       "company": "ROKT",
+      "position": "Senior Software Engineer",
       "startDate": "2019-06-01",
       "present": true,
       "relevance": 10,
