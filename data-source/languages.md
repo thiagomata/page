@@ -1,6 +1,7 @@
-  "languages": [
-    {
-      "name": "English",
-      "level": "Good"
-    }
-  ],
+  # Languages
+  
+  ## English
+  Good
+  
+  ## Portuguese
+  Native

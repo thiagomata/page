@@ -1,7 +1,6 @@
 # Experience
 
-## Company
-[ROKT](http://rokt.com/)
+## [ROKT](http://rokt.com/)
 
 ### Logo
 ![logo](./images/ideia-bigdata-icon.png)
@@ -23,8 +22,7 @@ Python, GoLang, Java
 
 ------------------------------------------------------------------------
 
-## Company
-[SLI Systems](https://www.sli-systems.com/)
+## [SLI Systems](https://www.sli-systems.com/)
 
 ### Position
 Chief Technology Officer
@@ -49,8 +47,7 @@ Java, Python
 
 ------------------------------------------------------------------------
 
-## Company
-[Ideia Big Data](http://ideiabigdata.com/en/)
+## [Ideia Big Data](http://ideiabigdata.com/en/)
 
 ### Start Date
 2014-11
@@ -72,8 +69,7 @@ PHP, Scala, Python, Javascript, R-Language
 
 ------------------------------------------------------------------------
 
-## Company
-[Adjetiva](http://www.facebook.com/adjetiva)
+## [Adjetiva](http://www.facebook.com/adjetiva)
 
 ### Logo
 "icon": "adjetiva-icon.png",
@@ -101,8 +97,7 @@ PHP, Java, Node.js
 
 ------------------------------------------------------------------------
 
-## Company
-[Otimicar](http://otimicar.com)
+## [Otimicar](http://otimicar.com)
 
 ### Logo
 otimicar-icon.png
@@ -130,8 +125,7 @@ Java, Node.js
 
 ------------------------------------------------------------------------
 
-## Company
-954 Business Consulting
+## 954 Business Consulting
 
 ### Logo
 954-icon.png
@@ -159,8 +153,7 @@ PHP, Javascript
 
 ------------------------------------------------------------------------
 
-## Company
-[INEP - Instituto Nacional de Pesquisas Educacionais](http://inep.gov.br)
+## [INEP - Instituto Nacional de Pesquisas Educacionais](http://inep.gov.br)
 
 ### Logo
 inep-icon.png
@@ -188,8 +181,7 @@ PHP, Java
 
 ------------------------------------------------------------------------
 
-## Company
-[Bancoob - Sicoob](https://www.bancoob.com.br/)
+## [Bancoob - Sicoob](https://www.bancoob.com.br/)
 
 ### Logo
 sicoob-icon.png
@@ -217,8 +209,7 @@ Visual Basic, Java
 
 ------------------------------------------------------------------------
 
-## Company
-MEC - [Ministry of Education of Brazil](https://mec.gov.br)
+## [MEC - Ministry of Education of Brazil](https://mec.gov.br)
 
 ### Logo
 mec-icon.png
@@ -245,8 +236,7 @@ PHP, Javascript
 1
 
 ------------------------------------------------------------------------
-## Company
-[AgênciaClick - Isobar](http://www.isobar.com/global/en)
+## [AgênciaClick - Isobar](http://www.isobar.com/global/en)
 
 ### Logo
 isobar_orange.png
@@ -274,8 +264,7 @@ PHP, Javascript
 
 ------------------------------------------------------------------------
  
-## Company
-S.A.M.U. - Emergency Medical Service"
+## S.A.M.U. - Emergency Medical Service
 
 ### Logo
 samu-icon.png
@@ -290,7 +279,7 @@ Developer
 2005-09-28
 
 ### Description
-The S.A.M.U. is a critial call center software to deal with emergency calls and connect the pacient, ambulance driver and medical into one call. There, I could create the Rich Internet Aplications of the Internal System of Ambulance Request Manager
+The S.A.M.U. is a critical call center software to deal with emergency calls and connect the pacient, ambulance driver and medical into one call. There, I could create the Rich Internet Aplications of the Internal System of Ambulance Request Manager
 
 ### Tech
 JSTL, CSS, Struts
@@ -300,8 +289,7 @@ Java, Javascript
 
 ------------------------------------------------------------------------
  
-## Company
-M.S.D.
+## M.S.D.
 
 ### Logo
 msd-icon.png
@@ -326,8 +314,7 @@ Javascript, Action Script
 
 ------------------------------------------------------------------------
  
-## Company
-ABEN Nacional - Brazilian Nurse Association
+## ABEN Nacional - Brazilian Nurse Association
 
 ### Logo
 logo_aben.png
