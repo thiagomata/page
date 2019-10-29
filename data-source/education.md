@@ -89,7 +89,7 @@ logo_unb2.png
 * Transduction of Quantities
 * Research Methodologies in Biomedical Engineering
 * Medical Physiology
-* Electromedical Instrumentation
+* Electro Medical Instrumentation
 * Intelligent Systems in Biomedical Engineering
 * Biological Signal Processing
 * Biostatistics in Biomedical Engineering

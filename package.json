@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "dev": "next",
     "build": "next build",
     "start": "next start",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/thiagomata/resume.js#readme",
   "dependencies": {
+    "@types/jest": "^24.0.20",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.1",
     "react": "^16.11.0",
@@ -30,7 +32,8 @@
   "devDependencies": {
     "@types/node": "^12.11.7",
     "@types/react": "^16.9.11",
-    "babel-cli": "^6.26.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   }
 }

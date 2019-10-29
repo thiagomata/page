@@ -11,7 +11,16 @@ interface Props {
 
 const Page: NextPage<Props> = ({ userAgent, shows }) => (
     <Layout>
-        Hello Workd
+        <main>Your user agent: {userAgent}</main>
+        <ul>
+            {shows.map(show => (
+                <li key={show.id}>
+                    <Link href="/p/[id]" as={`/p/${show.id}`}>
+                        <a>{show.name}</a>
+                    </Link>
+                </li>
+            ))}
+        </ul>
     </Layout>
 )
 
