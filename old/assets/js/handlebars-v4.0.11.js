@@ -1592,7 +1592,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _utils = __webpack_require__(5);
 
-	exports.parser = _parser2['default'];
+	exports.parse = _parser2['default'];
 
 	var yy = {};
 	_utils.extend(yy, Helpers);
@@ -1902,7 +1902,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.lexer.setInput(input);
 	            this.lexer.yy = this.yy;
 	            this.yy.lexer = this.lexer;
-	            this.yy.parser = this;
+	            this.yy.parse = this;
 	            if (typeof this.lexer.yylloc == "undefined") this.lexer.yylloc = {};
 	            var yyloc = this.lexer.yylloc;
 	            lstack.push(yyloc);

@@ -1,12 +1,16 @@
-import TitleParser from "../model/parser/TitleParser";
+import TitleParser from "./TitleParser";
 
-describe('parse nodes', function() {
+describe('parse titles', function() {
     it('sibling nodes', function() {
-        let result = TitleParser.parser(`
-        # a
+        let result = TitleParser.parse(`
+        ### a
         inside a
-        # b
+        ### b
         inside b
+        ### c
+        inside c
+        ### d
+        inside d
         `);
         // @ts-ignore
         let expected: ParseElement = {
@@ -18,6 +22,14 @@ describe('parse nodes', function() {
                 "b": {
                     content: "inside b",
                     elements: {}
+                },
+                "c": {
+                    content: "inside c",
+                    elements: {}
+                },
+                "d": {
+                    content: "inside d",
+                    elements: {}
                 }
             }
         };
@@ -26,7 +38,7 @@ describe('parse nodes', function() {
     });
 
     it('not linear deep', function() {
-        let result = TitleParser.parser(`
+        let result = TitleParser.parse(`
         # a
         inside a
         ### a3
@@ -66,7 +78,7 @@ describe('parse nodes', function() {
 
 
     it('child nodes', function() {
-        let result = TitleParser.parser(`
+        let result = TitleParser.parse(`
         # a
         inside a
             ## a1
@@ -136,4 +148,64 @@ describe('parse nodes', function() {
         expect(result).toStrictEqual(expected);
 
     });
+
+
+    it('missing parent', function() {
+        let result = TitleParser.parse(`
+        # a1
+        inside a1
+        #### a4
+            inside a4
+        ### a2
+            inside a2
+        `);
+        // @ts-ignore
+        let expected: ParseElement = {
+            elements: {
+                "a1": {
+                    content: "inside a1",
+                    elements: {
+                        "a4": {
+                            content: "inside a4",
+                            elements: {}
+                        },
+                        "a2": {
+                            content: "inside a2",
+                            elements: {}
+                        }
+                    }
+                }
+            }
+        };
+
+        expect(result).toStrictEqual(expected);
+
+    });
+
+    it('same level', function() {
+        let result = TitleParser.parse(`
+        # a1
+        inside a1
+        
+        # a2
+        inside a2
+        `);
+        // @ts-ignore
+        let expected: ParseElement = {
+            elements: {
+                "a1": {
+                    content: "inside a1",
+                    elements: {}
+                },
+                "a2": {
+                    content: "inside a2",
+                    elements: {}
+                }
+            }
+        };
+
+        expect(result).toStrictEqual(expected);
+
+    });
+
 });

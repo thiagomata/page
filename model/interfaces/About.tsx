@@ -1,15 +1,15 @@
 import {Profile} from "./Profile";
 import {Image} from "./Image";
 
-export interface Show {
+export interface About {
     name:  string,
     fullName: string,
     label: string,
     picture: Image,
-    email: string,
-    phone: string,
     website: string,
     summary: string,
-    location: string,
-    profiles: Profile[]
+    email?: string,
+    phone?: string,
+    location?: string,
+    profiles?: Profile[]
 }
