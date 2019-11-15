@@ -11,9 +11,9 @@ interface Props {
 
 const Page: NextPage<Props> = ({ userAgent, shows }) => (
     <Layout>
-        Hello Workd
+        Hello World
     </Layout>
-)
+);
 
 Page.getInitialProps = async ({ req }) => {
     const userAgent = req ? req.headers['user-agent'] : navigator.userAgent

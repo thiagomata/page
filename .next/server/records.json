@@ -5,14 +5,16 @@
       "multi private-next-pages/p/[id].tsx": 1,
       "multi next/dist/pages/_app": 2,
       "multi next/dist/pages/_error": 3,
-      "multi next/dist/pages/_document": 4
+      "multi next/dist/pages/_document": 4,
+      "multi private-next-pages/copy.tsx": 5
     },
     "usedIds": {
       "0": 0,
       "1": 1,
       "2": 2,
       "3": 3,
-      "4": 4
+      "4": 4,
+      "5": 5
     }
   },
   "chunks": {
@@ -41,15 +43,22 @@
       "static/dtaioOIDZNnEoLmw6LpN0/pages/_document.js": 1,
       "static/dtaioOIDZNnEoLmw6LpN0/pages/_error.js": 2,
       "static/dtaioOIDZNnEoLmw6LpN0/pages/index.js": 3,
-      "static/dtaioOIDZNnEoLmw6LpN0/pages/p/[id].js": 4
+      "static/dtaioOIDZNnEoLmw6LpN0/pages/p/[id].js": 4,
+      "static/w1rZ3xLkpFJzzvs8MEWC2/pages/_app.js": 5,
+      "static/w1rZ3xLkpFJzzvs8MEWC2/pages/_document.js": 6,
+      "static/w1rZ3xLkpFJzzvs8MEWC2/pages/_error.js": 7,
+      "static/w1rZ3xLkpFJzzvs8MEWC2/pages/copy.js": 8,
+      "static/w1rZ3xLkpFJzzvs8MEWC2/pages/index.js": 9,
+      "static/w1rZ3xLkpFJzzvs8MEWC2/pages/p/[id].js": 10
     },
     "bySource": {},
     "usedIds": [
-      0,
-      1,
-      2,
-      3,
-      4
+      10,
+      5,
+      6,
+      7,
+      8,
+      9
     ]
   }
 }

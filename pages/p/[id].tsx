@@ -1,17 +1,17 @@
 import { NextPage } from 'next'
 import Layout from '../../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
-import { Show } from '../../data/Show'
+import {Show} from "../../model/interfaces/Show";
 
 interface Props {
-    show: Show
+    show: Show;
 }
 
 const Post: NextPage<Props> = ({show}) => (
   <Layout>
     <h1>{show.name}</h1>
     <p>{show.summary.replace(/<[/]?[pb]>/g, '')}</p>
-    <img src={show.image.medium} />
+    <img src={show.image.medium}  alt={"Image of the Page"}/>
   </Layout>
 );
 

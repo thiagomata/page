@@ -3,6 +3,7 @@ import Layout from '../components/MyLayout';
 import { Show } from '../model/interfaces/Show'
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import * as React from "react";
 
 interface Props {
     userAgent?: string,
@@ -48,6 +49,6 @@ Page.getInitialProps = async ({ req }) => {
         userAgent: userAgent,
         shows: shows,
     };
-}
+};
 
 export default Page
