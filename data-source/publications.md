@@ -33,7 +33,7 @@ We published this paper that describes part of a search result, after extensive 
 andrebdes@unb.br
 
 ##### Institution 
-Universidade de Brasília - UnB
+Universidade de Brasília - UnBf
           
 ##### Abbreviation
 AB Sales

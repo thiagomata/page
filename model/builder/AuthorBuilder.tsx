@@ -1,52 +1,68 @@
 import {Image} from "../interfaces/Image";
-import {Profile} from "../interfaces/Profile";
-import {createCheckers, ICheckerSuite} from "ts-interface-checker";
-import {About} from "../interfaces/About";
+import {Author, Institution} from "../interfaces/Publication";
 import {ValidationError, ValidationResult} from "../interfaces/ValidationError";
+import {Profile} from "../interfaces/Profile";
 import BuilderUtils from "../utils/BuilderUtils";
 
-export default class ProfileBuilder {
+export default class AuthorBuilder {
     name?: string;
-    username?: string;
+    abbreviation?: string;
+    email?: string;
     link?: string;
-    icon?: Image;
+    avatar?: Image;
+    institution?: Institution;
+    profiles?: Profile[];
 
-    public withName(name: string): ProfileBuilder {
+    public withName(name: string): AuthorBuilder {
         this.name = name;
         return this;
     }
 
-    public withUsername(username: string): ProfileBuilder {
-        this.username = username;
+    public withAbbreviation(abbreviation: string): AuthorBuilder {
+        this.abbreviation = abbreviation;
+        return this;
+    }
+    public withEmail(email: string): AuthorBuilder {
+        this.email = email;
         return this;
     }
 
-    public withLink(link: string): ProfileBuilder {
+    public withLink(link: string): AuthorBuilder {
         this.link = link;
         return this;
     }
 
-    public withIcon(icon: Image): ProfileBuilder {
-        this.icon = icon;
+    public withAvatar(avatar: Image): AuthorBuilder {
+        this.avatar = avatar;
         return this;
+    }
+
+    public withInstitution(institution: Institution): AuthorBuilder {
+        this.institution = institution;
+        return this;
+    }
+
+    public withProfiles(profiles: Profile[]): AuthorBuilder {
+        this.profiles = profiles;
+        return this
     }
 
     /**
      * Build or throws an Exception
      * @throws BuilderException
      */
-    public buildOrFail(): Profile {
+    public buildOrFail(): Author {
         return BuilderUtils.buildOrFail(this.build());
     }
 
-    public build(): ValidationResult<Profile> {
+    public build(): ValidationResult<Author> {
 
         let errors: ValidationError[] = [];
 
         if (!this.name) {
             errors.push(
                 {
-                    element: "Profile",
+                    element: "Author",
                     attribute: "name",
                     message: "Name is required"
                 }
@@ -71,15 +87,18 @@ export default class ProfileBuilder {
             throw new Error("Unexpected missing fields after validation");
         }
 
-        let profile: Profile = {
+        let author: Author = {
             name: this.name,
-            username: this.username,
+            email: this.email,
             link: this.link,
-            icon: this.icon,
+            avatar: this.avatar,
+            abbreviation: this.abbreviation,
+            institution: this.institution,
+            profiles: this.profiles
         };
         return {
             hasErrors: false,
-            result: profile
+            result: author
         }
     }
 }

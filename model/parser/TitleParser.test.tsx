@@ -1,4 +1,4 @@
-import TitleParser from "./TitleParser";
+import TitleParser, {ParseElement} from "./TitleParser";
 
 describe('parse titles', function() {
     it('sibling nodes', function() {
@@ -12,7 +12,6 @@ describe('parse titles', function() {
         ### d
         inside d
         `);
-        // @ts-ignore
         let expected: ParseElement = {
             elements: {
                 "a": {
@@ -48,7 +47,6 @@ describe('parse titles', function() {
         ## a2
         inside a2
         `);
-        // @ts-ignore
         let expected: ParseElement = {
             elements: {
                 "a": {
@@ -98,7 +96,6 @@ describe('parse titles', function() {
                     #### b2.1.1
                     inside b2.1.1
         `);
-        // @ts-ignore
         let expected: ParseElement = {
             elements: {
                 "a": {
@@ -159,7 +156,6 @@ describe('parse titles', function() {
         ### a2
             inside a2
         `);
-        // @ts-ignore
         let expected: ParseElement = {
             elements: {
                 "a1": {
@@ -190,7 +186,6 @@ describe('parse titles', function() {
         # a2
         inside a2
         `);
-        // @ts-ignore
         let expected: ParseElement = {
             elements: {
                 "a1": {

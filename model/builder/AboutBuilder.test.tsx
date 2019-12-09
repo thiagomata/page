@@ -1,6 +1,5 @@
 import AboutBuilder from "./AboutBuilder";
-import {ValidationError, ValidationErrors, ValidationResult} from "../interfaces/ValidationError";
-import ProfileBuilder from "./ProfileBuilder";
+import {ValidationErrors, ValidationResult} from "../interfaces/ValidationError";
 import ProfileBuilderTestHelper from "./ProfileBuilder.test";
 import {Profile} from "../interfaces/Profile";
 import {Image} from "../interfaces/Image";
@@ -18,10 +17,11 @@ export default class AboutBuilderTestHelper {
     static readonly TEST_PHONE: string = "Some About Phone";
     static readonly TEST_PROFILES: Profile[] = [ ProfileBuilderTestHelper.getWithRequired() ];
 
-    // @todo replace by a call to the ImageTestHelper
-    // @see ImageTestHelper
     static readonly TEST_PICTURE: Image = {
-        link: "Some About Image Link"
+        title: "Some About Image",
+        link: "http://someabout.com/icon.png",
+        width: 100,
+        height: 200
     };
 
     public static getBuilderWithAllAttributes(): AboutBuilder {
@@ -55,7 +55,24 @@ export default class AboutBuilderTestHelper {
 
     public static getBuilderWithRequired(): AboutBuilder {
         return new AboutBuilder()
-            .withName(AboutBuilderTestHelper.TEST_ABOUT_NAME);
+            .withName(AboutBuilderTestHelper.TEST_ABOUT_NAME)
+            .withFullName(AboutBuilderTestHelper.TEST_FULL_NAME)
+            .withLabel(AboutBuilderTestHelper.TEST_LABEL)
+            .withPicture(AboutBuilderTestHelper.TEST_PICTURE)
+            .withSummary(AboutBuilderTestHelper.TEST_SUMMARY)
+            .withWebsite(AboutBuilderTestHelper.TEST_WEBSITE)
+            ;
+    }
+
+    public static getWithRequired(): About {
+        return {
+            name: AboutBuilderTestHelper.TEST_ABOUT_NAME,
+            fullName: AboutBuilderTestHelper.TEST_FULL_NAME,
+            label: AboutBuilderTestHelper.TEST_LABEL,
+            picture: AboutBuilderTestHelper.TEST_PICTURE,
+            summary: AboutBuilderTestHelper.TEST_SUMMARY,
+            website: AboutBuilderTestHelper.TEST_WEBSITE,
+        }
     }
 
     public static getErrorMissingRequired(): ValidationErrors {
@@ -100,10 +117,19 @@ export default class AboutBuilderTestHelper {
 describe('test About Builder', function() {
     it('check missing all', function() {
         let result = new AboutBuilder().build();
-        // @ts-ignore
         let expected: ValidationErrors = AboutBuilderTestHelper.getErrorMissingRequired();
 
         expect(result).toEqual(expected);
+    });
+    it('check missing exception', function() {
+        expect(()=>{
+            new AboutBuilder().buildOrFail();
+        }).toThrow();
+    });
+    it('check required not throw exception', function() {
+        expect((()=>{
+            return AboutBuilderTestHelper.getBuilderWithRequired().buildOrFail()
+        })()).toEqual( AboutBuilderTestHelper.getWithRequired() )
     });
     it('check having all', function() {
         let result:ValidationResult<About> = AboutBuilderTestHelper.getBuilderWithAllAttributes().build();
@@ -111,6 +137,16 @@ describe('test About Builder', function() {
         let expected = {
             hasErrors: false,
             result: AboutBuilderTestHelper.getWithAllAttributes()
+        };
+
+        expect(result).toEqual(expected);
+    });
+    it('check required only', function() {
+        let result:ValidationResult<About> = AboutBuilderTestHelper.getBuilderWithRequired().build();
+        // @ts-ignore
+        let expected = {
+            hasErrors: false,
+            result: AboutBuilderTestHelper.getWithRequired()
         };
 
         expect(result).toEqual(expected);

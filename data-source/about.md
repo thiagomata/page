@@ -42,6 +42,8 @@ Chatswood, Sydney, Australia
 
 [@thiagomata](http://twitter.com/thiagomata)
 
+### Icon
+
 ### Linkedin
 
 [thiagomata](https://www.linkedin.com/in/thiagomata/)

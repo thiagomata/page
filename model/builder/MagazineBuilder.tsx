@@ -1,32 +1,35 @@
 import {Image} from "../interfaces/Image";
-import {Profile} from "../interfaces/Profile";
-import {createCheckers, ICheckerSuite} from "ts-interface-checker";
-import {About} from "../interfaces/About";
+import {Magazine} from "../interfaces/Publication";
 import {ValidationError, ValidationResult} from "../interfaces/ValidationError";
 import BuilderUtils from "../utils/BuilderUtils";
 
-export default class ProfileBuilder {
+export default class MagazineBuilder {
     name?: string;
-    username?: string;
+    abbreviation?: string;
+    email?: string;
     link?: string;
     icon?: Image;
 
-    public withName(name: string): ProfileBuilder {
+    public withName(name: string): MagazineBuilder {
         this.name = name;
         return this;
     }
 
-    public withUsername(username: string): ProfileBuilder {
-        this.username = username;
+    public withAbbreviation(abbreviation: string): MagazineBuilder {
+        this.abbreviation = abbreviation;
+        return this;
+    }
+    public withEmail(email: string): MagazineBuilder {
+        this.email = email;
         return this;
     }
 
-    public withLink(link: string): ProfileBuilder {
+    public withLink(link: string): MagazineBuilder {
         this.link = link;
         return this;
     }
 
-    public withIcon(icon: Image): ProfileBuilder {
+    public withIcon(icon: Image): MagazineBuilder {
         this.icon = icon;
         return this;
     }
@@ -35,18 +38,18 @@ export default class ProfileBuilder {
      * Build or throws an Exception
      * @throws BuilderException
      */
-    public buildOrFail(): Profile {
+    public buildOrFail(): Magazine {
         return BuilderUtils.buildOrFail(this.build());
     }
 
-    public build(): ValidationResult<Profile> {
+    public build(): ValidationResult<Magazine> {
 
         let errors: ValidationError[] = [];
 
         if (!this.name) {
             errors.push(
                 {
-                    element: "Profile",
+                    element: "Magazine",
                     attribute: "name",
                     message: "Name is required"
                 }
@@ -71,15 +74,15 @@ export default class ProfileBuilder {
             throw new Error("Unexpected missing fields after validation");
         }
 
-        let profile: Profile = {
+        let Magazine: Magazine = {
             name: this.name,
-            username: this.username,
             link: this.link,
             icon: this.icon,
+            abbreviation: this.abbreviation,
         };
         return {
             hasErrors: false,
-            result: profile
+            result: Magazine
         }
     }
 }

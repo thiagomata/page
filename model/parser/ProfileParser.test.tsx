@@ -1,6 +1,7 @@
 import ProfileParser from "./ProfileParser";
 import TitleParser from "./TitleParser";
 import ProfileBuilderTestHelper from "../builder/ProfileBuilder.test";
+import ParseSettings from "./ParseSettings";
 
 describe('profile parser tests', function() {
     it('simple case', function() {
@@ -20,7 +21,8 @@ describe('profile parser tests', function() {
             result: {
                 name: "Twitter",
                 link: "http://twitter.com/thiagomata",
-                username: "@thiagomata"
+                username: "@thiagomata",
+                icon: undefined,
             }
         };
         expect(result).toStrictEqual(expected);
@@ -40,7 +42,8 @@ describe('profile parser tests', function() {
             result: {
                 name: "Twitter",
                 link: "http://twitter.com/thiagomata",
-                username: "@thiagomata"
+                username: "@thiagomata",
+                icon: undefined,
             }
         };
         expect(result).toStrictEqual(expected);
@@ -60,7 +63,7 @@ describe('profile parser tests', function() {
                 username: "@thiagomata"
             }]
         };
-        expect(result).toStrictEqual(expected);
+        expect(result).toEqual(expected);
     });
 
     it('name on title and link on username - one profile', function() {
@@ -78,7 +81,7 @@ describe('profile parser tests', function() {
                 username: "@thiagomata"
             }]
         };
-        expect(result).toStrictEqual(expected);
+        expect(result).toEqual(expected);
     });
 
     it('complex case - many profiles', function() {
@@ -88,23 +91,38 @@ describe('profile parser tests', function() {
         ## Username
         @thiagomata
 
+        ## Icon
+        <img src="http://www.thiagomata.com/images/twitter.svg" alt="twitter"/>
+        
         # Linkedin
         
-        [thiagomata](https://www.linkedin.com/in/thiagomata/)
+        [thiagomata](https://www.linkedin.com/in/thiagomata)
+        
+        ## Icon
+        [linkedin](http://www.thiagomata.com/images/linkedin.svg)
+        
         `));
         let expected = {
             hasErrors: false,
             result: [{
                 name: "Twitter",
                 link: "http://twitter.com/thiagomata",
-                username: "@thiagomata"
+                username: "@thiagomata",
+                icon: {
+                    link: "http://www.thiagomata.com/images/twitter.svg",
+                    title: "twitter"
+                }
             },{
+                link: "https://www.linkedin.com/in/thiagomata",
                 name: "Linkedin",
-                link: "https://www.linkedin.com/in/thiagomata/",
-                username: "thiagomata"
+                username: "thiagomata",
+                icon: {
+                    link: "http://www.thiagomata.com/images/linkedin.svg",
+                    title: "linkedin",
+                }
             }]
         };
-        expect(result).toStrictEqual(expected);
+        expect(result).toEqual(expected);
     });
 
     it('error case - missing name', function() {
@@ -113,5 +131,32 @@ describe('profile parser tests', function() {
         `));
         let expected = ProfileBuilderTestHelper.getErrorMissingRequired();
         expect(result).toStrictEqual(expected);
+    });
+
+    it('error case - invalid image', function() {
+        let result = ProfileParser.getProfilesFromParseElement( TitleParser.parse(`
+        # bob
+        ## icon
+         <button>something</button>
+        `));
+        let expected = {
+            hasErrors: true,
+            errors: [{
+                attribute: "xml",
+                element: "image",
+                message: "Unable to find Image in the XML <button>something</button>"
+            }]
+        }
+        expect(result).toStrictEqual(expected);
+    });
+
+    it('error case - unknown title', function() {
+        let result = ProfileParser.getProfilesFromParseElement( TitleParser.parse(`
+        # hey
+        ## joe
+        what are you doing
+        `));
+
+        expect(result.hasErrors).toStrictEqual(ParseSettings.FAIL_ON_UNKNOWN_PARSE_KEY);
     });
 });

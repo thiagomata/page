@@ -21,7 +21,7 @@ export default class TitleParser {
         let root = element;
         let stack = [element];
         let lines: string[] = content.split("\n");
-        let acc = "";
+        let acc = [];
         for (let line_pos in lines) {
             let line = lines[line_pos];
             let trim_line: string = line.trim();
@@ -30,7 +30,7 @@ export default class TitleParser {
             }
             let is_header = trim_line[0] == "#";
             if (is_header) {
-                this.setElementContent(element, acc);
+                this.setElementContent(element, acc.join(' '));
                 let deep = (trim_line.match(/#*/) || [])[0].length;
                 let title = trim_line.substr(deep).trim();
                 let newElement: ParseElement = {
@@ -47,12 +47,12 @@ export default class TitleParser {
                 stack[deep] = newElement;
                 stack.splice(deep + 1);
                 element = newElement;
-                acc = ""
+                acc = []
             } else {
-                acc += (" " + trim_line).trim()
+                acc.push((" " + trim_line).trim())
             }
         }
-        this.setElementContent(element, acc);
+        this.setElementContent(element, acc.join(' '));
         return root;
     }
 

@@ -1,32 +1,35 @@
 import {Image} from "../interfaces/Image";
-import {Profile} from "../interfaces/Profile";
-import {createCheckers, ICheckerSuite} from "ts-interface-checker";
-import {About} from "../interfaces/About";
+import {Institution} from "../interfaces/Publication";
 import {ValidationError, ValidationResult} from "../interfaces/ValidationError";
 import BuilderUtils from "../utils/BuilderUtils";
 
-export default class ProfileBuilder {
+export default class InstitutionBuilder {
     name?: string;
-    username?: string;
+    abbreviation?: string;
+    email?: string;
     link?: string;
     icon?: Image;
 
-    public withName(name: string): ProfileBuilder {
+    public withName(name: string): InstitutionBuilder {
         this.name = name;
         return this;
     }
 
-    public withUsername(username: string): ProfileBuilder {
-        this.username = username;
+    public withAbbreviation(abbreviation: string): InstitutionBuilder {
+        this.abbreviation = abbreviation;
+        return this;
+    }
+    public withEmail(email: string): InstitutionBuilder {
+        this.email = email;
         return this;
     }
 
-    public withLink(link: string): ProfileBuilder {
+    public withLink(link: string): InstitutionBuilder {
         this.link = link;
         return this;
     }
 
-    public withIcon(icon: Image): ProfileBuilder {
+    public withIcon(icon: Image): InstitutionBuilder {
         this.icon = icon;
         return this;
     }
@@ -35,18 +38,18 @@ export default class ProfileBuilder {
      * Build or throws an Exception
      * @throws BuilderException
      */
-    public buildOrFail(): Profile {
+    public buildOrFail(): Institution {
         return BuilderUtils.buildOrFail(this.build());
     }
 
-    public build(): ValidationResult<Profile> {
+    public build(): ValidationResult<Institution> {
 
         let errors: ValidationError[] = [];
 
         if (!this.name) {
             errors.push(
                 {
-                    element: "Profile",
+                    element: "Institution",
                     attribute: "name",
                     message: "Name is required"
                 }
@@ -71,15 +74,16 @@ export default class ProfileBuilder {
             throw new Error("Unexpected missing fields after validation");
         }
 
-        let profile: Profile = {
+        let institution: Institution = {
             name: this.name,
-            username: this.username,
+            email: this.email,
             link: this.link,
             icon: this.icon,
+            abbreviation: this.abbreviation,
         };
         return {
             hasErrors: false,
-            result: profile
+            result: institution
         }
     }
 }

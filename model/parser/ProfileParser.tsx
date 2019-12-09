@@ -1,14 +1,24 @@
 import TitleParser, {ParseElement} from "./TitleParser";
 import {Profile} from "../interfaces/Profile";
-import {ValidationError, ValidationResult} from "../interfaces/ValidationError";
+import {
+    ValidatedVoid,
+    ValidationError,
+    ValidationErrors,
+    ValidationResult,
+    VoidValidator
+} from "../interfaces/ValidationError";
 import ProfileBuilder from "../builder/ProfileBuilder";
 import LinkParser from "./LinkParser";
+import ImageParser from "./ImageParser";
+import {element} from "prop-types";
+import ParseSettings from "./ParseSettings";
 
 export default class ProfileParser {
 
     static readonly PARSE_NAME = 'name';
     static readonly PARSE_LINK = 'link';
     static readonly PARSE_USERNAME = 'username';
+    static readonly PARSE_ICON = 'icon';
 
     profileBuilder: ProfileBuilder = new ProfileBuilder();
 
@@ -28,12 +38,15 @@ export default class ProfileParser {
             }
         }
         for( let key in titleTree.elements ) {
-            this.parseElementKey(key,titleTree.elements[key])
+            let parseResult = this.parseElementKey(key,titleTree.elements[key])
+            if( parseResult.hasErrors ) {
+                return parseResult;
+            }
         }
         return this.profileBuilder.build();
     }
 
-    private parseElementKey(key: string, element: ParseElement) {
+    private parseElementKey(key: string, element: ParseElement): VoidValidator {
         let parseKey = key.trim().toLowerCase();
         if ( parseKey == ProfileParser.PARSE_NAME && element.content ) {
             let profileHeader = LinkParser.parse(element.content);
@@ -41,11 +54,15 @@ export default class ProfileParser {
             if (profileHeader.link) {
                 this.profileBuilder.withLink(profileHeader.link);
             }
-            return;
+            return {
+                hasErrors: false
+            };
         }
         if ( parseKey == ProfileParser.PARSE_LINK && element.content ) {
             this.profileBuilder.withLink(element.content);
-            return;
+            return {
+                hasErrors: false
+            };
         }
         if ( parseKey == ProfileParser.PARSE_USERNAME && element.content ) {
             let profileHeader = LinkParser.parse(element.content);
@@ -53,8 +70,22 @@ export default class ProfileParser {
             if (profileHeader.link) {
                 this.profileBuilder.withLink(profileHeader.link);
             }
-            return;
+            return {
+                hasErrors: false
+            };
         }
+        if( parseKey == ProfileParser.PARSE_ICON ) {
+            let imageValidated = ImageParser.parseElement(element);
+            if ( imageValidated.hasErrors ) {
+                return imageValidated;
+            } else {
+                this.profileBuilder.withIcon( imageValidated.result );
+                return {
+                    hasErrors: false
+                };
+            }
+        }
+        return ParseSettings.unknownParseKey(parseKey,"profile")
     }
 
     public static getProfilesFromParseElement(profilesElement: ParseElement): ValidationResult<Profile[]> {

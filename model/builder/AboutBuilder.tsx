@@ -1,8 +1,8 @@
 import {Image} from "../interfaces/Image";
 import {Profile} from "../interfaces/Profile";
-import {createCheckers, ICheckerSuite} from "ts-interface-checker";
 import {About} from "../interfaces/About";
 import {ValidationError, ValidationResult} from "../interfaces/ValidationError";
+import BuilderUtils from "../utils/BuilderUtils";
 
 export default class AboutBuilder {
     name?: string;
@@ -66,7 +66,14 @@ export default class AboutBuilder {
         return this;
     }
 
-    // public build(): {errors?: ValidationError[], about?: About} {
+    /**
+     * Build or throws an Exception
+     * @throws BuilderException
+     */
+    public buildOrFail(): About {
+        return BuilderUtils.buildOrFail(this.build());
+    }
+
     public build(): ValidationResult<About> {
         let errors: ValidationError[] = [];
 
@@ -134,6 +141,7 @@ export default class AboutBuilder {
             !this.summary  ||
             !this.website
         ) {
+            /* istanbul ignore next */
             throw new Error("Unexpected missing fields after validation");
         }
 

@@ -1,33 +1,32 @@
 import {Image} from "../interfaces/Image";
-import {Profile} from "../interfaces/Profile";
 import {createCheckers, ICheckerSuite} from "ts-interface-checker";
-import {About} from "../interfaces/About";
+
 import {ValidationError, ValidationResult} from "../interfaces/ValidationError";
 import BuilderUtils from "../utils/BuilderUtils";
 
-export default class ProfileBuilder {
-    name?: string;
-    username?: string;
+export default class ImageBuilder {
+    title?: string;
     link?: string;
-    icon?: Image;
+    width?: number;
+    height?: number;
 
-    public withName(name: string): ProfileBuilder {
-        this.name = name;
+    public withTitle(title: string): ImageBuilder {
+        this.title = title;
         return this;
     }
 
-    public withUsername(username: string): ProfileBuilder {
-        this.username = username;
+    public withWidth(width: number): ImageBuilder {
+        this.width = width;
         return this;
     }
 
-    public withLink(link: string): ProfileBuilder {
+    public withHeight(height: number): ImageBuilder {
+        this.height = height;
+        return this;
+    }
+
+    public withLink(link: string): ImageBuilder {
         this.link = link;
-        return this;
-    }
-
-    public withIcon(icon: Image): ProfileBuilder {
-        this.icon = icon;
         return this;
     }
 
@@ -35,20 +34,20 @@ export default class ProfileBuilder {
      * Build or throws an Exception
      * @throws BuilderException
      */
-    public buildOrFail(): Profile {
+    public buildOrFail(): Image {
         return BuilderUtils.buildOrFail(this.build());
     }
 
-    public build(): ValidationResult<Profile> {
+    public build(): ValidationResult<Image> {
 
         let errors: ValidationError[] = [];
 
-        if (!this.name) {
+        if (!this.link) {
             errors.push(
                 {
-                    element: "Profile",
-                    attribute: "name",
-                    message: "Name is required"
+                    element: "Image",
+                    attribute: "link",
+                    message: "Link is required"
                 }
             );
         }
@@ -66,20 +65,20 @@ export default class ProfileBuilder {
          *
          * This exception should never happening
          */
-        if (!this.name) {
+        if (!this.link) {
             /* istanbul ignore next */
             throw new Error("Unexpected missing fields after validation");
         }
 
-        let profile: Profile = {
-            name: this.name,
-            username: this.username,
+        let Image: Image = {
+            title: this.title,
             link: this.link,
-            icon: this.icon,
+            width: this.width,
+            height: this.height
         };
         return {
             hasErrors: false,
-            result: profile
+            result: Image
         }
     }
 }
