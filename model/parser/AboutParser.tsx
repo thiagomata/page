@@ -25,7 +25,11 @@ export default class AboutParser {
     builder: AboutBuilder = new AboutBuilder();
 
     parse(content: string): ValidationResult<About> {
-        let titleTree = TitleParser.parse(content);
+        let titleTree: ParseElement = TitleParser.parse(content);
+        return this.parseElement(titleTree);
+    }
+
+    parseElement(titleTree: ParseElement): ValidationResult<About> {
         let parseErrors: ValidationError[] = [];
         for (let key in titleTree.elements) {
             let parseResult = this.parseElementKey(key, titleTree.elements[key]);
