@@ -7,6 +7,7 @@ import {ValidationError, ValidationResult, VoidValidator} from "../interfaces/Va
 import ImageParser from "./ImageParser";
 import ParseSettings from "./ParseSettings";
 import {Event} from "../interfaces/Publication";
+import LinkParser from "./LinkParser";
 
 export default class EventParser {
 
@@ -30,7 +31,19 @@ export default class EventParser {
         return this.parseElement(titleTree);
     }
 
+    private extractTitleAndLink(value: string) {
+        const header = LinkParser.parse(value);
+        this.builder.withName(header.title);
+        if (header.link) {
+            this.builder.withLink(header.link);
+        }
+        return this;
+    }
+
     public parseElement(titleTree: ParseElement): ValidationResult<Event> {
+        if ( titleTree.content ) {
+            this.extractTitleAndLink(titleTree.content);
+        }
         let parseErrors: ValidationError[] = [];
         for (let key in titleTree.elements) {
             const parseResult = this.parseElementKey(key, titleTree.elements[key]);

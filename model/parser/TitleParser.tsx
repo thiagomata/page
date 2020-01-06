@@ -13,7 +13,7 @@ export default class TitleParser {
         element.content = trim_content;
     }
 
-    static parse(content: string) {
+    static parse(content: string): ParseElement {
 
         let element: ParseElement = {
             elements: {}

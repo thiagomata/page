@@ -19,6 +19,10 @@ export type ValidatedVoid = {
     hasErrors: false
 }
 
+export const ValidVoid: ValidatedVoid = {
+    hasErrors: false
+};
+
 export type VoidValidator = ValidationErrors | ValidatedVoid
 
 export type ValidationResult<T> = Validated<T> | ValidationErrors

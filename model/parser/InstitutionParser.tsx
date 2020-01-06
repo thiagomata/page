@@ -6,6 +6,7 @@ import {ValidationError, ValidationResult, VoidValidator} from "../interfaces/Va
 import ImageParser from "./ImageParser";
 import ParseSettings from "./ParseSettings";
 import {Institution} from "../interfaces/Publication";
+import LinkParser from "./LinkParser";
 
 export default class InstitutionParser {
 
@@ -15,7 +16,7 @@ export default class InstitutionParser {
     static readonly PARSE_LINK = 'link';
     static readonly PARSE_ICON = 'icon';
 
-    builder: institutionBuilder = new InstitutionBuilder();
+    builder: InstitutionBuilder = new InstitutionBuilder();
 
     public static parse(content: string): ValidationResult<Institution> {
         return new InstitutionParser().parse(content);
@@ -32,6 +33,13 @@ export default class InstitutionParser {
 
     public parseElement(titleTree: ParseElement): ValidationResult<Institution> {
         let parseErrors: ValidationError[] = [];
+        if( titleTree.content ) {
+            const header = LinkParser.parse(titleTree.content);
+            this.builder.withName(header.title);
+            if (header.link) {
+                this.builder.withLink(header.link);
+            }
+        }
         for (let key in titleTree.elements) {
             const parseResult = this.parseElementKey(key, titleTree.elements[key]);
             if (parseResult.hasErrors) {
