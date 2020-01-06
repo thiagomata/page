@@ -2,7 +2,7 @@ import TitleParser, {ParseElement} from "./TitleParser";
 import {Image} from "../interfaces/Image";
 import institutionBuilder from "../builder/InstitutionBuilder";
 import InstitutionBuilder from "../builder/InstitutionBuilder";
-import {ValidationError, ValidationResult, VoidValidator} from "../interfaces/ValidationError";
+import {ValidationError, ValidationResult, ValidVoid, VoidValidator} from "../interfaces/ValidationError";
 import ImageParser from "./ImageParser";
 import ParseSettings from "./ParseSettings";
 import {Institution} from "../interfaces/Publication";
@@ -59,28 +59,27 @@ export default class InstitutionParser {
         const parseKey = key.toLowerCase().trim();
         if (parseKey == InstitutionParser.PARSE_NAME && element.content ) {
             this.builder.withName(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == InstitutionParser.PARSE_ABBREVIATION && element.content ) {
             this.builder.withAbbreviation(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (InstitutionParser.PARSE_EMAIL.includes(parseKey) && element.content ) {
             this.builder.withEmail(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == InstitutionParser.PARSE_LINK && element.content ) {
             this.builder.withLink(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == InstitutionParser.PARSE_ICON) {
             const pictureResult: ValidationResult<Image> = ImageParser.parseElement(element);
             if (pictureResult.hasErrors) {
                 return pictureResult;
-            } else {
-                this.builder.withIcon(pictureResult.result);
             }
-            return {hasErrors: false};
+            this.builder.withIcon(pictureResult.result);
+            return ValidVoid;
         }
         return ParseSettings.unknownParseKey(parseKey,"Institution");
     }

@@ -4,7 +4,7 @@ import {
     ValidatedVoid,
     ValidationError,
     ValidationErrors,
-    ValidationResult,
+    ValidationResult, ValidVoid,
     VoidValidator
 } from "../interfaces/ValidationError";
 import ProfileBuilder from "../builder/ProfileBuilder";
@@ -54,15 +54,11 @@ export default class ProfileParser {
             if (profileHeader.link) {
                 this.profileBuilder.withLink(profileHeader.link);
             }
-            return {
-                hasErrors: false
-            };
+            return ValidVoid;
         }
         if ( parseKey == ProfileParser.PARSE_LINK && element.content ) {
             this.profileBuilder.withLink(element.content);
-            return {
-                hasErrors: false
-            };
+            return ValidVoid;
         }
         if ( parseKey == ProfileParser.PARSE_USERNAME && element.content ) {
             let profileHeader = LinkParser.parse(element.content);
@@ -70,20 +66,15 @@ export default class ProfileParser {
             if (profileHeader.link) {
                 this.profileBuilder.withLink(profileHeader.link);
             }
-            return {
-                hasErrors: false
-            };
+            return ValidVoid;
         }
         if( parseKey == ProfileParser.PARSE_ICON ) {
             let imageValidated = ImageParser.parseElement(element);
             if ( imageValidated.hasErrors ) {
                 return imageValidated;
-            } else {
-                this.profileBuilder.withIcon( imageValidated.result );
-                return {
-                    hasErrors: false
-                };
             }
+            this.profileBuilder.withIcon( imageValidated.result );
+            return ValidVoid;
         }
         return ParseSettings.unknownParseKey(parseKey,"profile")
     }

@@ -5,7 +5,13 @@ import {About} from "../interfaces/About";
 import ProfileParser from "./ProfileParser";
 import {isValidElement} from "react";
 import AboutBuilder from "../builder/AboutBuilder";
-import {ValidationError, ValidationResult, ValidationErrors, VoidValidator} from "../interfaces/ValidationError";
+import {
+    ValidationError,
+    ValidationResult,
+    ValidationErrors,
+    VoidValidator,
+    ValidVoid
+} from "../interfaces/ValidationError";
 import ImageParser from "./ImageParser";
 import ParseSettings from "./ParseSettings";
 
@@ -50,35 +56,35 @@ export default class AboutParser {
         let parseKey = key.trim().toLowerCase();
         if (parseKey == AboutParser.PARSE_NAME) {
             this.builder.withName(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_FULL_NAME) {
             this.builder.withFullName(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_LABEL) {
             this.builder.withLabel(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (AboutParser.PARSE_EMAIL.includes(parseKey)) {
             this.builder.withEmail(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_PHONE) {
             this.builder.withPhone(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_WEBSITE) {
             this.builder.withWebsite(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_SUMMARY) {
             this.builder.withSummary(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_LOCATION) {
             this.builder.withLocation(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_PROFILES) {
             let profileResult: ValidationResult<Profile[]> = ProfileParser.getProfilesFromParseElement(element);
@@ -87,16 +93,15 @@ export default class AboutParser {
             } else {
                 this.builder.withProfiles(profileResult.result);
             }
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == AboutParser.PARSE_PICTURE) {
             let pictureResult: ValidationResult<Image> = ImageParser.parseElement(element);
             if (pictureResult.hasErrors) {
                 return pictureResult;
-            } else {
-                this.builder.withPicture(pictureResult.result);
             }
-            return {hasErrors: false};
+            this.builder.withPicture(pictureResult.result);
+            return ValidVoid;
         }
         return ParseSettings.unknownParseKey(parseKey,"about");
     }

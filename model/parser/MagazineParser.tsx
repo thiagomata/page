@@ -3,7 +3,7 @@ import {Image} from "../interfaces/Image";
 import {Profile} from "../interfaces/Profile";
 import ProfileParser from "./ProfileParser";
 import MagazineBuilder from "../builder/MagazineBuilder";
-import {ValidationError, ValidationResult, VoidValidator} from "../interfaces/ValidationError";
+import {ValidationError, ValidationResult, ValidVoid, VoidValidator} from "../interfaces/ValidationError";
 import ImageParser from "./ImageParser";
 import ParseSettings from "./ParseSettings";
 import {Magazine} from "../interfaces/Publication";
@@ -51,15 +51,15 @@ export default class MagazineParser {
         const parseKey = key.toLowerCase().trim();
         if (parseKey == MagazineParser.PARSE_NAME && element.content ) {
             this.builder.withName(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == MagazineParser.PARSE_ABBREVIATION && element.content ) {
             this.builder.withAbbreviation(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == MagazineParser.PARSE_LINK && element.content ) {
             this.builder.withLink(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == MagazineParser.PARSE_ICON) {
             const pictureResult: ValidationResult<Image> = ImageParser.parseElement(element);
@@ -67,7 +67,7 @@ export default class MagazineParser {
                 return pictureResult;
             }
             this.builder.withIcon(pictureResult.result);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         return ParseSettings.unknownParseKey(parseKey,"Magazine");
     }

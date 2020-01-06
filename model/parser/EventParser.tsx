@@ -3,7 +3,7 @@ import {Image} from "../interfaces/Image";
 import {Profile} from "../interfaces/Profile";
 import ProfileParser from "./ProfileParser";
 import EventBuilder from "../builder/EventBuilder";
-import {ValidationError, ValidationResult, VoidValidator} from "../interfaces/ValidationError";
+import {ValidationError, ValidationResult, ValidVoid, VoidValidator} from "../interfaces/ValidationError";
 import ImageParser from "./ImageParser";
 import ParseSettings from "./ParseSettings";
 import {Event} from "../interfaces/Publication";
@@ -64,15 +64,15 @@ export default class EventParser {
         const parseKey = key.toLowerCase().trim();
         if (parseKey == EventParser.PARSE_NAME && element.content ) {
             this.builder.withName(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == EventParser.PARSE_ABBREVIATION && element.content ) {
             this.builder.withAbbreviation(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == EventParser.PARSE_LINK && element.content ) {
             this.builder.withLink(element.content);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         if (parseKey == EventParser.PARSE_ICON) {
             const pictureResult: ValidationResult<Image> = ImageParser.parseElement(element);
@@ -80,7 +80,7 @@ export default class EventParser {
                 return pictureResult;
             }
             this.builder.withIcon(pictureResult.result);
-            return {hasErrors: false};
+            return ValidVoid;
         }
         return ParseSettings.unknownParseKey(parseKey,"Event");
     }
