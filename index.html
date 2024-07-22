@@ -1,645 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="search" type="application/opensearchdescription+xml" title="Resume.js Search" href="/opensearch.xml" />
-  <link rel='shortcut icon' type='image/vnd.microsoft.icon' href='/favicon.ico'> <!-- IE -->
-  <link rel='apple-touch-icon' type='image/png' href='/icon.57.png'> <!-- iPhone -->
-  <link rel='apple-touch-icon' type='image/png' sizes='72x72' href='/icon.72.png'> <!-- iPad -->
-  <link rel='apple-touch-icon' type='image/png' sizes='114x114' href='/icon.114.png'> <!-- iPhone4 -->
-  <link rel='icon' type='image/png' href='/icon.114.png'> <!-- Opera Speed Dial, at least 144×114 px -->
-  <script id="template-page-title" type="text/x-handlebars-template">
-    {{name}} - {{label}}
-  </script>
-  <meta name="description" content="My Profissional History"/>
-  <script id="template-meta-description" type="text/x-handlebars-template">
-    {{name}} - {{label}}
-  </script>
-  <meta name="keywords" content="cv history professional "/>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
-  <link href="assets/css/icons.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <link href="assets/css/facebook.css" rel="stylesheet">
-  <script type="text/javascript" src="assets/js/mapreduce.js"></script>
-  <script type="text/javascript" src="assets/js/kv.js"></script>
-  <script type="text/javascript" src="assets/js/handlebars-v4.0.11.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.js"></script>
-  <script type="text/javascript" src="assets/js/chart.min.js"></script>
-  <script type="text/javascript" src="assets/js/chart.bundle.min.js"></script>
-  <script type="text/javascript" src="assets/js/chart.utils.js"></script>
-  <script type="text/javascript" src="assets/js/pallete.js"></script>
-  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-  <script type="text/javascript" src="assets/js/resume.js"></script>
-  <script type="text/javascript" src="assets/json/resume.jsonp"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago Mata - Crafting impactful software</title>
+    <script src="https://kit.fontawesome.com/0c3ce68536.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css" />
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="box">
-      <div class="row row-offcanvas row-offcanvas-left">
-
-        <!-- sidebar -->
-        <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
-
-          <!--
-            Mobile icon to show / hide the text of the side bar menu
-          -->
-          <ul class="nav">
-            <li>
-              <a href="#" data-toggle="offcanvas" class="visible-xs text-center">
-                <i class="glyphicon glyphicon-chevron-right"></i>
-              </a>
-            </li>
-          </ul>
-
-          <!--
-          Left Side Menu
-          -->
-          <ul
-          data-template-source="#template-social-networks-details"
-          data-template-context="getSocialNetworks"
-          class="nav hidden-xs" id="lg-menu"
-          >
-          </ul>
-          <script type="text/x-handlebars-template" id="template-social-networks-details">
-            <li class="active">
-              <a href="index.html">
-                <i class="glyphicon glyphicon-list-alt"></i>
-                Document
-              </a>
-            </li>
-            <!-- <li>
-              <a href="sorry.html">
-                <i class="glyphicon glyphicon-list"></i>
-                Stories
-              </a>
-            </li> -->
-            <!--
-            <li>
-              <a href="assets/images/timeline.html">
-                <div class="icons icons-timeline">
-                </div> Timeline
-              </a>
-            </li>
-            -->
-            <!-- list of social networks links -->
-            {{#each socialNetworks }}
-              <li>
-                <a href="{{link}}">
-                  <div class="icons icons-social-{{icon}}">
-                  </div>
-                  {{name}}
-                </a>
-              </li>
-            {{/each}}
-          </script>
-          <!--
-          Menu footer
-          -->
-          <ul class="list-unstyled hidden-xs"
-            id="sidebar-footer"
-            data-template-source="#template-menu-footer"
-            data-template-context="getBasicData">
-          </ul>
-          <script id="template-menu-footer" type="text/x-handlebars-template">
-            <li>
-              <a href="{{link}}">
-                <h1>{{name}}</h1>
-                {{label}}
-                </a>
-            </li>
-          </script>
-
-          <!--
-          Mobile version of the side bar menu
-          -->
-          <!-- tiny only nav-->
-          <ul class="nav visible-xs" id="xs-menu"
-          data-template-source="#template-social-networks-short"
-          data-template-context="getSocialNetworks"
-          >
-          </ul>
-          <script id="template-social-networks-short" type="text/x-handlebars-template">
-            <!-- <li class="active">
-              <a href="index.php?page=document">
-                <i class="glyphicon glyphicon-list-alt"></i>
-              </a>
-            </li> -->
-            <!-- <li>
-              <a href="index.php?page=stories">
-                <i class="glyphicon glyphicon-list"></i>
-              </a>
-            </li> -->
-            <!--
-            <li>
-              <a href="index.php?page=timeline">
-                <div class="icons icons-timeline"></div>
-              </a>
-            </li>
-            -->
-            <li class="list-unstyled hidden-xs">
-            </li>
-            {{#each socialNetworks }}
-              <li>
-                  <a href="{{link}}">
-                    <div class="icons icons-social-{{icon}}">
-                    </div>
-                  </a>
-                </li>
-            {{/each}}
-          </script>
+    <article id="hero">
+        <div class="center">
+            <div class="title-box">
+                <div class="title-box-left"></div>
+                <div class="title-box-name">
+                    <h1>
+                        <span class="t">T</span><span>hiago </span>
+                        <span class="m">M</span><span>ata</span></h1>
+                </div>
+                <div class="title-box-description">
+                    <h4 class="crafting">Crafting impactful software</h4>
+                </div>
+                <div class="title-box-offer">
+                    <p class="offer">
+                        I offer a unique vision, combining long-term technical experi&shy;ence, aca&shy;demic
+                        frame&shy;work, analysis aptitude,
+                        and communi&shy;cation skills to inter&shy;act with deve&shy;lopers, investors and clients to
+                        aid decision-making and
+                        build
+                        <a class="internal-link" href="#useful">useful</a>,
+                        <a class="internal-link" href="#reliable">reli&shy;able</a>,
+                        <a class="internal-link" href="#elegant">elegant</a> and
+                        <a class="internal-link" href="#thrifty">thrifty</a> products.
+                    </p>
+                </div>
+                <div class="title-box-call-to-action">
+                    <a href="mailto:thiago.henrique.mata@gmail.com">
+                        <button class="button button-primary">Let's Talk</button>
+                    </a>
+                </div>
+                <div class="title-box-right"></div>
+            </div>
         </div>
-        <!-- /sidebar -->
-
-        <!-- all the information that is not on the left side menu -->
-        <!-- main right col -->
-        <div class="column col-sm-10 col-xs-11" id="main">
-
-          <!-- top nav -->
-          <div class="navbar navbar-blue navbar-static-top">
-
-            <form class="navbar-form navbar-left"
-            data-template-source="#template-search-filter"
-            >
-            </form>
-            <script id="template-search-filter" type="text/x-handlebars-template">
-              <div class="input-group input-group-sm" style="max-width:360px;">
-                <input
-                  class="form-control"
-                  placeholder="Search"
-                  id="search-term"
-                  name="q"
-                  onchange="window.resume.updateSearchTerm(this)"
-                  value="{{ searchTerm }}"
-                  type="text"
-                />
-                <div class="input-group-btn">
-                <button class="btn btn-default" type="updateSearchTerm(this)"><i class="glyphicon glyphicon-search"></i></button>
+        <div class="center">
+            <div class="bento-box">
+                <div class="bento-box-left"></div>
+                <div class="bento-box-item bento-box-xp">
+                    <span class="bento-box-item-plus-value">20</span>
+                    <span class="bento-box-item-years">Years in</span>
+                    <span class="bento-box-item-title">Software Development</span>
                 </div>
-              </div>
-            </script>
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="#professional">
-                  <div class="icons icons-work-tie">
-                    &nbsp;
-                  </div>
-                  Professional
-                </a>
-              <li>
-                <li>
-                  <a href="#academic">
-                    <div class="icons icons-academic">
-                      &nbsp;
-                    </div>
-                    Academic
-                  </a>
-                <li>
-              </li>
-              <li>
-                <a href="#courses">
-                  <div class="icons icons-course">
-                    &nbsp;
-                  </div>
-                  Courses
-                </a>
-              </li>
-              <li>
-                <a href="#scientific-papers">
-                  <div class="icons icons-paper">
-                    &nbsp;
-                  </div>
-                  Papers
-                </a>
-              </li>
-              <li>
-                <a href="#awards">
-                  <div class="icons icons-award">
-                    &nbsp;
-                  </div>
-                  Awards
-                </a>
-              </li>
-              <li>
-                <a href="#trending">
-                  <div class="icons icons-chart">
-                    &nbsp;
-                  </div>
-                  Trending
-                </a>
-              <li>
-            </ul>
-          </div>
-          <!-- /top nav -->
-          <div class="padding">
-            <div class="full col-sm-12" >
-              <div class="row me"
-                data-template-source="#template-row-me"
-                data-template-context="getBasicData"
-                data-template-render-on-update="false"
-              ><!-- begin me-row-->
-              </div><!-- end me-row -->
-              <script id="template-row-me" type="text/x-handlebars-template">
-                {{#if picture}}
-                  <div class="col-sm-2">
-                    <div class="face-circle">
-                      <img src="{{picture}}" alt="one picture of {{name}}"/>
-                    </div>
-                  </div>
-                  <div class="col-sm-8 me-description">
-                    <h4>{{name}}</h4>
-                    <p> {{summary}}
-                    </p>
-                    <p>
-                      {{#if email}}
-                        <a href="mailto:{{email}}">
-                          {{email}}
-                        </a>
-                      {{/if}}
-                      {{#if phone}}
-                        <a href="tel:{{phone}}">
-                          {{phone}}
-                        </a>
-                      {{/if}}
-                      {{#if jsonresume}}
-                        <a href="{{jsonresume}}">
-                          resume.json
-                        </a>
-                      {{/if}}
-                    </p>
-                  </div><!-- end me-description -->
-                {{else}}
-                  <div class="col-sm-12 me-description">
-                    <h4>{{name}}</h4>
-                    <p>
-                      {{summary}}
-                    </p>
-                    <p>
-                      {{#if email}}
-                        <a href="mailto:{{email}}">
-                          {{email}}
-                        </a>
-                      {{/if}}
-                      {{#if phone}}
-                        <a href="tel:{{phone}}">
-                          {{phone}}
-                        </a>
-                      {{/if}}
-                      {{#if jsonresume}}
-                        <a href="{{jsonresume}}">
-                          resume.json
-                        </a>
-                      {{/if}}
-                    </p>
-                  </div><!-- end me-description -->
-                {{/if}}
-              </script>
-              <div
-                data-template-source="#template-category"
-                data-template-context="getWorkExperiences"
-              >
-                <!-- This content will be replaced by the template -->
-                <!-- This previous description can be used to help search spiders -->
-                <div
-                  class="panel panel-default parent-panel">
-                  <div class="panel-heading">
-                    <div class="row">
-                      <div class="col-sm-7">
-                        <a name="professional" class="category-title">
-                          <h3>Professional Experiences</h3>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="bento-box-item bento-box-lead">
+                    <span class="bento-box-item-value">3</span>
+                    <span class="bento-box-item-years">Years as</span>
+                    <span class="bento-box-item-title">Tech Lead</span>
                 </div>
-              </div>
-              <div
-                data-template-source="#template-category"
-                data-template-context="getAcademicHistory"
-              >
-              <!-- This content will be replaced by the template -->
-              <!-- This previous description can be used to help search spiders -->
-                <div
-                  class="panel panel-default parent-panel">
-                  <div class="panel-heading">
-                    <div class="row">
-                      <div class="col-sm-7">
-                        <a name="academic">
-                          <h3>Academic Experiences</h3>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="bento-box-item bento-box-data">
+                    <span class="bento-box-item-value">2</span>
+                    <span class="bento-box-item-years">Years as</span>
+                    <span class="bento-box-item-title">Data Engineer</span>
                 </div>
-              </div>
-              <div
-                data-template-source="#template-category"
-                data-template-context="getCoursesHistory"
-              >
-                <!-- This content will be replaced by the template -->
-                <!-- This previous description can be used to help search spiders -->
-                <div
-                  class="panel panel-default parent-panel">
-                  <div class="panel-heading">
-                    <div class="row">
-                      <div class="col-sm-7">
-                        <a name="courses">
-                          <h3>Courses</h3>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="bento-box-item bento-box-awards">
+                    <span class="bento-box-item-value">3</span>
+                    <span class="bento-box-item-awards">International Awards</span>
                 </div>
-              </div>
-              <div
-                data-template-source="#template-category"
-                data-template-context="getPapersHistory"
-              >
-                <!-- This content will be replaced by the template -->
-                <!-- This previous description can be used to help search spiders -->
-                <div
-                  class="panel panel-default parent-panel">
-                  <div class="panel-heading">
-                    <div class="row">
-                      <div class="col-sm-7">
-                        <a name="scientific-papers">
-                          <h3>Scientific Papers</h3>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="bento-box-item bento-box-courses">
+                    <span class="bento-box-item-plus-value">20</span>
+                    <span class="bento-box-item-courses">Courses and Specialisations</span>
                 </div>
-              </div>
-              <div
-                data-template-source="#template-category"
-                data-template-context="getAwardsHistory"
-              >
-                <!-- This content will be replaced by the template -->
-                <!-- This previous description can be used to help search spiders -->
-                <div
-                  class="panel panel-default parent-panel">
-                  <div class="panel-heading">
-                    <div class="row">
-                      <div class="col-sm-7">
-                        <a name="awards">
-                          <h3>Awards</h3>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="bento-box-item bento-box-cloud">
+                    <span class="bento-box-item-value">5</span>
+                    <span class="bento-box-item-years">Years as</span>
+                    <span class="bento-box-item-title">Cloud Architect</span>
                 </div>
-              </div>
-              <script id="template-category" type="text/x-handlebars-template">
-                <div
-                  class="panel panel-default parent-panel"
-                  id="{{categoryId}}">
-                  <div class="panel-heading">
-                    <div class="row"> <!-- element experience header -->
-                      <div class="col-sm-1  category-{{categoryAnchor}}-icon category-title-icon">
-                      </div>
-                      <div class="col-sm-7">
-                        <a name="{{categoryAnchor}}" class="category-title">
-                          <h3>{{categoryTitle}}</h3>
-                        </a>
-                      </div>
-
-                      <div class="col-sm-4"> <!-- select filter -->
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <select class="form-control"
-                            onclick="window.resume.onSelectFilterChange( this )">
-                              <option
-                                {{#ifCond searchFilter 'relevants' }}
-                                  selected
-                                {{/ifCond}}
-                                value="relevants"
-                              >Only the most relevants</option>
-                              <option value="relevants last">Most relevants and last</option>
-                              <option value="last"
-                                {{#ifCond searchFilter 'last' }}
-                                  selected
-                                {{/ifCond}}
-                              >All from the last years</option>
-                              <option value="all"
-                                {{#ifCond searchFilter 'all' }}
-                                  selected
-                                {{/ifCond}}
-                              >All experiences</option>
-                            </select>
-                          </div>
-                        </form>
-                      </div> <!-- end select filter -->
-                    </div>
-                    <div id="element-experience-list" class="row experience-list"> <!-- element experience list -->
-                      {{#each elements }}
-                        <div class="
-                          experience
-                          element-experience
-                          experience-{{date-order-position}}
-                          relevance-{{relevance}}
-                          {{#each tags}}
-                            {{id}}
-                          {{/each}}"
-                        >
-                          <div class="panel-body"> <!-- element experience panel body -->
-                            <h4> {{ title }} </h4>
-
-                            <div class="row">
-                              {{#if icon }}
-                                <div class="subheading col-lg-1">
-                                  <div class="company-icon-box" style="background-image: url(assets/images/{{{ icon }}}">
-                                  </div>
-                                </div>
-                                <div class="subheading col-lg-8">
-                                    <h5 class="company-name">
-                                      {{#if website }}
-                                        <a href="{{ website }}">
-                                      {{/if}}
-                                      {{#if abbreviation }}
-                                        {{abbreviation}} -
-                                        {{company}}
-                                      {{else}}
-                                        {{company}}
-                                      {{/if}}
-                                      {{#if website }}
-                                        </a>
-                                      {{/if}}
-                                    </h5>
-                                </div>
-                              {{else}}
-                                <div class="subheading col-sm-9">
-                                  <h4 class="company-name">
-                                    {{#if website }}
-                                      <a href="{{ website }}">
-                                    {{/if}}
-                                    {{#if abbreviation }}
-                                      {{abbreviation}} -
-                                      {{company}}
-                                    {{else}}
-                                      {{company}}
-                                    {{/if}}
-                                    {{#if website }}
-                                      </a>
-                                    {{/if}}
-                                  </h4>
-                                </div>
-                              {{/if}}
-
-                            <div class="col-sm-3"> <!-- element experience duration -->
-                              <h4 class="date-range">
-                                  <div style="float:left">
-                                    {{startDate}}
-                                  </div>
-                                {{#if endDate }}
-                                  <div style="float:left">
-                                    &nbsp;
-                                    to
-                                    {{endDate}}
-                                  </div>
-                                  {{/if}}
-                                  {{#if present }}
-                                    &nbsp;
-                                    to
-                                    Present
-                                  {{/if}}
-                              </h4>
-                            </div>
-                          </div>
-                            {{#if duration}}
-                              <div class="row">
-                                <div class="col-sm-12 col align-self-end"> <!-- element experience duration -->
-                                  <div class=" pull-right">
-                                    {{#if duration.years }}
-                                      {{ duration.years }} years
-                                    {{/if}}
-                                    {{#if duration.months }}
-                                      {{#if duration.years }}
-                                        and
-                                      {{/if}}
-                                      {{ duration.months }} months
-                                    {{/if}}
-                                  </div>
-                                </div>
-                              </div>
-                          {{/if}}
-                          </div> <!-- end element experience panel body -->
-                          <div class="col-sm-12 element-text-description">
-                            {{description}}
-                            {{#if authors}}
-                              {{#ifArraySize authors 1 }}
-                                Author is
-                                {{#each authors }}
-                                    <a href="mailto:{{email}}">
-                                      {{name}}.
-                                    </a>
-                                {{/each}}
-                              {{else}}
-                                Authors are
-                                {{#each authors }}
-                                    <a href="mailto:{{email}}">
-                                      {{name}}{{#unless @last}},{{else}}.{{/unless}}
-                                    </a>
-                                {{/each}}
-                              {{/ifArraySize}}
-                            {{/if}}
-                            {{#if certificate }}
-                              <a href="{{certificate}}">See Certificate</a>.
-                            {{/if}}
-                            {{#if see-more }}
-                              <a href="{{see-more}}">See more</a>.
-                            {{/if}}
-                          </div><!-- end element-text-description -->
-                          <div class="col-sm-12 tags"> <!-- element tags -->
-                            {{#each tags }}
-                              <div
-                                class="tag tag-{{id}}
-                                {{#if active}}
-                                  tag-active
-                                {{/if}}
-                                "
-                                onclick="window.resume.clickTag('{{id}}', 'element-panel')">
-                                  {{label}}
-                              </div>
-                            {{/each}}
-                          </div> <!-- end tags -->
-                        </div><!-- end element experience -->
-                      {{/each}}
-                    </div> <!-- end element experience list-->
-                  </div><!-- end element panel heading -->
-                  {{#if hasHiddenElements }}
-                    {{#if hasVisibileElements }}
-                      <div class="panel-body there-are-hidden-elements">
-                        <p class="lead">Missing Something?</p>
-                        <p>
-                          There are <span class="count-hidden-elements">{{countHidden}}</span> {{elementsTitle}} hidden by the filters.
-                          You can <a href="#" onclick="window.resume.clearFilter()">clean the filter and show them all</a>.
-                        </p>
-                      </div>
-                    {{else}}
-                      <div class="panel-body all-hidden-elements">
-                        <p class="lead">
-                          Nothing Here :(
-                        </p>
-                        <p>
-                          There are no {{elementsTitle}} that fits into the current filter.
-                          But, there are <span class="count-hidden-elements">{{countHidden}}</span> {{elementsTitle}} hidden.
-                          You can <a href="#" onclick="window.resume.clearFilter()">clean the filter and show them all</a>.
-                        </p>
-                      </div>
-                    {{/if}}
-                  {{/if}}
+                <div class="bento-box-item bento-box-founder">
+                    <span class="bento-box-item-value">1</span>
+                    <span class="bento-box-item-years">Year as</span>
+                    <span class="bento-box-item-title">Co-Founder</span>
                 </div>
-              </script>
-              <div class="panel panel-default parent-panel" >
-                <div class="panel-heading">
-                  <div class="row">
-                    <div class="col-sm-1  category-title-icon category-trending-icon">
-                    </div>
-                    <div class="col-sm-7">
-                      <a name="trending" class="category-title">
-                        <h3>Trending</h3>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <p>
-                      These trends are calculated from the proportion
-                      that each tag appears in the experiences
-                      over the years.
-                    </p>
-                    <div id="canvas-box">
-                    </div>
-                  </div>
-                </div>
+                <div class="bento-box-right"></div>
             </div>
-            <div class="row" id="footer">
-              <div class="col-sm-6">
-              </div>
-              <div class="col-sm-6">
+        </div>
+    </article>
+    <article id="top-companies">
+        <h2>Top Companies</h2>
+        <section data-company="rokt">
+            <div class="company-name" data-icon-type="full-name">
+                <h3>ROKT</h3>
+            </div>
+            <div class="position">
+                <h4>Senior Software Engineer</h4>
+            </div>
+            <div class="duration">
+                <span>5 years</span>
+            </div>
+            <div class="call">
+                Leverage customer data
+            </div>
+            <div class="description">
                 <p>
-                  <span class="pull-right"
-                    data-template-source="#resume-js-footer"
-                    data-template-context="getBasicData"
-                    data-template-render-on-update="false"
-                  >
-                  </span>
-                  <script id="resume-js-footer" type="text/x-handlebars-template">
-                    Created from
-                    <a href="{{jsonresume}}">resume.json</a> file using
-                    <a href="https://github.com/thiagomata/resume.js">resume.js</a>.
-                  </script>
+                    I developed high-performance, high-availability services in a platform that processes billions 
+                    of transactions and delivers personalized offers to millions of users.
+                    These services consume events and enrich the product experience and impact.
                 </p>
-              </div>
             </div>
-            <hr/>
-          </div><!-- end padding -->
-        </div> <!-- end #main -->
-      </div><!-- end row-offcanvas -->
-    </div><!-- end wrapper -->
-  </div><!-- end box -->
+            <div class="see-more">
+                <a href="./cases/rokt-identity.html">Customer Identification</a>
+                <a href="./cases/rokt-attribution.html">Conversion Attribution</a>
+                <a href="./cases/rokt-bot-detection.html">Bot Detection</a>
+            </div>
+        </section>
+        <section data-company="sli">
+            <div class="company-name"  data-icon-type="full-name">
+                <h3>SLI-Systems</h3>
+            </div>
+            <div class="position">
+                <h4>Senior Data Enginner</h4>
+            </div>
+            <div class="duration">
+                <span>1.5 years</span>
+            </div>
+            <div class="call">
+                Moving data streams to the cloud
+            </div>
+            <div class="description">
+                <p>
+                    Enabled data-driven decision-making by developing an AI product
+                    over a data platform with optimized data pipelines and enhanced 
+                    data management.
+                </p>
+            </div>
+            <div class="see-more">
+                <a href="./cases/sli-to-the-cloud.html">To the Cloud</a>
+            </div>
+        </section>
+        <section data-company="ideia">
+            <div class="company-name"  data-icon-type="full-name">
+                <h3>Ideia</h3>
+            </div>
+            <div class="position">
+                <h4>Chief Technology Officer</h4>
+            </div>
+            <div class="duration">
+                <span>3 year</span>
+            </div>
+            <div class="call">
+                Demographic analysis and micro targeting
+            </div>
+            <div class="description">
+                <p>
+                    Development of Alexandria, a cloud-based tool that combined surveys, machine learning and big data
+                    analytics to provide insights, reports and recommendations to clients about their audience.
+                </p>
+            </div>
+            <div class="see-more">
+                <a href="./cases/ideia-alexandria.html">Alexandria</a>
+            </div>
+        </section>
+        <section data-company="otimicar">
+            <div class="company-name"  data-icon-type="before-name">
+                <h3 id="otimicar">Otimicar</h3>
+            </div>
+            <div class="position">
+                <h4>Co-Founder</h4>
+            </div>
+            <div class="duration">
+                <span>1.5 years</span>
+            </div>
+            <div class="call">
+                Make any car a smart car.
+            </div>
+            <div class="description">
+                <p>
+                    Developed the server that receives data from the car app
+                    and generates insights and recommendations for the car owner.
+                    It also allows the driver to share the data with car stores and mechanics.
+                </p>
+            </div>
+            <div class="see-more">
+                <a href="./cases/otimicar-data-sync.html">Data Sharing</a>
+            </div>
+        </section>
+        <section data-company="mec">
+            <div class="company-name"  data-icon-type="before-name">
+                <h3>MEC / INEP</h3>
+            </div>
+            <div class="position">
+                <h4>Web Developer and Process Analyst</h4>
+            </div>
+            <div class="duration">
+                <span>3 years and 10 months</span>
+            </div>
+            <div class="call">
+                Brazilian Ministry of Education
+            </div>
+            <div class="description">
+                <p>
+                    While Working for the government, I analysed, specified, modelled and developed systems for the federal
+                    government to interact with students, schools and universities.
+                </p>
+            </div>
+            <div class="see-more">
+                <a href="./cases/mec-education-platform.html">Education as Platform</a>
+            </div>
+        </section>
+    </article>
+    <article id="values">
+        <h2> Values  </h2>
+            <section class="value-box useful">
+                <h3 id="useful" class="useful value-title">Useful</h3>
+                <h4 class="useful">Influential and meaningful</h4>
+                <div class="section-blockquote">
+                    <blockquote class="useful">
+                        <p>
+                            The largest source of waste in the startup is building a product that no one will find
+                            useful.
+                        </p>
+                        <span class="quote-author">Eric Ries</span>
+                    </blockquote>
+                </div>
+                <div class="section-summary">
+                    <div class="section-topics">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-shop"></i>
+                                <span>Market Suitability</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                <span>Data-Driven Decision</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-bolt"></i>
+                                    <span>Impact forecasting</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Risk Management</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-flask"></i>
+                                <span>
+                                    Prototyping and Hypothesis Testing
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="value-reliable">
+                <h3 id="reliable" class="reliable">Reliable</h3>
+                <h4 class="reliable">Steady and trustworthy</h4>
+                <div class="section-blockquote">
+                    <blockquote class="reliable">
+                        <div>
+                            <p>
+                                In truth, whatever is worth doing at all, is worth doing well; and nothing can be done well
+                                without attention.
+                            </p>
+                            <span class="quote-author">Philip Dormer Stanhope</span>
+                        </div>
+                    </blockquote>
+                </div>
+                <div class="section-summary">
+                    <div class="section-topics">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-shield"></i>
+                                <span>Verified and Validated</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-building-columns"></i>
+                                <span>Stability and Resilience</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                                <span>Progressive Delivery</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chart-area"></i>
+                                <span>Observability</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-road-barrier"></i>
+                                <span>Levels of Degragation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="value-elegant">
+                <h3 id="elegant" class="elegant">Elegant</h3>
+                <h4 class="elegant">Straightforward but thorough</h4>
+                <div class="section-blockquote">
+                    <blockquote class="elegant">
+                        <div class="blockquote-inner">
+                            <p>Everything should be made as simple as possible, but not simpler.</p>
+                            <span class="quote-author">Albert Einstein</span>
+                        </div>
+                    </blockquote>
+                </div>
+                <div class="section-summary">
+                    <div class="section-topics">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-fan"></i>
+                                <span>Simplicity</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-bath"></i>
+                                <span>Cleanliness</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-map"></i>
+                                <span>Clarity</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-compass"></i>
+                                <span>Alignment</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chart-gantt"></i>
+                                <span>Traceability</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="value-thrifty">
+                <h3 id="thrifty" class="thrifty">Thrifty</h3>
+                <h4 class="thrifty">Budget-conscious and efficient</h4>
+                <div class="section-blockquote">
+                    <blockquote class="thrifty">
+                        <div class="blockquote-inner">
+                            <p>A penny saved is a penny earned.</p>
+                            <span class="quote-author"> Benjamin Franklin</span>
+                        </div>
+                    </blockquote>
+                </div>
+                <div class="section-summary">
+                    <div class="section-topics">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-brain"></i>
+                                <span>
+                                    Thoroughness
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-server"></i>
+                                <span>
+                                    Resource Optimization
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-faucet"></i>
+                                <span>
+                                    Efficiency
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>
+                                    Business Impact
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-toggle-on"></i>
+                                <span>
+                                    Adaptability
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article id="cv">
+            <section class="checkout">
+                <h2>More About Me</h2>
+                <div class="company-name"  data-icon-type="before-name">
+                    <h3>
+                        Explore my professional journey, skills, and achievements in detail.
+                    </h3>
+                </div>
+                <div class="emailme">
+                    You can also reach me on
+                    <a href="https://www.linkedin.com/in/thiagomata/">Linkedin</a>,
+                    <a href="https://twitter.com/thiagomata">Twitter</a>,
+                    <a href="https://github.com/thiagomata">GitHub</a>,
+                    <a href="https://stackoverflow.com/users/456164/thiago-mata">StackOverflow</a>,
+                    or by email at <a class="email" href="mailto:thiago.henrique.mata@gmail.com">thiago.henrique.mata@gmail.com</a>
+                </div>
+                <div class="see-more">
+                    <a href="./pdf/thiago-mata-one-page-cv.pdf">One Page CV</a>
+                    <a href="./pdf/thiago-mata-detailed-cv.pdf">Detailed CV</a>
+                </div>
+                </section>
+    </article>
+    <footer>
+    </footer>
 </body>
+
 </html>
