@@ -1,6 +1,6 @@
 # MEC / INEP - Education as Platform
 
-[Thiago Mata](./README.md)
+[Thiago Mata](../README.md)
 
 | &nbsp;    | &nbsp;                                              |
 |-----------|-----------------------------------------------------|
@@ -11,10 +11,10 @@
 ## MEC / INEP
 
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/mec.svg" style="height:90px;"/>
+<img src="../img/mec.svg" style="height:90px;"/>
 </div>
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/inep.svg" style="width:90px;"/>
+<img src="../img/inep.svg" style="width:90px;"/>
 </div>
 
 ---
@@ -27,7 +27,7 @@ I worked at theses institutions for 5 years, creating services to monitor the pl
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| With a country with continental dimensions, the services of the MEC and INEP are required to deal with millions of students, schools, technical schools, universities and educational professionals. Some of these services, include charging fees and taxes. These financial transactions, sometimes millions per day, need to be monitored and validated by the government. The services also need to aggregate the huge amount of data and provide maps, reports, insights, dashboards and alerts to the government and  related institutions. | <img width="1000px" src="./img/boy-reading.jpg"> |
+| With a country with continental dimensions, the services of the MEC and INEP are required to deal with millions of students, schools, technical schools, universities and educational professionals. Some of these services, include charging fees and taxes. These financial transactions, sometimes millions per day, need to be monitored and validated by the government. The services also need to aggregate the huge amount of data and provide maps, reports, insights, dashboards and alerts to the government and  related institutions. | <img width="1000px" src="../img/boy-reading.jpg"> |
 
 ## Impact
 
