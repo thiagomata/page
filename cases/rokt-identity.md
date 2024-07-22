@@ -11,7 +11,7 @@
 ##  Rokt
 
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/rokt.svg" style="height:90px;"/>
+<img src="../img/rokt.svg" style="height:90px;"/>
 </div>
 ---
 
@@ -23,7 +23,7 @@ I am working at Rokt as Senior Data Engineer for the last five years. My work co
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| One of the key factors to improve the relevance of the offers is to properly identify the customer. That requires connecting multiple touchpoints and devices to a single customer by using a multi-hop high-connected graph. We also needed to guarantee the customer data privacy and residency, and the client data isolation and encryption. We tested several approaches to improve the customer identification accuracy and speed, including using graph databases. The right approach needs to be cost-effective, scalable, secure, with low latency, ensuring zero downtime, with properly monitoring, alarms and failover. | <img width="1000px" src="./img/identity.svg"> |
+| One of the key factors to improve the relevance of the offers is to properly identify the customer. That requires connecting multiple touchpoints and devices to a single customer by using a multi-hop high-connected graph. We also needed to guarantee the customer data privacy and residency, and the client data isolation and encryption. We tested several approaches to improve the customer identification accuracy and speed, including using graph databases. The right approach needs to be cost-effective, scalable, secure, with low latency, ensuring zero downtime, with properly monitoring, alarms and failover. | <img width="1000px" src="../img/identity.svg"> |
 
 ## Impact
 
