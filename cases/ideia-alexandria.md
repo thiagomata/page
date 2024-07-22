@@ -1,6 +1,6 @@
 # Ideia - Alexandria
 
-[Thiago Mata](./README.md)
+[Thiago Mata](../README.md)
 
 | &nbsp;    | &nbsp;                                              |
 |-----------|-----------------------------------------------------|
@@ -11,7 +11,7 @@
 ##  Ideia
 
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/ideia.svg" style="height:90px;"/>
+<img src="../img/ideia.svg" style="height:90px;"/>
 </div>
 
 ---
@@ -24,7 +24,7 @@ I guided the company's development of their IT infrastructure and products, impr
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| Alexandria was the main product of the company. It was a created tobe the platform for the company to combine the data from thedifferent sources, do data cleaning, feature extraction, anddata visualization. It should also was used to define the demographics of the target audience, to create themicrotargeting campaigns, and consume the data from thedifferent sources to create the statistics and reports. The clients could extract reports with insights from the data, and use them to improve their campaigns and products. | <img width="1000px" src="./img/library.jpg"> |
+| Alexandria was the main product of the company. It was a created tobe the platform for the company to combine the data from thedifferent sources, do data cleaning, feature extraction, anddata visualization. It should also was used to define the demographics of the target audience, to create themicrotargeting campaigns, and consume the data from thedifferent sources to create the statistics and reports. The clients could extract reports with insights from the data, and use them to improve their campaigns and products. | <img width="1000px" src="../img/library.jpg"> |
 
 ## Impact
  
