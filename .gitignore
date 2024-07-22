@@ -1,0 +1,9 @@
+# idea files
+.idea
+.idea/**/*
+
+.vscode
+.trunk
+.history
+
+.DS_Store
