@@ -1,6 +1,6 @@
 # Rokt - Conversion Attribution
 
-[Thiago Mata](./README.md)
+[Thiago Mata](../README.md)
 
 | &nbsp;    | &nbsp;                                              |
 |-----------|-----------------------------------------------------|
@@ -11,7 +11,7 @@
 ##  Rokt
 
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/rokt.svg" style="height:90px;"/>
+<img src="../img/rokt.svg" style="height:90px;"/>
 </div>
 
 ---
@@ -24,7 +24,7 @@ I am working at Rokt as Senior Data Engineer for the last five years. My work co
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| Properly attributing the campaign events to the desired outcome is a complex task that requires comparing a high-number of events, applying different attribution rules per campaign ensuring consistency and explainability. Properly measuring how successful a campaign is, is crucial to clients to understand the return on investment. It is also important to guide the machine learning models to better predict and optimize the campaigns. | <img width="1000px" src="./img/conversion.svg"> |
+| Properly attributing the campaign events to the desired outcome is a complex task that requires comparing a high-number of events, applying different attribution rules per campaign ensuring consistency and explainability. Properly measuring how successful a campaign is, is crucial to clients to understand the return on investment. It is also important to guide the machine learning models to better predict and optimize the campaigns. | <img width="1000px" src="../img/conversion.svg"> |
 
 ## Impact
 

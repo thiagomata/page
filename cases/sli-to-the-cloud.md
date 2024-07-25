@@ -1,6 +1,6 @@
 # SLI Systems - To The Cloud
 
-[Thiago Mata](./README.md)
+[Thiago Mata](../README.md)
 
 | &nbsp;    | &nbsp;                                              |
 |-----------|-----------------------------------------------------|
@@ -11,7 +11,7 @@
 ##  SLI-Systems
 
 <div style="background-color: black; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/sli.svg" style="height:90px;"/>
+<img src="../img/sli.svg" style="height:90px;"/>
 </div>
 
 ---
@@ -24,7 +24,7 @@ I worked at SLI-Systems as Senior Data Engineer for one and half year. My work c
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| The company decided to migrate the main services to the Google Cloud. That required rewrite the services from Apache Spark to Apache Beam, and use Google Dataflow to run the services. During the migration, we need to ensure that the services were still running and that the data was consistent across the two platforms. | <img width="1000px" src="./img/cloud1.jpg"> |
+| The company decided to migrate the main services to the Google Cloud. That required rewrite the services from Apache Spark to Apache Beam, and use Google Dataflow to run the services. During the migration, we need to ensure that the services were still running and that the data was consistent across the two platforms. | <img width="1000px" src="../img/cloud1.jpg"> |
 
 ## Impact
  

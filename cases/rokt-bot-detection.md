@@ -1,6 +1,6 @@
 # Rokt - Bot Detection
 
-[Thiago Mata](./README.md)
+[Thiago Mata](../README.md)
 
 | &nbsp;    | &nbsp;                                              |
 |-----------|-----------------------------------------------------|
@@ -11,7 +11,7 @@
 ##  Rokt
 
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/rokt.svg" style="height:90px;"/>
+<img src="../img/rokt.svg" style="height:90px;"/>
 </div>
 
 ---
@@ -24,7 +24,7 @@ I am working at Rokt as Senior Data Engineer for the last five years. My work co
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| The bot detection project was developed to identify and block malicious bots that were affecting the company's revenue, the customer experience and the performance of the platform. This evaluation needs to be done in real-time, to avoid affecting the user experience. We also need to store the explanation of each decision as a way to audit the system. A rule engine needs to be developed to allow the company to create and evaluate new rules without affecting the customer experience. | <img width="1000px" src="./img/bot1.jpg"> |
+| The bot detection project was developed to identify and block malicious bots that were affecting the company's revenue, the customer experience and the performance of the platform. This evaluation needs to be done in real-time, to avoid affecting the user experience. We also need to store the explanation of each decision as a way to audit the system. A rule engine needs to be developed to allow the company to create and evaluate new rules without affecting the customer experience. | <img width="1000px" src="../img/bot1.jpg"> |
 
 ## Impact
 

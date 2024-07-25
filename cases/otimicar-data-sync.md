@@ -1,6 +1,6 @@
 # Otimicar - Data Sync
 
-[Thiago Mata](./README.md)
+[Thiago Mata](../README.md)
 
 | &nbsp;    | &nbsp;                                              |
 |-----------|-----------------------------------------------------|
@@ -11,7 +11,7 @@
 ## Otimicar
 
 <div style="background-color: white; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/otimicar-with-text.svg" style="height:90px;"/>
+<img src="../img/otimicar-with-text.svg" style="height:90px;"/>
 </div>
 
 ---
@@ -24,7 +24,7 @@ I created the server-side application that receives the customer car's data, com
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| Making possible the customer to send theirs car data to different car stores, mechanic workshops and insurances and then receive personalized promotions and services was a essential business requirement to make the product profitable. The challenge was that are many different systems used by each one of those partners and they don't have any standard way of receiving or sharing data. Therefore, we had to provide many interfaces adapted to each one of those services, even when they don't provide proper documentation of how they work. | <img width="1000px" src="./img/engine.jpg"> |
+| Making possible the customer to send theirs car data to different car stores, mechanic workshops and insurances and then receive personalized promotions and services was a essential business requirement to make the product profitable. The challenge was that are many different systems used by each one of those partners and they don't have any standard way of receiving or sharing data. Therefore, we had to provide many interfaces adapted to each one of those services, even when they don't provide proper documentation of how they work. | <img width="1000px" src="../img/engine.jpg"> |
 
 ## Impact
 

@@ -45,9 +45,9 @@ I developed high-performance, high-availability services in a platform that proc
 
 #### Cases
 
-- [Customer Identification](./rokt-identity.md)
-- [Conversion Attribution](./rokt-attribution.md)
-- [Bot Detection](./rokt-bot-detection.md)
+- [Customer Identification](./cases/rokt-identity.md)
+- [Conversion Attribution](./cases/rokt-attribution.md)
+- [Bot Detection](./cases/rokt-bot-detection.md)
 
 ### SLI-Systems
 
@@ -69,7 +69,7 @@ data management.
 
 #### Cases
 
-- [To the Cloud](./sli-to-the-cloud.md)
+- [To the Cloud](./cases/sli-to-the-cloud.md)
 
 
 ### Ideia
@@ -93,7 +93,7 @@ and recommendations to clients about their audience.
 
 #### Cases
 
-- [Alexandria](./ideia-alexandria.md)
+- [Alexandria](./cases/ideia-alexandria.md)
 
 
 ### Otimicar
@@ -110,7 +110,7 @@ It also allows the driver to share the data with car stores and mechanics.
 
 #### Cases
 
-- [Data Sharing](./otimicar-data-sync.md)
+- [Data Sharing](./cases/otimicar-data-sync.md)
 
 
 ### MEC / INEP
@@ -126,7 +126,7 @@ systems for the federal government to interact with students, schools and univer
 
 #### Cases
 
-- [Education as Platform](./mec-education-platform.md)
+- [Education as Platform](./cases/mec-education-platform.md)
 
 
 ## Values
