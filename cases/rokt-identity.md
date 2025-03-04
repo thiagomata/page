@@ -1,4 +1,4 @@
-# Rokt - Conversion Attribution
+# Rokt - Identity
 
 [Thiago Mata](../README.md)
 
