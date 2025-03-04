@@ -118,11 +118,16 @@ menu li:nth-child(1) {
     grid-area: brand;
     font-family: Oswald, Arial, Helvetica, sans-serif;
     h3 {
-      background-image: url("../img/rokt-white.svg");
+      /* background-image: url("../img/rokt-white.svg"); */
       background-size: contain;
       background-repeat: no-repeat;
-      color: transparent;
-    }
+      text-transform: uppercase;
+      /* color: transparent; */
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: white;
+      visibility: inherit;
+        }
   }
   .job-title {
     grid-area: job-title;
@@ -247,6 +252,9 @@ menu li:nth-child(1) {
     background-color: rgb(8, 1, 16);
     color: white;
   }
+}
+.rokt #summary .brand h3 {
+  background-image: url("../img/rokt-white.svg");
 }
 .slisystems #summary .brand h3 {
   background-image: none;
