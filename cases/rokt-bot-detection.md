@@ -16,15 +16,16 @@
 
 ---
 
-Rokt is a technology company specializing in e-commerce marketing, providing personalized transaction moments to enhance customer engagement and revenue. As of 2023, Rokt has over 500 million users and is valued at approximately $2.4 billion. Rokt has partnerships with notable companies such as Uber, Ticketmaster, Fanatics and Live Nation.
+Rokt is a technology company specializing in e-commerce marketing. It provides personalized transaction moments to enhance customer engagement and revenue. As of 2023, Rokt has over 500 million users and is valued at approximately $2.4 billion. Rokt has partnerships with notable companies such as Uber, Ticketmaster, Fanatics, and Live Nation.
 
-I worked at Rokt as a Senior Data Engineer for five years. My work involved developing services in a high-performance, high-availability, and scalable platform that processes billions of monthly transactions to deliver personalized and relevant offers to millions of users worldwide.
+I worked at Rokt as a Senior Data Engineer for five years. My work involved developing services in a high-performance, high-availability, scalable platform that processes billions of monthly transactions to deliver personalized and relevant offers to millions of users worldwide.
+
 
 ## Protection Against Malicious Bots
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| The bot detection project was developed to identify and block malicious bots affecting the company's revenue, customer experience and the platform's performance. This evaluation must be done in real time to avoid affecting the user experience. We also need to store the explanation of each decision as a way to audit the system. A rule engine must be developed to allow the company to create and evaluate new rules without affecting the customer experience. | <img width="1000px" src="../img/bot1.jpg"> |
+| We developed the bot detection project to identify and block malicious bots affecting the company's revenue, customer experience and the platform's performance. Its evaluations must run in real-time to avoid affecting the user experience. We also need to store the explanation of each decision as a way to audit the system. The company needs a rule engine to evaluate the impact of suggested and existing rules without affecting the customer experience. | <img width="1000px" src="../img/bot1.jpg"> |
 
 ## Impact
 

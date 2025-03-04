@@ -6,7 +6,7 @@
 |-----------|-----------------------------------------------------|
 | Company:  | Otimicar                                            |
 | Position: | Co-Founder                                          |
-| Summary:  | Otimicar is a solution that converts any car into a smart car. I created the server-side services that allowed car owners to sync and share their data, receive recommendations and promotions. |
+| Summary:  | Otimicar is a solution that converts any car into a smart car. I created server-side services that allowed car owners to sync and share their data and receive recommendations and promotions. |
 
 ## Otimicar
 
@@ -16,19 +16,19 @@
 
 ---
 
-Otimicar is a hardware and app solution that converts any car into a smart car. The hardware connected into the car and share the data with the phone app by bluetooth. The phone app send the data to the server that generates reports, monitoring metrics, recommendations to the customers.
+Otimicar is a hardware and app solution that converts any car into a smart car. The hardware is connected to the car and shares data with the phone app via Bluetooth. The phone app sends the data to the server, which generates reports, monitoring metrics, and recommendations to customers.
 
-I created the server-side application that receives the customer car's data, compare it with other cars of similar models and send reports with recommendations of services and maintenance to the customers. It also allowed the customers to share their data with the mechanic workshop, car stores and insurances.
+I created a server-side application that receives the customer car's data, compares it with other cars of similar models, and sends reports with recommendations for services and maintenance to the customers. It also allows the customers to share their data with the mechanic workshop, car stores, and insurance companies.
 
 ## Education as a Platform
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| Making possible the customer to send theirs car data to different car stores, mechanic workshops and insurances and then receive personalized promotions and services was a essential business requirement to make the product profitable. The challenge was that are many different systems used by each one of those partners and they don't have any standard way of receiving or sharing data. Therefore, we had to provide many interfaces adapted to each one of those services, even when they don't provide proper documentation of how they work. | <img width="1000px" src="../img/engine.jpg"> |
+| Making it possible for customers to send their car data to different car stores, mechanic workshops, and insurance companies and then receive personalized promotions and services was an essential business requirement to make the product profitable. The challenge was that each of those partners used many different systems and didn't have any standard way of receiving or sharing data. Therefore, we had to provide many interfaces adapted to each of those services, even when they didn't properly document how they work. | <img width="1000px" src="../img/engine.jpg"> |
 
 ## Impact
 
-We integrated with some key partners sending data about the customers' cars. The created service was running on Google Cloud only charging on demand. The working integration was one of the requirements from the prospected investors. Having that working boosted their confidence about the viability of the product.
+We integrated with some key partners, sending data about the customers' cars. The created service ran on Google Cloud, only charging on demand. Working integration was one of the requirements of the prospected investors. Having that working boosted their confidence about the product's viability.
 
 ## Technologies
 

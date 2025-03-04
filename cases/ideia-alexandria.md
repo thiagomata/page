@@ -16,7 +16,7 @@
 
 ---
 
-IDEIA is a survey company that provides demographic analysis and microtargeting services to political campaigns, non-profits, and corporations. The company was founded in 2011 and has developed a unique methodology that integrates traditional and modern information-gathering techniques, utilizing crowdsourcing for anthropological studies to innovate in public opinion research.
+IDEIA is a survey company that provides demographic analysis and microtargeting services to political campaigns, non-profits, and corporations. Founded in 2011, it has developed a unique methodology that integrates traditional and modern information-gathering techniques. For example, it utilizes crowdsourcing for anthropological studies to innovate in public opinion research.
 
 I guided the company's development of its IT infrastructure and products, improving the company's development process and training policy, defining the career ladder, reporting the company strategy and vision to investors, improving the observability and monitoring, evaluating product existing and new features with clients, measuring their engagement and feedback, and optimizing the cloud infrastructure for scalability and reliability while reducing the cost.
 
@@ -24,11 +24,11 @@ I guided the company's development of its IT infrastructure and products, improv
 
 | &nbsp; | &nbsp; |
 |--------|--------|
-| Alexandria was the company's main product. It was created as a platform for the company to combine data from different sources, clean data, extract features, and visualize data. It should also be used to define the target audience's demographics, create the microtargeting campaigns, and consume the data from the different sources to create the statistics and reports. The clients could extract reports with insights from the data and use them to improve their campaigns and products. | <img width="1000px" src="../img/library.jpg"> |
+| Alexandria was the company's main product. It serves as a platform for the company to combine data from different sources, clean data, extract features, and visualize data. It also helps to define the target audience's demographics, create microtargeting campaigns, and consume the data from different sources to create statistics and reports. The clients could extract reports with insights from the data and use them to improve their campaigns and products. | <img width="1000px" src="../img/library.jpg"> |
 
 ## Impact
  
-We developed the new product Alexandria to be the platform for the company to combine the data from different sources, do data cleaning, feature extraction, and data visualization. It was used to  improve the data quality, the reports' accuracy, and the surveys' speed. The clients used to extract reports with insights  from the data and use them to improve their campaigns and products.  The company increased the number of clients, revenue, the speed to create and run surveys, and the quality of the reports.
+We developed the new product Alexandria as a platform for the company to combine data from different sources, clean data, extract features, and visualize data. It helped to improve the data quality, the reports' accuracy, and the surveys' speed. The clients used to extract reports with insights from the data and use them to improve their campaigns and products. The company increased the number of clients, revenue, the speed to create and run surveys, and the quality of the reports.
 
 ## Technologies
 
