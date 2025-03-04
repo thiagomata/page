@@ -120,8 +120,7 @@ It also allows the driver to share the data with car stores and mechanics.
 ### MEC / INEP
 
 <div style="background-color: black; display: flex; justify-content: center; align-items: center; height: 100px;">
-<img src="./img/mec.svg"  style="height:90px;"/>
-<img src="./img/inep.svg"  style="height:90px;"/>
+<img src="./img/mec.svg"  style="height:90px;"/>&nbsp;&nbsp;<img src="./img/inep.svg"  style="height:90px;"/>
 </div>
 
 
