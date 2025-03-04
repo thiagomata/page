@@ -21,7 +21,7 @@ and build
 - **2 Years** as Data Engineer
 - **3** Internation Awards
 - **20** Courses and Specializations
-- **f Years** as Cloud Arquitect
+- **5 Years** as Cloud Arquitect
 - **1 Year** as Co-Founder
 
 ## Top Companies
